@@ -51,22 +51,22 @@
 &lt;pre&gt;&lt;code&gt;print &#39;this is pre tag&#39;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Following is the syntax highlighted code block&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;getCookie&lt;/span&gt;(name &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;, r &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;interface&lt;/span&gt;{}) (*http.Cookie, &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt;) {
-	rd := r.(*http.Request)
-	cookie, err := rd.&lt;span style=&#34;color:#008b45&#34;&gt;Cookie&lt;/span&gt;(name)
-	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; err != &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt; {
-		&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;, err
-	}
-	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; cookie, &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;
-}
-
-&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;setCookie&lt;/span&gt;(cookie *http.Cookie, w &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;interface&lt;/span&gt;{}) &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt; {
-	&lt;span style=&#34;color:#228b22&#34;&gt;// Get write interface registered using `Acquire` method in handlers.
-&lt;/span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	wr := w.(http.ResponseWriter)
-	http.&lt;span style=&#34;color:#008b45&#34;&gt;SetCookie&lt;/span&gt;(wr, cookie)
-	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is blockquote, Will make it &lt;em&gt;better now&lt;/em&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;getCookie&lt;/span&gt;(name &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;, r &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;interface&lt;/span&gt;{}) (*http.Cookie, &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt;) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	rd := r.(*http.Request)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	cookie, err := rd.&lt;span style=&#34;color:#008b45&#34;&gt;Cookie&lt;/span&gt;(name)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; err != &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;, err
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; cookie, &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;setCookie&lt;/span&gt;(cookie *http.Cookie, w &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;interface&lt;/span&gt;{}) &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// Get write interface registered using `Acquire` method in handlers.
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	wr := w.(http.ResponseWriter)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	http.&lt;span style=&#34;color:#008b45&#34;&gt;SetCookie&lt;/span&gt;(wr, cookie)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is blockquote, Will make it &lt;em&gt;better now&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;&amp;lsquo;I want to do with you what spring does with the cherry trees.&amp;rsquo; &lt;!-- raw HTML omitted --&gt;cited ~Pablo Neruda&lt;!-- raw HTML omitted --&gt;*&lt;/p&gt;
 &lt;/blockquote&gt;
