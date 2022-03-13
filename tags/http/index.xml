@@ -15,7 +15,7 @@
       
       <guid>https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</guid>
       <description>HTTP 状态码是表示一次 HTTP 请求的响应状态，是网页可用性的重要指标。
-  HTTP 状态码（HTTP Status Code）是用来表示网页服务器 HTTP 响应状态的 3 位数字代码。下面列出了常见的网页 HTTP 状态码及其含义，供参考。更多不常见的 HTTP 状态的含义，请参考 RFC 2616 规范。
+  [HTTP 状态码] &amp;ldquo;HTTP状态码&amp;rdquo;)（HTTP Status Code）是用来表示网页服务器 HTTP 响应状态的 3 位数字代码。下面列出了常见的网页 HTTP 状态码及其含义，供参考。更多不常见的 HTTP 状态的含义，请参考 RFC 2616 规范。
  1xx 状态：表示临时响应 1xx 系列状态码，表示请求已收到，需要请求者继续执行操作的状态代码。
 继续（Continue）
 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部
