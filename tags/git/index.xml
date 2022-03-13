@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git on 摆人日寄</title>
+    <link>https://shenyiminghfut.github.io/tags/git/</link>
+    <description>Recent content in git on 摆人日寄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Tue, 09 Apr 2019 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Git命令速查表</title>
+      <link>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+      <pubDate>Tue, 09 Apr 2019 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+      <description> Git 是一款流行的版本管理工具，熟练使用 Git 命令是用好 Git 的基础。本参考表提供了常用 Git 命令的速查功能，是技术开发人员必备的参考资料。
+ 创建命令 本地更改 提交历史 分支和标签 删除命令 合并和衍合 撤销命令 配置命令 其他命令 </description>
+    </item>
+    
+  </channel>
+</rss>

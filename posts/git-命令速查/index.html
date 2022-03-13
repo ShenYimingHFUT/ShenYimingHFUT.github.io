@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title>Chapter VI: Esmeralda</title>
+<title>Git命令速查表</title>
 
 
 
@@ -10,27 +10,29 @@
 <meta name="google-site-verification" content="">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 <meta content="telephone=no" name="format-detection">
-<meta name="description" content="Esmeralda">
+<meta name="description" content="Git速查">
 <meta name="renderer" content="webkit">
 <meta name="theme-color" content="#ffffff">
 
 
 
-<meta property="og:title" content="Chapter VI: Esmeralda" />
-<meta property="og:description" content="Esmeralda" />
+<meta property="og:title" content="Git命令速查表" />
+<meta property="og:description" content="Git速查" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://shenyiminghfut.github.io/posts/chapter-6/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2017-04-14T11:25:05-04:00" />
-<meta property="article:modified_time" content="2017-04-14T11:25:05-04:00" /><meta property="og:site_name" content="My Blog" />
+<meta property="og:url" content="https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" /><meta property="og:image" content="https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-04-09T10:58:08-04:00" />
+<meta property="article:modified_time" content="2019-04-09T10:58:08-04:00" /><meta property="og:site_name" content="My Blog" />
 
 
 
 
 
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Chapter VI: Esmeralda"/>
-<meta name="twitter:description" content="Esmeralda"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg"/>
+
+<meta name="twitter:title" content="Git命令速查表"/>
+<meta name="twitter:description" content="Git速查"/>
 
 
 
@@ -167,10 +169,10 @@
 
     <div class="nav-footer">
         
-Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a>
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
 <br>
-移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
-<br>
+
 
 &copy;
 	
@@ -184,6 +186,187 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a>
     
     <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
 
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%88%9b%e5%bb%ba%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#创建命令-nav`)" id="创建命令-nav">
+									创建命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9c%ac%e5%9c%b0%e6%9b%b4%e6%94%b9" onclick="onNavClick(`#本地更改-nav`)" id="本地更改-nav">
+									本地更改
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%8f%90%e4%ba%a4%e5%8e%86%e5%8f%b2" onclick="onNavClick(`#提交历史-nav`)" id="提交历史-nav">
+									提交历史
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%86%e6%94%af%e5%92%8c%e6%a0%87%e7%ad%be" onclick="onNavClick(`#分支和标签-nav`)" id="分支和标签-nav">
+									分支和标签
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%a0%e9%99%a4%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#删除命令-nav`)" id="删除命令-nav">
+									删除命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%90%88%e5%b9%b6%e5%92%8c%e8%a1%8d%e5%90%88" onclick="onNavClick(`#合并和衍合-nav`)" id="合并和衍合-nav">
+									合并和衍合
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%92%a4%e9%94%80%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#撤销命令-nav`)" id="撤销命令-nav">
+									撤销命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%85%8d%e7%bd%ae%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#配置命令-nav`)" id="配置命令-nav">
+									配置命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%85%b6%e4%bb%96%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#其他命令-nav`)" id="其他命令-nav">
+									其他命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
 
 </div>
     
@@ -256,6 +439,187 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a>
             <div class="toc">
 
 
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%88%9b%e5%bb%ba%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#创建命令-nav`)" id="创建命令-nav">
+									创建命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%9c%ac%e5%9c%b0%e6%9b%b4%e6%94%b9" onclick="onNavClick(`#本地更改-nav`)" id="本地更改-nav">
+									本地更改
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%8f%90%e4%ba%a4%e5%8e%86%e5%8f%b2" onclick="onNavClick(`#提交历史-nav`)" id="提交历史-nav">
+									提交历史
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%86%e6%94%af%e5%92%8c%e6%a0%87%e7%ad%be" onclick="onNavClick(`#分支和标签-nav`)" id="分支和标签-nav">
+									分支和标签
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%88%a0%e9%99%a4%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#删除命令-nav`)" id="删除命令-nav">
+									删除命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%90%88%e5%b9%b6%e5%92%8c%e8%a1%8d%e5%90%88" onclick="onNavClick(`#合并和衍合-nav`)" id="合并和衍合-nav">
+									合并和衍合
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%92%a4%e9%94%80%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#撤销命令-nav`)" id="撤销命令-nav">
+									撤销命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e9%85%8d%e7%bd%ae%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#配置命令-nav`)" id="配置命令-nav">
+									配置命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%85%b6%e4%bb%96%e5%91%bd%e4%bb%a4" onclick="onNavClick(`#其他命令-nav`)" id="其他命令-nav">
+									其他命令
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
 </div>
             
         </div>
@@ -310,21 +674,21 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a>
                 
                     
                     
-                    style="background-image: url('https://shenyiminghfut.github.io/images/esmeralda.jpg')"
+                    style="background-image: url('https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg')"
                     
                 
             >
                 <div class="post-title">
-                    Chapter VI: Esmeralda
+                    Git命令速查表
                     
                     <div class="post-subtitle">
-                        Esmeralda
+                        Git速查
                     </div>
                     
                     <div class="post-meta">
                         
                         <time itemprop="datePublished">
-                            2017-04-14 11:25
+                            2019-04-09 10:58
                         </time>
                         
 
@@ -335,6 +699,21 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a>
                         
 
                         
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/git">git</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            27 s.
                         
                     </div>
                 </div>
@@ -344,79 +723,31 @@ Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a>
                 
                 <div class="post-body" v-pre>
                 
-                    <p>We are delighted to be able to inform the reader, that during the whole of
-this scene, Gringoire and his piece had stood firm. His actors, spurred on
-by him, had not ceased to spout his comedy, and he had not ceased to
-listen to it. He had made up his mind about the tumult, and was determined
-to proceed to the end, not giving up the hope of a return of attention on
-the part of the public. This gleam of hope acquired fresh life, when he
-saw Quasimodo, Coppenole, and the deafening escort of the pope of the
-procession of fools quit the hall amid great uproar. The throng rushed
-eagerly after them. “Good,” he said to himself, “there go all the
-mischief-makers.” Unfortunately, all the mischief-makers constituted the
-entire audience. In the twinkling of an eye, the grand hall was empty.</p>
-<p>To tell the truth, a few spectators still remained, some scattered, others
-in groups around the pillars, women, old men, or children, who had had
-enough of the uproar and tumult. Some scholars were still perched astride
-of the window-sills, engaged in gazing into the Place.</p>
-<p>“Well,” thought Gringoire, “here are still as many as are required to hear
-the end of my mystery. They are few in number, but it is a choice
-audience, a lettered audience.”</p>
-<p>An instant later, a symphony which had been intended to produce the
-greatest effect on the arrival of the Virgin, was lacking. Gringoire
-perceived that his music had been carried off by the procession of the
-Pope of the Fools. “Skip it,” said he, stoically.</p>
-<p>He approached a group of bourgeois, who seemed to him to be discussing his
-piece. This is the fragment of conversation which he caught,—</p>
-<p>“You know, Master Cheneteau, the Hôtel de Navarre, which belonged to
-Monsieur de Nemours?”</p>
-<p>“Yes, opposite the Chapelle de Braque.”</p>
-<p>“Well, the treasury has just let it to Guillaume Alixandre, historian, for
-six hivres, eight sols, parisian, a year.”</p>
-<p>“How rents are going up!”</p>
-<p>“Come,” said Gringoire to himself, with a sigh, “the others are
-listening.”</p>
-<p>“Comrades,” suddenly shouted one of the young scamps from the window, “La
-Esmeralda! La Esmeralda in the Place!”</p>
-<p>This word produced a magical effect. Every one who was left in the hall
-flew to the windows, climbing the walls in order to see, and repeating,
-“La Esmeralda! La Esmeralda?” At the same time, a great sound of applause
-was heard from without.</p>
-<p>“What’s the meaning of this, of the Esmeralda?” said Gringoire, wringing
-his hands in despair. “Ah, good heavens! it seems to be the turn of the
-windows now.”</p>
-<p>He returned towards the marble table, and saw that the representation had
-been interrupted. It was precisely at the instant when Jupiter should have
-appeared with his thunder. But Jupiter was standing motionless at the foot
-of the stage.</p>
-<p>“Michel Giborne!” cried the irritated poet, “what are you doing there? Is
-that your part? Come up!”</p>
-<p>“Alas!” said Jupiter, “a scholar has just seized the ladder.”</p>
-<p>Gringoire looked. It was but too true. All communication between his plot
-and its solution was intercepted.</p>
-<p>“The rascal,” he murmured. “And why did he take that ladder?”</p>
-<p>“In order to go and see the Esmeralda,” replied Jupiter piteously. “He
-said, ‘Come, here’s a ladder that’s of no use!’ and he took it.”</p>
-<p>This was the last blow. Gringoire received it with resignation.</p>
-<p>“May the devil fly away with you!” he said to the comedian, “and if I get
-my pay, you shall receive yours.”</p>
-<p>Then he beat a retreat, with drooping head, but the last in the field,
-like a general who has fought well.</p>
-<p>And as he descended the winding stairs of the courts: “A fine rabble of
-asses and dolts these Parisians!” he muttered between his teeth; “they
-come to hear a mystery and don’t listen to it at all! They are engrossed
-by every one, by Chopin Trouillefou, by the cardinal, by Coppenole, by
-Quasimodo, by the devil! but by Madame the Virgin Mary, not at all. If I
-had known, I’d have given you Virgin Mary; you ninnies! And I! to come to
-see faces and behold only backs! to be a poet, and to reap the success of
-an apothecary! It is true that Homerus begged through the Greek towns, and
-that Naso died in exile among the Muscovites. But may the devil flay me if
-I understand what they mean with their Esmeralda! What is that word, in
-the first place?—‘tis Egyptian!”</p>
+                    <blockquote>
+<p>Git 是一款流行的版本管理工具，熟练使用 Git 命令是用好 Git 的基础。本参考表提供了常用 Git 命令的速查功能，是技术开发人员必备的参考资料。</p>
+</blockquote>
+<h2 id="创建命令">创建命令</h2>
+<!-- raw HTML omitted -->
+<h2 id="本地更改">本地更改</h2>
+<!-- raw HTML omitted -->
+<h2 id="提交历史">提交历史</h2>
+<!-- raw HTML omitted -->
+<h2 id="分支和标签">分支和标签</h2>
+<!-- raw HTML omitted -->
+<h2 id="删除命令">删除命令</h2>
+<!-- raw HTML omitted -->
+<h2 id="合并和衍合">合并和衍合</h2>
+<!-- raw HTML omitted -->
+<h2 id="撤销命令">撤销命令</h2>
+<!-- raw HTML omitted -->
+<h2 id="配置命令">配置命令</h2>
+<!-- raw HTML omitted -->
+<h2 id="其他命令">其他命令</h2>
+<!-- raw HTML omitted -->
 
                     
                     <HR width="100%" id="EOF">
-		    <p style="color:#777;">上次修改於 2017-04-14</p>
+		    <p style="color:#777;">上次修改於 2019-04-09</p>
                     
                 </div>
             </div>
@@ -425,14 +756,14 @@ the first place?—‘tis Egyptian!”</p>
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="https://shenyiminghfut.github.io/posts/post-1/">
-			下回<br>(No comment) When You Have Too Much to Do
+                <a class="newer-posts" href="https://shenyiminghfut.github.io/posts/chinese/">
+			下回<br>中文文本测试
                 </a>
                 
                 
                 
-                <a class="older-posts" href="https://shenyiminghfut.github.io/posts/chapter-1/">
-			上回<br>Chapter I: The Grand Hall
+                <a class="older-posts">
+			上回<br>這是最舊的文章了。
                 </a>
                 
             </nav>
@@ -449,10 +780,10 @@ the first place?—‘tis Egyptian!”</p>
 
                     </div>
             </div><div id="single-column-footer">
-Hugo Theme <a href="https://github.com/amazingrise/hugo-theme-diary">Diary</a>
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
 <br>
-移植自 <a href="https://mak1t0.cc/" target="_blank" rel="noreferrer noopener">Makito</a>'s <a href="https://github.com/SumiMakito/hexo-theme-journal/" target="_blank" rel="noreferrer noopener">Journal.</a> <br>
-<br>
+
 
 &copy;
 	

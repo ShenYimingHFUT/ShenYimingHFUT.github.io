@@ -4,11 +4,201 @@
     <link>https://shenyiminghfut.github.io/</link>
     <description>Recent content on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Thu, 14 Nov 2019 11:25:05 -0400</lastBuildDate>
+    <lastBuildDate>Sat, 12 Mar 2022 10:58:08 -0400</lastBuildDate>
     
         <atom:link href="https://shenyiminghfut.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>HTTP状态码速查表</title>
+        <link>https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</link>
+        <pubDate>Sat, 12 Mar 2022 10:58:08 -0400</pubDate>
+        
+        <guid>https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</guid>
+        <description>摆人日寄 https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/ -&lt;blockquote&gt;
+&lt;p&gt;HTTP 状态码是表示一次 HTTP 请求的响应状态，是网页可用性的重要指标。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&#34;https://quanxin.org/http-status-code&#34; title=&#34;HTTP状态码&#34;&gt;HTTP 状态码&lt;/a&gt;（HTTP Status Code）是用来表示网页服务器 HTTP 响应状态的 3 位数字代码。下面列出了常见的网页 HTTP 状态码及其含义，供参考。更多不常见的 HTTP 状态的含义，请参考 RFC 2616 规范。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;1xx-状态表示临时响应&#34;&gt;1xx 状态：表示临时响应&lt;/h2&gt;
+&lt;p&gt;1xx 系列状态码，表示请求已收到，需要请求者继续执行操作的状态代码。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;继续&lt;/strong&gt;（Continue）&lt;/p&gt;
+&lt;p&gt;请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;切换协议&lt;/strong&gt;（Switching Protocols）&lt;/p&gt;
+&lt;p&gt;请求者已要求服务器切换协议，服务器已确认并做好了的切换的准备&lt;/p&gt;
+&lt;h2 id=&#34;2xx-状态表示成功响应&#34;&gt;2xx 状态：表示成功响应&lt;/h2&gt;
+&lt;p&gt;2xx 系列状态码，表示成功处理了请求的状态代码。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;成功&lt;/strong&gt;（Success）&lt;/p&gt;
+&lt;p&gt;服务器已成功处理了请求。 通常，这表示服务器提供了请求的网页&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;已创建&lt;/strong&gt;（Created）&lt;/p&gt;
+&lt;p&gt;请求成功，并且服务器创建了新的资源&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;已接受&lt;/strong&gt;（Accepted）&lt;/p&gt;
+&lt;p&gt;服务器已接受请求，但尚未处理&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;非授权信息&lt;/strong&gt;（Non Authoritative Information）&lt;/p&gt;
+&lt;p&gt;服务器已成功处理了请求，但返回的信息可能来自另一来源&lt;/p&gt;
+&lt;p&gt;从 HTTP/1.1 开始支持&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;无内容&lt;/strong&gt;（No Content）&lt;/p&gt;
+&lt;p&gt;服务器成功处理了请求，但没有返回任何内容&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;重置内容&lt;/strong&gt;（Reset Content）&lt;/p&gt;
+&lt;p&gt;服务器成功处理了请求，但没有返回任何内容。该响应要求浏览器重置它所显示的内容&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;部分内容&lt;/strong&gt;（Partial Content）&lt;/p&gt;
+&lt;p&gt;由于客户端发送了 &lt;code&gt;range&lt;/code&gt; 头信息，服务器成功返回了部分资源&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 7233 定义&lt;/p&gt;
+&lt;h2 id=&#34;3xx-状态表示重定向&#34;&gt;3xx 状态：表示重定向&lt;/h2&gt;
+&lt;p&gt;3xx 系列状态码，表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;多种选择&lt;/strong&gt;（Multiple Choices）&lt;/p&gt;
+&lt;p&gt;针对不同请求，服务器可执行多种操作。服务器可根据请求者的选择执行对应的操作，或者提供一个操作列表供请求者选择&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;永久移动&lt;/strong&gt;（Moved Permanently）&lt;/p&gt;
+&lt;p&gt;请求的网页已永久移动到新位置。对于 GET 或 HEAD 请求，服务器返回此响应时，会自动将请求者转到新位置&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;资源已找到（临时移动）&lt;/strong&gt;（Found (Moved Temporarily)）&lt;/p&gt;
+&lt;p&gt;告诉客户端，请到另一处 URL 获取需要的资源（该状态已被 303 和 307 状态取代）&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;查看其他位置&lt;/strong&gt;（See Other）&lt;/p&gt;
+&lt;p&gt;请求者应当对不同的位置使用单独的 GET 请求来获取资源时，服务器返回此代码&lt;/p&gt;
+&lt;p&gt;从 HTTP/1.1 开始支持&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;资源未修改&lt;/strong&gt;（Not Modified）&lt;/p&gt;
+&lt;p&gt;自从上次请求后，网页未做过修改。服务器返回此响应时，不会返回网页内容&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 7232 定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;使用代理&lt;/strong&gt;（Use Proxy）&lt;/p&gt;
+&lt;p&gt;请求者只能使用代理访问所请求的资源。资源地址将包含在响应中（出于安全考虑，许多客户端不会遵守该响应状态）&lt;/p&gt;
+&lt;p&gt;从 HTTP/1.1 开始支持&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;切换代理&lt;/strong&gt;（Switch Proxy）&lt;/p&gt;
+&lt;p&gt;后续请求应该使用指定的代理（在最新版的 HTTP 规范中，该状态码已经不再使用）&lt;/p&gt;
+&lt;p&gt;该状态码已废弃&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;临时重定向&lt;/strong&gt;（Temporary Redirect）&lt;/p&gt;
+&lt;p&gt;请求者应使用另一个 URL 重新发起一次请求，但后续的请求仍应使用原来的 URL&lt;/p&gt;
+&lt;p&gt;从 HTTP/1.1 开始支持&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;永久重定向&lt;/strong&gt;（Permanent Redirect）&lt;/p&gt;
+&lt;p&gt;当前请求和后续的请求都应该向另一个 URL 发起请求&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 7538 定义&lt;/p&gt;
+&lt;h2 id=&#34;4xx-状态表示客户端错误&#34;&gt;4xx 状态：表示客户端错误&lt;/h2&gt;
+&lt;p&gt;4xx 系列状态码，表示客户端请求可能出现了错误，妨碍了服务器的处理。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;错误请求&lt;/strong&gt;（Bad Request）&lt;/p&gt;
+&lt;p&gt;服务器不理解客户端请求的语法，如：请求语法错误、请求体过大以及带有欺骗性的请求路径&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;未授权&lt;/strong&gt;（Unauthorized）&lt;/p&gt;
+&lt;p&gt;访问的资源要求身份验证，但请求时未提供授权或提供了错误的授权。对于需要登录的网页，服务器可能返回此响应&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 7235 定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;需要支付信息&lt;/strong&gt;（Payment Required）&lt;/p&gt;
+&lt;p&gt;为以后使用保留。通常用于需要提供支付的场景，如数字钞票或在线支付。一个例子是：Google 开发者 API 使用 402 状态来表示超过了每日请求上限的情况&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;禁止访问&lt;/strong&gt;（Forbidden）&lt;/p&gt;
+&lt;p&gt;服务器已收到请求，但拒绝提供服务。出现此状态通常是因为请求者没有足够的权限访问请求的资源&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;页面未找到&lt;/strong&gt;（Not Found）&lt;/p&gt;
+&lt;p&gt;服务器找不到请求的网页或资源&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不支持的请求方法&lt;/strong&gt;（Method Not Allowed）&lt;/p&gt;
+&lt;p&gt;服务器不支持当前请求方法。比如：某些资源只支持 GET 和 POST 请求，如果发起 HEAD 请求，服务器将返回该状态&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不被接受&lt;/strong&gt;（Not Acceptable）&lt;/p&gt;
+&lt;p&gt;服务器无法使用请求的内容特性响应请求的网页，即：不支持请求头部中 &lt;code&gt;Accept&lt;/code&gt; 字段对应的内容&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;需要代理授权&lt;/strong&gt;（Proxy Authentication Required）&lt;/p&gt;
+&lt;p&gt;此状态代码与 401（未授权）类似，但指定请求者应当授权使用代理&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 7235 定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;请求超时&lt;/strong&gt;（Request Timeout）&lt;/p&gt;
+&lt;p&gt;服务器等候请求时发生超时&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;请求冲突&lt;/strong&gt;（Conflict）&lt;/p&gt;
+&lt;p&gt;服务器在完成请求时发生冲突。服务器必须在响应中包含有关冲突的信息&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;已删除&lt;/strong&gt;（Gone）&lt;/p&gt;
+&lt;p&gt;如果请求的资源已永久删除，服务器就会返回此响应&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;需要有效长度&lt;/strong&gt;（Length Required）&lt;/p&gt;
+&lt;p&gt;服务器无法处理不含有内容长度标头字段（Content-Length）的请求&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;未满足前提条件&lt;/strong&gt;（Precondition Failed）&lt;/p&gt;
+&lt;p&gt;服务器未满足请求者在请求中设置的其中一个前提条件&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 7232 定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;请求实体过大&lt;/strong&gt;（Payload Too Large）&lt;/p&gt;
+&lt;p&gt;服务器无法处理请求，因为请求实体过大，超出服务器的处理能力&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 7231 定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;请求的 URI 过长&lt;/strong&gt;（URI Too Long）&lt;/p&gt;
+&lt;p&gt;请求的 URI（通常为网址）过长，服务器无法处理&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 7231 定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不支持的媒体类型&lt;/strong&gt;（Unsupported Media Type）&lt;/p&gt;
+&lt;p&gt;服务器不支持请求的内容格式（Content-Type）&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 7231 定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;请求范围不符合要求&lt;/strong&gt;（Range Not Satisfiable）&lt;/p&gt;
+&lt;p&gt;客户端请求服务器资源的某一部分，但服务器不能提供该部分内容时，则会返回此状态码&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 7233 定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;未满足期望值&lt;/strong&gt;（Expectation Failed）&lt;/p&gt;
+&lt;p&gt;服务器不能满足 &amp;ldquo;Expection&amp;rdquo; 请求头部的要求时返回该状态码&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;地址错误的请求&lt;/strong&gt;（Misdirected Request）&lt;/p&gt;
+&lt;p&gt;当请求被定向到一个不能输出响应的服务器时，则会返回该状态&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 7540 定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;无法处理的实体&lt;/strong&gt;（Unprocessable Entity）&lt;/p&gt;
+&lt;p&gt;请求格式正确，但由于语义错误，导致无法响应请求&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 4918 定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;被锁定&lt;/strong&gt;（Locked）&lt;/p&gt;
+&lt;p&gt;正在访问的资源已被锁定&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 4918 定义&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;依赖请求失败&lt;/strong&gt;（Failed Dependency）&lt;/p&gt;
+&lt;p&gt;由于之前的某个请求（即依赖的请求）发生错误，导致当前请求失败&lt;/p&gt;
+&lt;p&gt;该状态码由 RFC 4918 定义&lt;/p&gt;
+&lt;h2 id=&#34;5xx-状态表示服务器错误&#34;&gt;5xx 状态：表示服务器错误&lt;/h2&gt;
+&lt;p&gt;5xx 系列状态码，表示服务器在尝试处理请求时发生内部错误。 这些错误可能是服务器本身的错误，而不是请求出错。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;服务器内部错误&lt;/strong&gt;（Internal Server Error）&lt;/p&gt;
+&lt;p&gt;服务器内部发生错误，无法完成请求&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;尚未实现&lt;/strong&gt;（Not Implemented）&lt;/p&gt;
+&lt;p&gt;服务器尚不具备完成请求的条件：要么无法识别请求方法；要么缺乏完成请求的能力&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;错误网关&lt;/strong&gt;（Bad Gateway）&lt;/p&gt;
+&lt;p&gt;服务器作为网关或代理，从上游服务器收到无效响应&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;服务不可用&lt;/strong&gt;（Service Unavailable）&lt;/p&gt;
+&lt;p&gt;服务器目前无法使用（由于超载或停机维护）。通常，这只是一个暂时的状态&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;网关超时&lt;/strong&gt;（Gateway Timeout）&lt;/p&gt;
+&lt;p&gt;服务器作为网关或代理，但是没有及时从上游服务器收到请求&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;不支持的 HTTP 协议版本&lt;/strong&gt;（HTTP Version Not Supported）&lt;/p&gt;
+&lt;p&gt;服务器不支持请求中所用的 HTTP 协议版本&lt;/p&gt;
+&lt;p&gt;HTTP 响应状态码是网页服务器最重要的参考指标之一，了解常见 HTTP 状态码的含义，能更好地指导网站对优化。作为程序开发者以及网站管理员，需要了解并熟悉这些常见 HTTP 状态码的含义，并合理地应用到日常 web 开发中。&lt;/p&gt;
+- https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title> Vim 常用的命令</title>
+        <link>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
+        
+        <guid>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <description>摆人日寄 https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ -&lt;blockquote&gt;
+&lt;p&gt;记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本速查表按分类列出了 Vim 常用的命令和快捷键，数量较多，可使用 Ctrl + F 进行查找。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;全局命令&#34;&gt;全局命令&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;移动光标&#34;&gt;移动光标&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;插入模式插入--追加文本&#34;&gt;插入模式（插入 / 追加文本）&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;编辑文本&#34;&gt;编辑文本&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;选择文本可视化模式&#34;&gt;选择文本（可视化模式）&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;可视化模式命令&#34;&gt;可视化模式命令&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;寄存器&#34;&gt;寄存器&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;标记和位置&#34;&gt;标记和位置&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;宏&#34;&gt;宏&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;复制剪切和粘贴&#34;&gt;复制、剪切和粘贴&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;文本缩进&#34;&gt;文本缩进&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;文本搜索和替换&#34;&gt;文本搜索和替换&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;多文件编辑&#34;&gt;多文件编辑&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;多文件搜索&#34;&gt;多文件搜索&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;标签&#34;&gt;标签&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;diff文件比较&#34;&gt;Diff（文件比较）&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;退出&#34;&gt;退出&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+- https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ - This is a customized copyright.</description>
+        </item>
     
     
     
@@ -28,266 +218,33 @@
     
     
         <item>
-        <title>Typography - Test for features</title>
-        <link>https://shenyiminghfut.github.io/posts/post-5/</link>
-        <pubDate>Sun, 18 Mar 2018 12:13:38 +0530</pubDate>
+        <title>Git命令速查表</title>
+        <link>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <pubDate>Tue, 09 Apr 2019 10:58:08 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/post-5/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/post-5/ -&lt;p&gt;Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p&gt;
-&lt;h1 id=&#34;heading-1&#34;&gt;Heading 1&lt;/h1&gt;
-&lt;p&gt;Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p&gt;
-&lt;h2 id=&#34;heading-2&#34;&gt;Heading 2&lt;/h2&gt;
-&lt;p&gt;Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p&gt;
-&lt;h3 id=&#34;heading-3&#34;&gt;Heading 3&lt;/h3&gt;
-&lt;p&gt;Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p&gt;
-&lt;h4 id=&#34;heading-4&#34;&gt;Heading 4&lt;/h4&gt;
-&lt;p&gt;Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p&gt;
-&lt;h5 id=&#34;heading-5&#34;&gt;Heading 5&lt;/h5&gt;
-&lt;p&gt;Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p&gt;
-&lt;h6 id=&#34;heading-6&#34;&gt;Heading 6&lt;/h6&gt;
-&lt;p&gt;Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.&lt;/p&gt;
-&lt;h2 id=&#34;typography&#34;&gt;Typography&lt;/h2&gt;
-&lt;p&gt;Lid est laborum et dolorum fuga, This is &lt;a href=&#34;http://example.com/&#34; title=&#34;Title&#34;&gt;an example&lt;/a&gt; inline link. Et harum quidem rerum facilis, &lt;strong&gt;This is bold&lt;/strong&gt; and &lt;em&gt;emphasis&lt;/em&gt; cumque nihilse impedit quo minus id quod amets untra dolor amet sad. While this is &lt;code&gt;code block()&lt;/code&gt; and following is a &lt;code&gt;pre&lt;/code&gt; tag&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;print &#39;this is pre tag&#39;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Following is the syntax highlighted code block&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-go&#34; data-lang=&#34;go&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;getCookie&lt;/span&gt;(name &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;string&lt;/span&gt;, r &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;interface&lt;/span&gt;{}) (*http.Cookie, &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt;) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	rd := r.(*http.Request)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	cookie, err := rd.&lt;span style=&#34;color:#008b45&#34;&gt;Cookie&lt;/span&gt;(name)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;if&lt;/span&gt; err != &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;		&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;, err
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; cookie, &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;func&lt;/span&gt; &lt;span style=&#34;color:#008b45&#34;&gt;setCookie&lt;/span&gt;(cookie *http.Cookie, w &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;interface&lt;/span&gt;{}) &lt;span style=&#34;color:#00688b;font-weight:bold&#34;&gt;error&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#228b22&#34;&gt;// Get write interface registered using `Acquire` method in handlers.
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#228b22&#34;&gt;&lt;/span&gt;	wr := w.(http.ResponseWriter)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	http.&lt;span style=&#34;color:#008b45&#34;&gt;SetCookie&lt;/span&gt;(wr, cookie)
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;	&lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#8b008b;font-weight:bold&#34;&gt;nil&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This is blockquote, Will make it &lt;em&gt;better now&lt;/em&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&amp;lsquo;I want to do with you what spring does with the cherry trees.&amp;rsquo; &lt;!-- raw HTML omitted --&gt;cited ~Pablo Neruda&lt;!-- raw HTML omitted --&gt;*&lt;/p&gt;
+        <guid>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <description>摆人日寄 https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ -&lt;blockquote&gt;
+&lt;p&gt;Git 是一款流行的版本管理工具，熟练使用 Git 命令是用好 Git 的基础。本参考表提供了常用 Git 命令的速查功能，是技术开发人员必备的参考资料。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Et harum quidem &lt;em&gt;rerum facilis&lt;/em&gt; est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;Unordered list&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Red&lt;/li&gt;
-&lt;li&gt;Green&lt;/li&gt;
-&lt;li&gt;Blue&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Ordered list&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Red&lt;/li&gt;
-&lt;li&gt;Green&lt;/li&gt;
-&lt;li&gt;Blue&lt;/li&gt;
-&lt;/ol&gt;
-- https://shenyiminghfut.github.io/posts/post-5/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>(No comment) When You Have Too Much to Do</title>
-        <link>https://shenyiminghfut.github.io/posts/post-1/</link>
-        <pubDate>Sun, 18 Mar 2018 02:01:58 +0530</pubDate>
-        
-        <guid>https://shenyiminghfut.github.io/posts/post-1/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/post-1/ -&lt;p&gt;You have a to-do list that scrolls on for days. You are managing multiple projects, getting lots of email and messages on different messaging systems, managing finances and personal health habits and so much more.&lt;/p&gt;
-&lt;p&gt;It all keeps piling up, and it can feel overwhelming.&lt;/p&gt;
-&lt;p&gt;How do you keep up with it all? How do you find focus and peace and get stuff accomplished when you have too much on your plate?&lt;/p&gt;
-&lt;p&gt;In this primer, I’ll look at some key strategies and tactics for taking on an overloaded life with an open heart, lots of energy, and a smile on your face.&lt;/p&gt;
-&lt;h2 id=&#34;the-first-step-triage&#34;&gt;The First Step: Triage&lt;/h2&gt;
-&lt;p&gt;Whether you’re just starting your day, or you’re in the middle of the chaos and just need to find some sanity … the first step is to get into triage mode.&lt;/p&gt;
-&lt;p&gt;Triage, as you probably know, is sorting through the chaos to prioritize: what needs to be done now, what needs to be done today, what needs to be done this week, and what can wait? You’re looking at urgency, but also what’s meaningful and important.&lt;/p&gt;
-&lt;p&gt;Here’s what you might do:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Pick out the things that need to be done today. Start a Short List for things you’re going to do today. That might be important tasks for big projects, urgent tasks that could result in damage if you don’t act, smaller admin tasks that you really should take care of today, and responding to important messages. I would recommend being ruthless and cutting out as much as you can, having just 5 things on your plate if that’s at all possible. Not everything needs to be done today, and not every email needs to be responded to.&lt;/li&gt;
-&lt;li&gt;Push some things to tomorrow and the rest of the week. If you have deadlines that can be pushed back (or renegotiated), do that. Spread the work out over the week, even into next week. What needs to be done tomorrow? What can wait a day or two longer?&lt;/li&gt;
-&lt;li&gt;Eliminate what you can. That might mean just not replying to some messages that aren’t that important and don’t really require a reply. It might mean telling some people that you can’t take on this project after all, or that you need to get out of the commitment that you said you’d do. Yes, this is uncomfortable. For now, just put them on a list called, “To Not Do,” and plan to figure out how to get out of them later.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;OK, you have some breathing room and a manageable list now! Let’s shrink that down even further and just pick one thing.&lt;/p&gt;
-&lt;h2 id=&#34;next-focus-on-one-thing&#34;&gt;Next: Focus on One Thing&lt;/h2&gt;
-&lt;p&gt;With a lot on your plate, it’s hard to pick one thing to focus on. But that’s exactly what I’m going to ask you to do.&lt;/p&gt;
-&lt;p&gt;Pick one thing, and give it your focus. Yes, there are a lot of other things you can focus on. Yes, they’re stressing you out and making it hard to focus. But think about it this way: if you allow it all to be in your head all the time, that will always be your mode of being. You’ll always be thinking about everything, stressing out about it all, with a frazzled mind … unless you start shifting.&lt;/p&gt;
-&lt;p&gt;The shift:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Pick something to focus on. Look at the triaged list from the first section … if you have 5-6 things on this Short List, you can assess whether there’s any super urgent, time-sensitive things you need to take care of. If there are, pick one of them. If not, pick the most important one — probably the one you have been putting off doing.&lt;/li&gt;
-&lt;li&gt;Clear everything else away. Just for a little bit. Close all browser tabs, turn off notifications, close open applications, put your phone away.&lt;/li&gt;
-&lt;li&gt;Put that one task before you, and allow yourself to be with it completely. Pour yourself into it. Think of it as a practice, of letting go (of everything else), of focus, of radical simplicity.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;When you’re done (or after 15-20 minutes have gone by at least), you can switch to something else. But don’t allow yourself to switch until then.&lt;/p&gt;
-&lt;p&gt;By closing off all exits, by choosing one thing, by giving yourself completely to that thing … you’re now in a different mode that isn’t so stressful or spread thin. You’ve started a shift that will lead to focus and sanity.&lt;/p&gt;
-&lt;h2 id=&#34;third-schedule-time-to-simplify&#34;&gt;Third: Schedule Time to Simplify&lt;/h2&gt;
-&lt;p&gt;Remember the To Not Do list above? Schedule some time this week to start reducing your projects, saying no to people, getting out of commitments, crossing stuff off your task list … so that you can have some sanity back.&lt;/p&gt;
-&lt;p&gt;There are lots of little things that you’ve said “yes” to that you probably shouldn’t have. That’s why you’re overloaded. Protect your more important work, and your time off, and your peace of mind, by saying “no” to things that aren’t as important.&lt;/p&gt;
-&lt;p&gt;Schedule the time to simplify — you don’t have to do it today, but sometime soon — and you can then not have to worry about the things on your To Not Do list until then.&lt;/p&gt;
-&lt;h2 id=&#34;fourth-practice-mindful-focus&#34;&gt;Fourth: Practice Mindful Focus&lt;/h2&gt;
-&lt;p&gt;Go through the rest of the day with an attitude of “mindful focus.” That means that you are doing one thing at a time, being as present as you can, switching as little as you can.&lt;/p&gt;
-&lt;p&gt;Think of it as a settling of the mind. A new mode of being. A mindfulness practice (which means you won’t be perfect at it).&lt;/p&gt;
-&lt;p&gt;As you practice mindful focus, you’ll learn to practice doing things with an open heart, with curiosity and gratitude, and even joy. Try these one at a time as you get to do each task on your Short List.&lt;/p&gt;
-&lt;p&gt;You’ll find that you’re not so overloaded, but that each task is just perfect for that moment. And that’s a completely new relationship with the work that you do, and a new relationship with life.&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/post-1/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Chapter VI: Esmeralda</title>
-        <link>https://shenyiminghfut.github.io/posts/chapter-6/</link>
-        <pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate>
-        
-        <guid>https://shenyiminghfut.github.io/posts/chapter-6/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/chapter-6/ -&lt;p&gt;We are delighted to be able to inform the reader, that during the whole of
-this scene, Gringoire and his piece had stood firm. His actors, spurred on
-by him, had not ceased to spout his comedy, and he had not ceased to
-listen to it. He had made up his mind about the tumult, and was determined
-to proceed to the end, not giving up the hope of a return of attention on
-the part of the public. This gleam of hope acquired fresh life, when he
-saw Quasimodo, Coppenole, and the deafening escort of the pope of the
-procession of fools quit the hall amid great uproar. The throng rushed
-eagerly after them. “Good,” he said to himself, “there go all the
-mischief-makers.” Unfortunately, all the mischief-makers constituted the
-entire audience. In the twinkling of an eye, the grand hall was empty.&lt;/p&gt;
-&lt;p&gt;To tell the truth, a few spectators still remained, some scattered, others
-in groups around the pillars, women, old men, or children, who had had
-enough of the uproar and tumult. Some scholars were still perched astride
-of the window-sills, engaged in gazing into the Place.&lt;/p&gt;
-&lt;p&gt;“Well,” thought Gringoire, “here are still as many as are required to hear
-the end of my mystery. They are few in number, but it is a choice
-audience, a lettered audience.”&lt;/p&gt;
-&lt;p&gt;An instant later, a symphony which had been intended to produce the
-greatest effect on the arrival of the Virgin, was lacking. Gringoire
-perceived that his music had been carried off by the procession of the
-Pope of the Fools. “Skip it,” said he, stoically.&lt;/p&gt;
-&lt;p&gt;He approached a group of bourgeois, who seemed to him to be discussing his
-piece. This is the fragment of conversation which he caught,—&lt;/p&gt;
-&lt;p&gt;“You know, Master Cheneteau, the Hôtel de Navarre, which belonged to
-Monsieur de Nemours?”&lt;/p&gt;
-&lt;p&gt;“Yes, opposite the Chapelle de Braque.”&lt;/p&gt;
-&lt;p&gt;“Well, the treasury has just let it to Guillaume Alixandre, historian, for
-six hivres, eight sols, parisian, a year.”&lt;/p&gt;
-&lt;p&gt;“How rents are going up!”&lt;/p&gt;
-&lt;p&gt;“Come,” said Gringoire to himself, with a sigh, “the others are
-listening.”&lt;/p&gt;
-&lt;p&gt;“Comrades,” suddenly shouted one of the young scamps from the window, “La
-Esmeralda! La Esmeralda in the Place!”&lt;/p&gt;
-&lt;p&gt;This word produced a magical effect. Every one who was left in the hall
-flew to the windows, climbing the walls in order to see, and repeating,
-“La Esmeralda! La Esmeralda?” At the same time, a great sound of applause
-was heard from without.&lt;/p&gt;
-&lt;p&gt;“What’s the meaning of this, of the Esmeralda?” said Gringoire, wringing
-his hands in despair. “Ah, good heavens! it seems to be the turn of the
-windows now.”&lt;/p&gt;
-&lt;p&gt;He returned towards the marble table, and saw that the representation had
-been interrupted. It was precisely at the instant when Jupiter should have
-appeared with his thunder. But Jupiter was standing motionless at the foot
-of the stage.&lt;/p&gt;
-&lt;p&gt;“Michel Giborne!” cried the irritated poet, “what are you doing there? Is
-that your part? Come up!”&lt;/p&gt;
-&lt;p&gt;“Alas!” said Jupiter, “a scholar has just seized the ladder.”&lt;/p&gt;
-&lt;p&gt;Gringoire looked. It was but too true. All communication between his plot
-and its solution was intercepted.&lt;/p&gt;
-&lt;p&gt;“The rascal,” he murmured. “And why did he take that ladder?”&lt;/p&gt;
-&lt;p&gt;“In order to go and see the Esmeralda,” replied Jupiter piteously. “He
-said, ‘Come, here’s a ladder that’s of no use!’ and he took it.”&lt;/p&gt;
-&lt;p&gt;This was the last blow. Gringoire received it with resignation.&lt;/p&gt;
-&lt;p&gt;“May the devil fly away with you!” he said to the comedian, “and if I get
-my pay, you shall receive yours.”&lt;/p&gt;
-&lt;p&gt;Then he beat a retreat, with drooping head, but the last in the field,
-like a general who has fought well.&lt;/p&gt;
-&lt;p&gt;And as he descended the winding stairs of the courts: “A fine rabble of
-asses and dolts these Parisians!” he muttered between his teeth; “they
-come to hear a mystery and don’t listen to it at all! They are engrossed
-by every one, by Chopin Trouillefou, by the cardinal, by Coppenole, by
-Quasimodo, by the devil! but by Madame the Virgin Mary, not at all. If I
-had known, I’d have given you Virgin Mary; you ninnies! And I! to come to
-see faces and behold only backs! to be a poet, and to reap the success of
-an apothecary! It is true that Homerus begged through the Greek towns, and
-that Naso died in exile among the Muscovites. But may the devil flay me if
-I understand what they mean with their Esmeralda! What is that word, in
-the first place?—‘tis Egyptian!”&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/chapter-6/ - This is a customized copyright.</description>
-        </item>
-    
-    
-    
-        <item>
-        <title>Chapter I: The Grand Hall</title>
-        <link>https://shenyiminghfut.github.io/posts/chapter-1/</link>
-        <pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate>
-        
-        <guid>https://shenyiminghfut.github.io/posts/chapter-1/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/chapter-1/ -&lt;p&gt;Three hundred and forty-eight years, six months, and nineteen days ago
-to-day, the Parisians awoke to the sound of all the bells in the triple
-circuit of the city, the university, and the town ringing a full peal.&lt;/p&gt;
-&lt;p&gt;The sixth of January, 1482, is not, however, a day of which history has
-preserved the memory. There was nothing notable in the event which thus
-set the bells and the bourgeois of Paris in a ferment from early morning.
-It was neither an assault by the Picards nor the Burgundians, nor a hunt
-led along in procession, nor a revolt of scholars in the town of Laas, nor
-an entry of “our much dread lord, monsieur the king,” nor even a pretty
-hanging of male and female thieves by the courts of Paris. Neither was it
-the arrival, so frequent in the fifteenth century, of some plumed and
-bedizened embassy. It was barely two days since the last cavalcade of that
-nature, that of the Flemish ambassadors charged with concluding the
-marriage between the dauphin and Marguerite of Flanders, had made its
-entry into Paris, to the great annoyance of M. le Cardinal de Bourbon,
-who, for the sake of pleasing the king, had been obliged to assume an
-amiable mien towards this whole rustic rabble of Flemish burgomasters, and
-to regale them at his Hôtel de Bourbon, with a very “pretty morality,
-allegorical satire, and farce,” while a driving rain drenched the
-magnificent tapestries at his door.&lt;/p&gt;
-&lt;p&gt;What put the “whole population of Paris in commotion,” as Jehan de Troyes
-expresses it, on the sixth of January, was the double solemnity, united
-from time immemorial, of the Epiphany and the Feast of Fools.&lt;/p&gt;
-&lt;p&gt;On that day, there was to be a bonfire on the Place de Grève, a maypole at
-the Chapelle de Braque, and a mystery at the Palais de Justice. It had
-been cried, to the sound of the trumpet, the preceding evening at all the
-cross roads, by the provost’s men, clad in handsome, short, sleeveless
-coats of violet camelot, with large white crosses upon their breasts.&lt;/p&gt;
-&lt;p&gt;So the crowd of citizens, male and female, having closed their houses and
-shops, thronged from every direction, at early morn, towards some one of
-the three spots designated.&lt;/p&gt;
-&lt;p&gt;Each had made his choice; one, the bonfire; another, the maypole; another,
-the mystery play. It must be stated, in honor of the good sense of the
-loungers of Paris, that the greater part of this crowd directed their
-steps towards the bonfire, which was quite in season, or towards the
-mystery play, which was to be presented in the grand hall of the Palais de
-Justice (the courts of law), which was well roofed and walled; and that
-the curious left the poor, scantily flowered maypole to shiver all alone
-beneath the sky of January, in the cemetery of the Chapel of Braque.&lt;/p&gt;
-&lt;p&gt;The populace thronged the avenues of the law courts in particular, because
-they knew that the Flemish ambassadors, who had arrived two days
-previously, intended to be present at the representation of the mystery,
-and at the election of the Pope of the Fools, which was also to take place
-in the grand hall.&lt;/p&gt;
-&lt;p&gt;It was no easy matter on that day, to force one’s way into that grand
-hall, although it was then reputed to be the largest covered enclosure in
-the world (it is true that Sauval had not yet measured the grand hall of
-the Château of Montargis). The palace place, encumbered with people,
-offered to the curious gazers at the windows the aspect of a sea; into
-which five or six streets, like so many mouths of rivers, discharged every
-moment fresh floods of heads. The waves of this crowd, augmented
-incessantly, dashed against the angles of the houses which projected here
-and there, like so many promontories, into the irregular basin of the
-place. In the centre of the lofty Gothic* façade of the palace, the grand
-staircase, incessantly ascended and descended by a double current, which,
-after parting on the intermediate landing-place, flowed in broad waves
-along its lateral slopes,—the grand staircase, I say, trickled
-incessantly into the place, like a cascade into a lake. The cries, the
-laughter, the trampling of those thousands of feet, produced a great noise
-and a great clamor. From time to time, this noise and clamor redoubled;
-the current which drove the crowd towards the grand staircase flowed
-backwards, became troubled, formed whirlpools. This was produced by the
-buffet of an archer, or the horse of one of the provost’s sergeants, which
-kicked to restore order; an admirable tradition which the provostship has
-bequeathed to the constablery, the constablery to the &lt;em&gt;maréchaussée&lt;/em&gt;,
-the &lt;em&gt;maréchaussée&lt;/em&gt; to our &lt;em&gt;gendarmeri&lt;/em&gt; of Paris.&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/chapter-1/ - This is a customized copyright.</description>
+&lt;h2 id=&#34;创建命令&#34;&gt;创建命令&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;本地更改&#34;&gt;本地更改&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;提交历史&#34;&gt;提交历史&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;分支和标签&#34;&gt;分支和标签&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;删除命令&#34;&gt;删除命令&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;合并和衍合&#34;&gt;合并和衍合&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;撤销命令&#34;&gt;撤销命令&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;配置命令&#34;&gt;配置命令&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+&lt;h2 id=&#34;其他命令&#34;&gt;其他命令&lt;/h2&gt;
+&lt;!-- raw HTML omitted --&gt;
+- https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ - This is a customized copyright.</description>
         </item>
     
     

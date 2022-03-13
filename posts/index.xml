@@ -5,9 +5,53 @@
     <link>https://shenyiminghfut.github.io/posts/</link>
     <description>Recent content in Posts on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Thu, 14 Nov 2019 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Mar 2022 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>HTTP状态码速查表</title>
+      <link>https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</link>
+      <pubDate>Sat, 12 Mar 2022 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</guid>
+      <description>HTTP 状态码是表示一次 HTTP 请求的响应状态，是网页可用性的重要指标。
+  HTTP 状态码（HTTP Status Code）是用来表示网页服务器 HTTP 响应状态的 3 位数字代码。下面列出了常见的网页 HTTP 状态码及其含义，供参考。更多不常见的 HTTP 状态的含义，请参考 RFC 2616 规范。
+ 1xx 状态：表示临时响应 1xx 系列状态码，表示请求已收到，需要请求者继续执行操作的状态代码。
+继续（Continue）
+请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部
+切换协议（Switching Protocols）
+请求者已要求服务器切换协议，服务器已确认并做好了的切换的准备
+2xx 状态：表示成功响应 2xx 系列状态码，表示成功处理了请求的状态代码。
+成功（Success）
+服务器已成功处理了请求。 通常，这表示服务器提供了请求的网页
+已创建（Created）
+请求成功，并且服务器创建了新的资源
+已接受（Accepted）
+服务器已接受请求，但尚未处理
+非授权信息（Non Authoritative Information）
+服务器已成功处理了请求，但返回的信息可能来自另一来源
+从 HTTP/1.1 开始支持
+无内容（No Content）
+服务器成功处理了请求，但没有返回任何内容
+重置内容（Reset Content）
+服务器成功处理了请求，但没有返回任何内容。该响应要求浏览器重置它所显示的内容
+部分内容（Partial Content）
+由于客户端发送了 range 头信息，服务器成功返回了部分资源
+该状态码由 RFC 7233 定义
+3xx 状态：表示重定向 3xx 系列状态码，表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</description>
+    </item>
+    
+    <item>
+      <title> Vim 常用的命令</title>
+      <link>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+      <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+      <description> 记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。
+  本速查表按分类列出了 Vim 常用的命令和快捷键，数量较多，可使用 Ctrl + F 进行查找。
+ 全局命令 移动光标 插入模式（插入 / 追加文本） 编辑文本 选择文本（可视化模式） 可视化模式命令 寄存器 标记和位置 宏 复制、剪切和粘贴 文本缩进 文本搜索和替换 多文件编辑 多文件搜索 标签 Diff（文件比较） 退出 </description>
+    </item>
+    
     <item>
       <title>中文文本测试</title>
       <link>https://shenyiminghfut.github.io/posts/chinese/</link>
@@ -20,43 +64,13 @@
     </item>
     
     <item>
-      <title>Typography - Test for features</title>
-      <link>https://shenyiminghfut.github.io/posts/post-5/</link>
-      <pubDate>Sun, 18 Mar 2018 12:13:38 +0530</pubDate>
+      <title>Git命令速查表</title>
+      <link>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+      <pubDate>Tue, 09 Apr 2019 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/post-5/</guid>
-      <description>Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihilse impedit quo minus id quod amets untra dolor amet sad. Sed ut perspser iciatis unde omnis iste natus error sit voluptatem accusantium doloremque laste. Dolores sadips ipsums sits.
-Heading 1 Lid est laborum et dolorum fuga. Et harum quidem rerum facilis est et expeditasi distinctio.</description>
-    </item>
-    
-    <item>
-      <title>(No comment) When You Have Too Much to Do</title>
-      <link>https://shenyiminghfut.github.io/posts/post-1/</link>
-      <pubDate>Sun, 18 Mar 2018 02:01:58 +0530</pubDate>
-      
-      <guid>https://shenyiminghfut.github.io/posts/post-1/</guid>
-      <description>You have a to-do list that scrolls on for days. You are managing multiple projects, getting lots of email and messages on different messaging systems, managing finances and personal health habits and so much more.
-It all keeps piling up, and it can feel overwhelming.
-How do you keep up with it all? How do you find focus and peace and get stuff accomplished when you have too much on your plate?</description>
-    </item>
-    
-    <item>
-      <title>Chapter VI: Esmeralda</title>
-      <link>https://shenyiminghfut.github.io/posts/chapter-6/</link>
-      <pubDate>Fri, 14 Apr 2017 11:25:05 -0400</pubDate>
-      
-      <guid>https://shenyiminghfut.github.io/posts/chapter-6/</guid>
-      <description>We are delighted to be able to inform the reader, that during the whole of this scene, Gringoire and his piece had stood firm. His actors, spurred on by him, had not ceased to spout his comedy, and he had not ceased to listen to it. He had made up his mind about the tumult, and was determined to proceed to the end, not giving up the hope of a return of attention on the part of the public.</description>
-    </item>
-    
-    <item>
-      <title>Chapter I: The Grand Hall</title>
-      <link>https://shenyiminghfut.github.io/posts/chapter-1/</link>
-      <pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate>
-      
-      <guid>https://shenyiminghfut.github.io/posts/chapter-1/</guid>
-      <description>Three hundred and forty-eight years, six months, and nineteen days ago to-day, the Parisians awoke to the sound of all the bells in the triple circuit of the city, the university, and the town ringing a full peal.
-The sixth of January, 1482, is not, however, a day of which history has preserved the memory. There was nothing notable in the event which thus set the bells and the bourgeois of Paris in a ferment from early morning.</description>
+      <guid>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+      <description> Git 是一款流行的版本管理工具，熟练使用 Git 命令是用好 Git 的基础。本参考表提供了常用 Git 命令的速查功能，是技术开发人员必备的参考资料。
+ 创建命令 本地更改 提交历史 分支和标签 删除命令 合并和衍合 撤销命令 配置命令 其他命令 </description>
     </item>
     
   </channel>

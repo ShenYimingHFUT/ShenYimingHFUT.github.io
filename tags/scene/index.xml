@@ -5,17 +5,18 @@
     <link>https://shenyiminghfut.github.io/tags/scene/</link>
     <description>Recent content in scene on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh</language>
+    <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Sun, 09 Apr 2017 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/scene/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Mar 2021 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/scene/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Chapter I: The Grand Hall</title>
-      <link>https://shenyiminghfut.github.io/posts/chapter-1/</link>
-      <pubDate>Sun, 09 Apr 2017 10:58:08 -0400</pubDate>
+      <title> Vim 常用的命令</title>
+      <link>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+      <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/chapter-1/</guid>
-      <description>Three hundred and forty-eight years, six months, and nineteen days ago to-day, the Parisians awoke to the sound of all the bells in the triple circuit of the city, the university, and the town ringing a full peal.
-The sixth of January, 1482, is not, however, a day of which history has preserved the memory. There was nothing notable in the event which thus set the bells and the bourgeois of Paris in a ferment from early morning.</description>
+      <guid>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+      <description> 记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。
+  本速查表按分类列出了 Vim 常用的命令和快捷键，数量较多，可使用 Ctrl + F 进行查找。
+ 全局命令 移动光标 插入模式（插入 / 追加文本） 编辑文本 选择文本（可视化模式） 可视化模式命令 寄存器 标记和位置 宏 复制、剪切和粘贴 文本缩进 文本搜索和替换 多文件编辑 多文件搜索 标签 Diff（文件比较） 退出 </description>
     </item>
     
   </channel>

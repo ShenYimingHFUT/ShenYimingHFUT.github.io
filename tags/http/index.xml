@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Story on 摆人日寄</title>
-    <link>https://shenyiminghfut.github.io/categories/story/</link>
-    <description>Recent content in Story on 摆人日寄</description>
+    <title>http on 摆人日寄</title>
+    <link>https://shenyiminghfut.github.io/tags/http/</link>
+    <description>Recent content in http on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Sat, 12 Mar 2022 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/categories/story/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Mar 2022 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTTP状态码速查表</title>
       <link>https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</link>
@@ -39,27 +39,6 @@
 由于客户端发送了 range 头信息，服务器成功返回了部分资源
 该状态码由 RFC 7233 定义
 3xx 状态：表示重定向 3xx 系列状态码，表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</description>
-    </item>
-    
-    <item>
-      <title> Vim 常用的命令</title>
-      <link>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
-      <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
-      
-      <guid>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
-      <description> 记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。
-  本速查表按分类列出了 Vim 常用的命令和快捷键，数量较多，可使用 Ctrl + F 进行查找。
- 全局命令 移动光标 插入模式（插入 / 追加文本） 编辑文本 选择文本（可视化模式） 可视化模式命令 寄存器 标记和位置 宏 复制、剪切和粘贴 文本缩进 文本搜索和替换 多文件编辑 多文件搜索 标签 Diff（文件比较） 退出 </description>
-    </item>
-    
-    <item>
-      <title>Git命令速查表</title>
-      <link>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
-      <pubDate>Tue, 09 Apr 2019 10:58:08 -0400</pubDate>
-      
-      <guid>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
-      <description> Git 是一款流行的版本管理工具，熟练使用 Git 命令是用好 Git 的基础。本参考表提供了常用 Git 命令的速查功能，是技术开发人员必备的参考资料。
- 创建命令 本地更改 提交历史 分支和标签 删除命令 合并和衍合 撤销命令 配置命令 其他命令 </description>
     </item>
     
   </channel>
