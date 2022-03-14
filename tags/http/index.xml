@@ -14,9 +14,7 @@
       <pubDate>Sat, 12 Mar 2022 10:58:08 -0400</pubDate>
       
       <guid>https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</guid>
-      <description>HTTP 状态码是表示一次 HTTP 请求的响应状态，是网页可用性的重要指标。
-  [HTTP 状态码] &amp;ldquo;HTTP状态码&amp;rdquo;)（HTTP Status Code）是用来表示网页服务器 HTTP 响应状态的 3 位数字代码。下面列出了常见的网页 HTTP 状态码及其含义，供参考。更多不常见的 HTTP 状态的含义，请参考 RFC 2616 规范。
- 1xx 状态：表示临时响应 1xx 系列状态码，表示请求已收到，需要请求者继续执行操作的状态代码。
+      <description>1xx 状态：表示临时响应 1xx 系列状态码，表示请求已收到，需要请求者继续执行操作的状态代码。
 继续（Continue）
 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部
 切换协议（Switching Protocols）
@@ -38,7 +36,14 @@
 部分内容（Partial Content）
 由于客户端发送了 range 头信息，服务器成功返回了部分资源
 该状态码由 RFC 7233 定义
-3xx 状态：表示重定向 3xx 系列状态码，表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。</description>
+3xx 状态：表示重定向 3xx 系列状态码，表示要完成请求，需要进一步操作。 通常，这些状态代码用来重定向。
+多种选择（Multiple Choices）
+针对不同请求，服务器可执行多种操作。服务器可根据请求者的选择执行对应的操作，或者提供一个操作列表供请求者选择
+永久移动（Moved Permanently）
+请求的网页已永久移动到新位置。对于 GET 或 HEAD 请求，服务器返回此响应时，会自动将请求者转到新位置
+资源已找到（临时移动）（Found (Moved Temporarily)）
+告诉客户端，请到另一处 URL 获取需要的资源（该状态已被 303 和 307 状态取代）
+查看其他位置（See Other）</description>
     </item>
     
   </channel>

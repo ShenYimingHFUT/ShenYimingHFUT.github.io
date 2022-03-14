@@ -10,16 +10,16 @@
 <meta name="google-site-verification" content="">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
 <meta content="telephone=no" name="format-detection">
-<meta name="description" content="Git速查">
+<meta name="description" content="Git 是一款流行的版本管理工具，熟练使用 Git 命令是用好 Git 的基础。本参考表提供了常用 Git 命令的速查功能，是技术开发人员必备的参考资料。">
 <meta name="renderer" content="webkit">
 <meta name="theme-color" content="#ffffff">
 
 
 
 <meta property="og:title" content="Git命令速查表" />
-<meta property="og:description" content="Git速查" />
+<meta property="og:description" content="Git 是一款流行的版本管理工具，熟练使用 Git 命令是用好 Git 的基础。本参考表提供了常用 Git 命令的速查功能，是技术开发人员必备的参考资料。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" /><meta property="og:image" content="https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/" /><meta property="og:image" content="https://shenyiminghfut.github.io/images/notebook.jpg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2019-04-09T10:58:08-04:00" />
 <meta property="article:modified_time" content="2019-04-09T10:58:08-04:00" /><meta property="og:site_name" content="My Blog" />
 
@@ -29,10 +29,10 @@
 
 
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg"/>
+<meta name="twitter:image" content="https://shenyiminghfut.github.io/images/notebook.jpg"/>
 
 <meta name="twitter:title" content="Git命令速查表"/>
-<meta name="twitter:description" content="Git速查"/>
+<meta name="twitter:description" content="Git 是一款流行的版本管理工具，熟练使用 Git 命令是用好 Git 的基础。本参考表提供了常用 Git 命令的速查功能，是技术开发人员必备的参考资料。"/>
 
 
 
@@ -674,7 +674,7 @@ PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
                 
                     
                     
-                    style="background-image: url('https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg')"
+                    style="background-image: url('https://shenyiminghfut.github.io/images/notebook.jpg')"
                     
                 
             >
@@ -682,7 +682,7 @@ PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
                     Git命令速查表
                     
                     <div class="post-subtitle">
-                        Git速查
+                        Git 是一款流行的版本管理工具，熟练使用 Git 命令是用好 Git 的基础。本参考表提供了常用 Git 命令的速查功能，是技术开发人员必备的参考资料。
                     </div>
                     
                     <div class="post-meta">
@@ -694,7 +694,7 @@ PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
 
                         
                             <i class="material-icons" style="">folder</i>
-                                <a href="/categories/story">Story</a>
+                                <a href="/categories/code">Code</a>
                                 &nbsp;
                         
 
@@ -715,7 +715,7 @@ PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
                             
                             10 min
                             
-                            26 s.
+                            9 s.
                         
                     </div>
                 </div>
@@ -725,10 +725,7 @@ PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
                 
                 <div class="post-body" v-pre>
                 
-                    <blockquote>
-<p>Git 是一款流行的版本管理工具，熟练使用 Git 命令是用好 Git 的基础。本参考表提供了常用 Git 命令的速查功能，是技术开发人员必备的参考资料。</p>
-</blockquote>
-<h2 id="创建命令">创建命令</h2>
+                    <h2 id="创建命令">创建命令</h2>
 <table><thead><tr><th width="35%">Git 命令</th><th>说明</th></tr></thead><tbody><tr><td><code>git clone &lt;url&gt;</code></td><td>克隆远程仓库</td></tr><tr><td><code>git init</code></td><td>初始化本地 git 仓库（即创建新的本地仓库）</td></tr></tbody></table>
 <h2 id="本地更改">本地更改</h2>
 <table><thead><tr><th width="35%">Git 命令</th><th>说明</th></tr></thead><tbody><tr><td><code>git status</code></td><td>查看当前分支状态</td></tr><tr><td><code>git diff</code></td><td>查看已跟踪文件的变更</td></tr><tr><td><code>git add &lt;file&gt;</code></td><td>将指定的文件添加到暂存区</td></tr><tr><td><code>git add .</code></td><td>将所有有变更的文件添加到暂存区</td></tr><tr><td><code>git commit -a</code></td><td>提交所有本地修改</td></tr><tr><td><code>git commit -m "xxx"</code></td><td>把已添加至暂存区的文件执行提交，并以 xxx 作为本次提交的描述</td></tr><tr><td><code>git commit --amend -m "xxx"</code></td><td>修改上一次提交（请勿用该命令修改已发布的提交）</td></tr><tr><td><code>git commit -am "xxx"</code></td><td>该命令是 <code>git add .</code> 和 <code>git commit -m "xxx"</code> 的快捷方式</td></tr><tr><td><code>git stash</code></td><td>暂存当前修改，将所有置为 HEAD 状态</td></tr><tr><td><code>git stash list</code></td><td>查看所有暂存列表</td></tr><tr><td><code>git stash push</code></td><td>把当前工作区的文件暂存到临时空间</td></tr><tr><td><code>git stash pop</code></td><td>把文件从临时空间中恢复到当前工作区</td></tr></tbody></table>

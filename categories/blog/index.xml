@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on 摆人日寄</title>
+    <link>https://shenyiminghfut.github.io/categories/blog/</link>
+    <description>Recent content in Blog on 摆人日寄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Sat, 13 Mar 2021 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/categories/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>会用 Markdown 还不够，还得知道排版规范</title>
+      <link>https://shenyiminghfut.github.io/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Sat, 13 Mar 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/</guid>
+      <description>本文将会介绍 Markdown 中
+  Markdown 标记的使用规范
+  使用空格、空行、缩进等元素优化排版的方法
+  常用中文标点符号规范
+  这些是 Markdown 写作的比较常见的排版格式指导，同时也是排版格式约定。遵守它们能使得排版更加美观，更加方便阅读，也能让你有固定的模式可依，降低写作时对于排版的心智负担。
+Markdown 标记的使用规范 标题   文章的顶层标题使用二级标题（有时文章的标题并不需要写在文章里，比如大多数博客有专门的位置填写文章标题，此时这级标题可以省略）
+  每个小节的标题使用三级标题
+  小节中进一步分层组织时使用四级标题
+  尽量少用五级标题和六级标题，考虑用有序列表和无序列表代替
+  完全不用一级标题
+  粗体、斜体 需要强调某处内容时使用粗体，如：
+ 中文全角标点符号占一个汉字宽度，英文半角标点占半个汉字宽度（亦即一个字母宽度）。
+ 在中文排版中不使用斜体。在英文排版中可用斜体表达强调，或表示书名、题目。
+引用块 以下情况使用引用块：
+  引述内容时（也可直接用引号替代）
+  作示例时
+  给出提示、补充、警告等额外说明时
+  行内代码 某一行文字中嵌入简短代码时使用行内代码，如：
+ 打开 Linux 虚拟终端，输入 echo &#39;Hello World&#39;。恭喜，你已经入门 Shell 了！
+ 代码块 展示多行代码时使用代码块，也可用于 XML、JSON、配置项等。尽量在使用代码块时给出语言标识，因为大多数 Markdown 工具会针对该语言高亮显示其中的语言元素。如：</description>
+    </item>
+    
+  </channel>
+</rss>

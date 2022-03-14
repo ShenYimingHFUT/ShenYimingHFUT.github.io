@@ -9,13 +9,12 @@
     <copyright>This is a customized copyright.</copyright>
     <lastBuildDate>Tue, 09 Mar 2021 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/scene/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title> Vim 常用的命令</title>
+      <title> Vim命令速查</title>
       <link>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
       <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
       
       <guid>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
-      <description>记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。
-  本速查表按分类列出了 Vim 常用的命令和快捷键，数量较多，可使用 Ctrl + F 进行查找。
+      <description>本速查表按分类列出了 Vim 常用的命令和快捷键，数量较多，可使用 Ctrl + F 进行查找。
  全局命令 命令 / 快捷键功能描述:h[elp] 关键字显示指定关键字的帮助:sav[eas] 文件名另存为...:clo[se]关闭当前窗口:ter[minal]打开新的终端窗口K打开光标所在单词对应的 man 页面 移动光标 命令 / 快捷键功能描述h左移光标j下移光标k上移光标l右移光标H移动到当前页面顶部M移动到当前页面中间L移动到当前页面底部w移动到下个单词开头W移动到下个单词开头（单词含标点）e移动到下个单词结尾E移动到下个单词结尾（单词含标点）b移动到上个单词开头B移动到上个单词开头（单词含标点）%跳转到配对的符号0移动到行首^移动到行首的非空白符$移动到行尾g_移动到行内最后一个非空白符gg移动到文件第一行G移动到文件最后一行5gg 或 5G移动到第 5 行fx移动到字符 x 下次出现的位置tx移动到字符 x 下次出现的位置的前一个字符Fx移动到字符 x 上次出现的位置Tx移动到字符 x 上次出现的位置的后一个字符;重复之前的 f、t、F、T 操作,反向重复之前的 f、t、F、T 操作}移动到下一个段落（当编辑代码时则为函数／代码块）{移动到上一个段落（当编辑代码时则为函数／代码块）zz移动屏幕使光标居中Ctrl + e向下移动屏幕一行（保持光标不动）Ctrl + y向上移动屏幕一行（保持光标不动）Ctrl + b向上滚动一屏Ctrl + f向下滚动一屏Ctrl + d向下滚动半屏Ctrl + u向上滚动半屏 插入模式（插入 / 追加文本） 命令 / 快捷键功能描述i从光标前开始插入字符I从行首开始插入字符a从光标后开始插入字符A从行尾开始插入字符o在当前行之下另起一行，开始插入字符O在当前行之上另起一行，开始插入字符ea从当前单词末尾开始插入Ctrl + h在插入模式下，删除光标前的字符Ctrl + w在插入模式下，删除光标前的单词Ctrl + j在插入模式下，另起一行Ctrl + t在插入模式下，向右缩进，宽度由 shiftwidth 控制Ctrl + d在插入模式下，向左缩进，宽度由 shiftwidth 控制Ctrl + n在插入模式下，在光标之前插入自动补全的下一个匹配项Ctrl + p在插入模式下，在光标之前插入自动补全的上一个匹配项Ctrl + rx在当前光标处插入 x 寄存器的内容Esc退出插入模式 编辑文本 命令 / 快捷键功能描述r替换当前字符J将下一行合并到当前行，并在两部分文本之间插入一个空格gJ将下一行合并到当前行，两部分文本之间不含空格gwip重新调整段落g~切换整个文本的大小写（即大写变小写，小写变大写）gu把整个文本改成小写gU把整个文本改成大写cc 或 S将光标所在的行删除，然后进入插入模式C 或 c$删除光标所在位置到行尾的所有文本，然后进入插入模式ciw将光标所在的单词删除，然后进入插入模式cw从光标位置开始，修改单词s删除当前字符，然后进入插入模式xp将当前字符后移uundo - 撤销最近一次操作U恢复 / 撤销最后修改的行Ctrl + rredo - 重做（和 u 相反）.</description>
     </item>
     
