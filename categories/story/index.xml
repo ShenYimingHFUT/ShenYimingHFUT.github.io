@@ -7,7 +7,103 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Tue, 09 Mar 2021 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/categories/story/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 08 Jul 2022 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/categories/story/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[译] NAT 穿透是如何工作的：技术原理及企业级实践（Tailscale, 2020）</title>
+      <link>https://shenyiminghfut.github.io/posts/nat%E7%A9%BF%E9%80%8F%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</link>
+      <pubDate>Fri, 08 Jul 2022 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/nat%E7%A9%BF%E9%80%8F%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</guid>
+      <description>译者序 本文翻译自 2020 年的一篇英文博客： How NAT traversal works。
+设想这样一个问题：在北京和上海各有一台局域网的机器（例如一台是家里的台式机，一 台是连接到星巴克 WiFi 的笔记本），二者都是私网 IP 地址，但可以访问公网， 如何让这两台机器通信呢？
+既然二者都能访问公网，那最简单的方式当然是在公网上架设一个中继服务器： 两台机器分别连接到中继服务，后者完成双向转发。这种方式显然有很大的性能开销，而 且中继服务器很容易成为瓶颈。
+有没有办法不用中继，让两台机器直接通信呢？
+如果有一定的网络和协议基础，就会明白这事儿是可能的。Tailscale 的这篇史诗级长文由浅入深地展示了这种 “可能”，如果完全实现本文所 介绍的技术，你将得到一个企业级的 NAT / 防火墙穿透工具。 此外，如作者所说，去中心化软件领域中的许多有趣想法，简化之后其实都变成了 跨过公网（互联网）实现端到端直连 这一问题，因此本文的意义并不仅限于 NAT 穿透本身。
+由于译者水平有限，本文不免存在遗漏或错误之处。如有疑问，请查阅原文。
+以下是译文。
+1.1 背景：IPv4 地址短缺，引入 NAT 1.2 需求：两台经过 NAT 的机器建立点对点连接 1.3 方案：NAT 穿透 1.3.1 两个必备前提：UDP + 能直接控制 socket 1.3.2 保底方式：中继 1.4 挑战：有状态防火墙和 NAT 设备 2.1 有状态防火墙 2.1.1 默认行为（策略） 2.1.2 如何区分入向和出向包 2.2 防火墙朝向（face-off）与穿透方案 2.2.1 防火墙朝向相同 场景特点：服务端 IP 可直接访问 穿透方案：客户端直连服务端，或 hub-and-spoke 拓扑 2.</description>
+    </item>
+    
+    <item>
+      <title>利用 GitHub Actions 自动为 README 添加 TOC 目录</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%88%A9%E7%94%A8-github-actions-%E8%87%AA%E5%8A%A8%E4%B8%BA-readme-%E6%B7%BB%E5%8A%A0-toc-%E7%9B%AE%E5%BD%95-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</link>
+      <pubDate>Wed, 09 Mar 2022 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%88%A9%E7%94%A8-github-actions-%E8%87%AA%E5%8A%A8%E4%B8%BA-readme-%E6%B7%BB%E5%8A%A0-toc-%E7%9B%AE%E5%BD%95-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</guid>
+      <description>GitHub 的 Markdown 目前不支持直接 [TOC] 渲染文章的目录，有些 README 则需要这样的效果，可以借助外部工具进行生成，也可以借助 GitHub Actions 自动生成，本文就介绍这种方式。
+GitHub 的 Markdown 目前不支持直接[TOC]渲染文章的目录，有些 README 则需要这样的效果，可以借助外部工具进行生成，也可以借助 GitHub Actions 自动生成，本文就介绍这种方式。
+所用 Actions：TOC Generator (opens new window)
+使用配置其实非常简单，基本上阅读完官方介绍文档就可以上手使用了，这里说一两个需要注意的地方。
+首先需要在将要生成目录的文件内，指定目录生成位置，e.g. README.md，在要生成的地方添加如下内容：
+&amp;lt;!-- START doctoc --&amp;gt; &amp;lt;!-- END doctoc --&amp;gt; 1
+2
+项目运行之后，会将目录添加在如上两段注释的中间。
+然后添加 Actions 配置文件，e.g. .github/workflows/toc.yml：
+on: push name: TOC Generator jobs: generateTOC: name: TOC Generator runs-on: ubuntu-latest steps: - uses: technote-space/toc-generator@v4 1
+2
+3
+4
+5
+6
+7
+8
+接着需要调整下项目的 Actions 权限，在 GitHub 上点击settings&amp;ndash;&amp;gt; actions &amp;ndash;&amp;gt; General &amp;ndash;&amp;gt; Workflow permissions &amp;ndash;&amp;gt; 选择 Read and write permissions。</description>
+    </item>
+    
+    <item>
+      <title> busybox</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8-/</link>
+      <pubDate>Sun, 09 May 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8-/</guid>
+      <description>今天正要下班，旁边部门的 PM 过来问我：
+『我们有个小伙子把生产系统上的 glibc 给删了，现在什么命令都跑不了了，还有救吗？』
+(更正：今天又问了一下，是正在准备要上线的服务器，所以还不是生产系统)
+我说，glibc 也能弄掉，莫不是 rpm &amp;ndash;force?
+回答是肯定的。
+glibc 被卸载，负责加载所有. so 的 ld.so 也就没了，因此运行几乎所有外部命令时都会得到一句『找不到 ld-linux-x-y-z.so.2』的出错提示。比如 ls，比如 cp，以及所有动态链接的命令。
+这是一台放置于另外一个大洲的客户 IDC 的物理服务器。我说不行就光盘引导修复，但不知道什么原因他们又连不上服务器的 HP iLO 工具。
+干着急也不是办法。万幸的是 rpm &amp;ndash;force 的小伙子的 ssh 登录 shell 还连着。我说那不行就只能你自己一个 byte 一个 byte 先敲一个 static linked 的 binary 出来，这是可以运行的。
+话说完，我就大概想到该怎么办了。
+用 bash 的内部命令 printf &amp;lsquo;\xaa\xbb\xcc&amp;rsquo; &amp;gt; file 可以生成任意内容的文件 另外找台同配置的 Linux，用 xxd 或 hexdump 配合一点点脚本，或者直接用 python 写个小脚本，把 ld.so 文件转储成若干条 printf &amp;lsquo;&amp;hellip;&amp;rsquo; &amp;raquo; file 的命令（考虑到 bash 单行命令的长度限制，我没有尝试只生成一条命令） copy 2) 中生成的命令，paste 到出事的 Linux shell 中运行 这样至少 ld.</description>
+    </item>
+    
+    <item>
+      <title>命令行Clash指南</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/</link>
+      <pubDate>Mon, 29 Mar 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/</guid>
+      <description>去年年中的时候切换到 macOS，一直用 ClashX，时隔半年又迁移回了 Linux，发现原先使用的 V2rayL 虽然能用，但是有些简陋，并且不支持分流，并且如果一个地址失效了，还需要手动地进行切换。
+去年年中的时候切换到 macOS，一直用 ClashX，时隔半年又迁移回了 Linux，发现原先使用的 V2rayL 虽然能用，但是有些简陋，并且不支持分流，并且如果一个地址失效了，还需要手动地进行切换。所以看到 Linux 的 Clash 可以自动进行流量切换的时候，就试一下。
+Clash 是 Go 语言实现的，跨平台代理工具，支持 Shadowsocks/v2ray，支持规则分流等等。
+可以在官方页面下载。
+Linux 下载对应的 linux-amd64 即可。
+在用了很长一段时间的 Clash 命令行之后，我发现 Clash For Windows 这个应用也能够在 Linux 下使用。所以最近就切换到了这个应用上。
+另外欢迎订阅使用 EV Proxy 注册之后一键订阅即可使用。
+下载对应的二进制，比如默认放到 ~/Downloads 目录，在终端进入该目录。
+gunzip clash-linux-amd64-v0.18.0.gz sudo mv clash-linux-amd64-v1.4.2 /usr/local/bin/clash sudo chmod +x /usr/local/bin/clash ./clash clash 启动后会在 ~/.config/clash 目录生成配置文件。
+ls -al ~/.config/clash .rw-r--r-- 10 einverne 23 Mar 19:30 config.yaml .rw-r--r-- 4.0M einverne 23 Mar 19:30 Country.</description>
+    </item>
+    
+    <item>
+      <title>Tg使用指南</title>
+      <link>https://shenyiminghfut.github.io/posts/tg%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Fri, 19 Mar 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/tg%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>Telegram 是一款著重速度与安全性的即时通讯软体。
+# 1 Telegram 简介 Telegram 是一款著重速度与安全性的即时通讯软体。快速、简单，而且完全免费。你可以同时在任何装置上使用 Telegram－你的讯息会在任意数量的手机，平板或电脑上无缝同步。Telegram 已经拥有超过 5 亿月活用户，是下载量全球前十的应用程式之一。
+有了 Telegram，你可以传送讯息、照片、影片或任何类型的档案（doc、zip、mp3 等等），以及建立可容纳 200,000 人的群组，或可对无限量观眾广播的频道。你可以传讯息给你的手机联络人，及透过人们的用户名称 (opens new window)(usernames) 找到他们。这样一来，Telegram 就像是手机简讯和电子邮件的结合，而且可以照顾到你的所有个人或商业讯息需求。除此之外，Telegram 还支持端对端加密的音频和视频通话，以及可供数千人参与的视频群聊。
+（以上文字是对 Telegram FAQ - What is Telegram? What do I do here? (opens new window) 的翻译，参考了 什么是 Telegram？ 我能用它做些什么？ (opens new window)）
+更多参见：
+Telegram 官网 (opens new window)
+Telegram FQA (opens new window)
+Telegram News (opens new window)
+Telegram Tips (opens new window)
+Durov&amp;rsquo;s Channel (opens new window)</description>
+    </item>
+    
     <item>
       <title> Vim命令速查</title>
       <link>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
@@ -15,7 +111,63 @@
       
       <guid>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
       <description>本速查表按分类列出了 Vim 常用的命令和快捷键，数量较多，可使用 Ctrl + F 进行查找。
- 全局命令 命令 / 快捷键功能描述:h[elp] 关键字显示指定关键字的帮助:sav[eas] 文件名另存为...:clo[se]关闭当前窗口:ter[minal]打开新的终端窗口K打开光标所在单词对应的 man 页面 移动光标 命令 / 快捷键功能描述h左移光标j下移光标k上移光标l右移光标H移动到当前页面顶部M移动到当前页面中间L移动到当前页面底部w移动到下个单词开头W移动到下个单词开头（单词含标点）e移动到下个单词结尾E移动到下个单词结尾（单词含标点）b移动到上个单词开头B移动到上个单词开头（单词含标点）%跳转到配对的符号0移动到行首^移动到行首的非空白符$移动到行尾g_移动到行内最后一个非空白符gg移动到文件第一行G移动到文件最后一行5gg 或 5G移动到第 5 行fx移动到字符 x 下次出现的位置tx移动到字符 x 下次出现的位置的前一个字符Fx移动到字符 x 上次出现的位置Tx移动到字符 x 上次出现的位置的后一个字符;重复之前的 f、t、F、T 操作,反向重复之前的 f、t、F、T 操作}移动到下一个段落（当编辑代码时则为函数／代码块）{移动到上一个段落（当编辑代码时则为函数／代码块）zz移动屏幕使光标居中Ctrl + e向下移动屏幕一行（保持光标不动）Ctrl + y向上移动屏幕一行（保持光标不动）Ctrl + b向上滚动一屏Ctrl + f向下滚动一屏Ctrl + d向下滚动半屏Ctrl + u向上滚动半屏 插入模式（插入 / 追加文本） 命令 / 快捷键功能描述i从光标前开始插入字符I从行首开始插入字符a从光标后开始插入字符A从行尾开始插入字符o在当前行之下另起一行，开始插入字符O在当前行之上另起一行，开始插入字符ea从当前单词末尾开始插入Ctrl + h在插入模式下，删除光标前的字符Ctrl + w在插入模式下，删除光标前的单词Ctrl + j在插入模式下，另起一行Ctrl + t在插入模式下，向右缩进，宽度由 shiftwidth 控制Ctrl + d在插入模式下，向左缩进，宽度由 shiftwidth 控制Ctrl + n在插入模式下，在光标之前插入自动补全的下一个匹配项Ctrl + p在插入模式下，在光标之前插入自动补全的上一个匹配项Ctrl + rx在当前光标处插入 x 寄存器的内容Esc退出插入模式 编辑文本 命令 / 快捷键功能描述r替换当前字符J将下一行合并到当前行，并在两部分文本之间插入一个空格gJ将下一行合并到当前行，两部分文本之间不含空格gwip重新调整段落g~切换整个文本的大小写（即大写变小写，小写变大写）gu把整个文本改成小写gU把整个文本改成大写cc 或 S将光标所在的行删除，然后进入插入模式C 或 c$删除光标所在位置到行尾的所有文本，然后进入插入模式ciw将光标所在的单词删除，然后进入插入模式cw从光标位置开始，修改单词s删除当前字符，然后进入插入模式xp将当前字符后移uundo - 撤销最近一次操作U恢复 / 撤销最后修改的行Ctrl + rredo - 重做（和 u 相反）.</description>
+全局命令 命令 / 快捷键功能描述:h[elp] 关键字显示指定关键字的帮助:sav[eas] 文件名另存为...:clo[se]关闭当前窗口:ter[minal]打开新的终端窗口K打开光标所在单词对应的 man 页面 移动光标 命令 / 快捷键功能描述h左移光标j下移光标k上移光标l右移光标H移动到当前页面顶部M移动到当前页面中间L移动到当前页面底部w移动到下个单词开头W移动到下个单词开头（单词含标点）e移动到下个单词结尾E移动到下个单词结尾（单词含标点）b移动到上个单词开头B移动到上个单词开头（单词含标点）%跳转到配对的符号0移动到行首^移动到行首的非空白符$移动到行尾g_移动到行内最后一个非空白符gg移动到文件第一行G移动到文件最后一行5gg 或 5G移动到第 5 行fx移动到字符 x 下次出现的位置tx移动到字符 x 下次出现的位置的前一个字符Fx移动到字符 x 上次出现的位置Tx移动到字符 x 上次出现的位置的后一个字符;重复之前的 f、t、F、T 操作,反向重复之前的 f、t、F、T 操作}移动到下一个段落（当编辑代码时则为函数／代码块）{移动到上一个段落（当编辑代码时则为函数／代码块）zz移动屏幕使光标居中Ctrl + e向下移动屏幕一行（保持光标不动）Ctrl + y向上移动屏幕一行（保持光标不动）Ctrl + b向上滚动一屏Ctrl + f向下滚动一屏Ctrl + d向下滚动半屏Ctrl + u向上滚动半屏 插入模式（插入 / 追加文本） 命令 / 快捷键功能描述i从光标前开始插入字符I从行首开始插入字符a从光标后开始插入字符A从行尾开始插入字符o在当前行之下另起一行，开始插入字符O在当前行之上另起一行，开始插入字符ea从当前单词末尾开始插入Ctrl + h在插入模式下，删除光标前的字符Ctrl + w在插入模式下，删除光标前的单词Ctrl + j在插入模式下，另起一行Ctrl + t在插入模式下，向右缩进，宽度由 shiftwidth 控制Ctrl + d在插入模式下，向左缩进，宽度由 shiftwidth 控制Ctrl + n在插入模式下，在光标之前插入自动补全的下一个匹配项Ctrl + p在插入模式下，在光标之前插入自动补全的上一个匹配项Ctrl + rx在当前光标处插入 x 寄存器的内容Esc退出插入模式 编辑文本 命令 / 快捷键功能描述r替换当前字符J将下一行合并到当前行，并在两部分文本之间插入一个空格gJ将下一行合并到当前行，两部分文本之间不含空格gwip重新调整段落g~切换整个文本的大小写（即大写变小写，小写变大写）gu把整个文本改成小写gU把整个文本改成大写cc 或 S将光标所在的行删除，然后进入插入模式C 或 c$删除光标所在位置到行尾的所有文本，然后进入插入模式ciw将光标所在的单词删除，然后进入插入模式cw从光标位置开始，修改单词s删除当前字符，然后进入插入模式xp将当前字符后移uundo - 撤销最近一次操作U恢复 / 撤销最后修改的行Ctrl + rredo - 重做（和 u 相反）.</description>
+    </item>
+    
+    <item>
+      <title> 利用 GitHub Actions 自动优雅地为项目构建 Releases</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%88%A9%E7%94%A8-github-actions-%E8%87%AA%E5%8A%A8%E4%BC%98%E9%9B%85%E5%9C%B0%E4%B8%BA%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA-releases-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</link>
+      <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%88%A9%E7%94%A8-github-actions-%E8%87%AA%E5%8A%A8%E4%BC%98%E9%9B%85%E5%9C%B0%E4%B8%BA%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA-releases-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</guid>
+      <description>基于 git 管理的项目，通常在分支管理之外，还会通过 tag 来对代码进行管理，尤其像 go 语言，go mod 更是依赖 tag 来对项目的版本进行管理，因此合理的版本管理，对于项目的发展也会是更加健康的一个激励。
+# 前言 基于 git 管理的项目，通常在分支管理之外，还会通过 tag 来对代码进行管理，尤其像 go 语言，go mod 更是依赖 tag 来对项目的版本进行管理，因此合理的版本管理，对于项目的发展也会是更加健康的一个激励。GitHub 中有一个 Releases 的概念，其实与 tag 差不多，简单理解就是在打一个 tag 的基础之上，用 releases 来进行管理。如果你没有了解过这里边的概念，那么要想成功打一个 release 还是有点难度的。
+本文就来讲一下，如何借助 Github Actions 自动且优雅地为项目构建 Release。
+# 配置 所用 Actions： release-drafter (opens new window)
+使用配置其实非常简单，基本上阅读完官方介绍文档就可以上手使用了，这里说一两个需要注意的地方。
+首先添加 Actions 配置文件，e.g. .github/workflows/release.yml：
+name: Release Drafter on: push: branches: - main pull_request: types: [opened, reopened, synchronize] permissions: contents: read jobs: update_release_draft: permissions: contents: write # for release-drafter/release-drafter to create a github release pull-requests: write # for release-drafter/release-drafter to add label to PR runs-on: ubuntu-latest steps: - uses: release-drafter/release-drafter@v5 env: GITHUB_TOKEN: ${{ secrets.</description>
+    </item>
+    
+    <item>
+      <title>docker exec 命令中含有通配符执行失败的问题</title>
+      <link>https://shenyiminghfut.github.io/posts/docker-exec-%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%90%AB%E6%9C%89%E9%80%9A%E9%85%8D%E7%AC%A6%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</link>
+      <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/docker-exec-%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%90%AB%E6%9C%89%E9%80%9A%E9%85%8D%E7%AC%A6%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</guid>
+      <description>我写的的 demo 环境是通过 docker-compose 一键拉起的。因为服务器部署，与本地拉起测试有一些配置需要调整，于是打算用脚本做一下，这个时候发现执行带有通配符的命令会报如下错误
+我写的 go-ldap-admin (opens new window) 的 demo 环境是通过 docker-compose 一键拉起的。
+因为服务器部署，与本地拉起测试有一些配置需要调整，于是打算用脚本做一下，这个时候发现执行带有通配符的命令会报如下错误：
+$ docker exec -it go-ldap-admin-ui ls static/js/app.*.js ls: cannot access static/js/app.*.js: No such file or directory 1
+2
+一开始想着加个单引号把命令包起来，发现仍然不行。
+解决方案：用双引号将命令包裹起来，就不会报错了。
+$ docker exec -it go-ldap-admin-ui sh -c &amp;#34;ls static/js/app.*.js&amp;#34; static/js/app.580a29c6.js 1
+2
+参考：https://stackoverflow.com/questions/50742892/using-in-docker-exec-command (opens new window)
+上次更新: 2022/06/15, 17:15:28</description>
+    </item>
+    
+    <item>
+      <title>Tmux教程</title>
+      <link>https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+      <pubDate>Mon, 09 Mar 2020 10:58:08 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
+      <description>Tmux 是一个终端复用器（terminal multiplexer），非常有用，属于常用的开发工具。
+本文介绍如何使用 Tmux。
+一、Tmux 是什么？ 1.1 会话与进程 命令行的典型使用方式是，打开一个终端窗口（terminal window，以下简称 &amp;ldquo;窗口&amp;rdquo;），在里面输入命令。用户与计算机的这种临时的交互，称为一次 &amp;ldquo;会话&amp;rdquo;（session） 。
+会话的一个重要特点是，窗口与其中启动的进程是连在一起的。打开窗口，会话开始；关闭窗口，会话结束，会话内部的进程也会随之终止，不管有没有运行完。
+一个典型的例子就是，SSH 登录远程计算机，打开一个远程窗口执行命令。这时，网络突然断线，再次登录的时候，是找不回上一次执行的命令的。因为上一次 SSH 会话已经终止了，里面的进程也随之消失了。
+为了解决这个问题，会话与窗口可以 &amp;ldquo;解绑&amp;rdquo;：窗口关闭时，会话并不终止，而是继续运行，等到以后需要的时候，再让会话 &amp;ldquo;绑定&amp;rdquo; 其他窗口。
+1.2 Tmux 的作用 Tmux 就是会话与窗口的 &amp;ldquo;解绑&amp;rdquo; 工具，将它们彻底分离。
+（1）它允许在单个窗口中，同时访问多个会话。这对于同时运行多个命令行程序很有用。
+（2） 它可以让新窗口 &amp;ldquo;接入&amp;rdquo; 已经存在的会话。
+（3）它允许每个会话有多个连接窗口，因此可以多人实时共享会话。
+（4）它还支持窗口任意的垂直和水平拆分。
+类似的终端复用器还有 GNU Screen。Tmux 与它功能相似，但是更易用，也更强大。
+二、基本用法 2.1 安装 Tmux 一般需要自己安装。
+# Ubuntu 或 Debian $ sudo apt-get install tmux # CentOS 或 Fedora $ sudo yum install tmux # Mac $ brew install tmux 2.</description>
     </item>
     
   </channel>

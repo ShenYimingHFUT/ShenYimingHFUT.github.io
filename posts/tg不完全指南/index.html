@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html><head>
+<title>Tg使用指南</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="Tg使用指南" />
+<meta property="og:description" content="记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shenyiminghfut.github.io/posts/tg%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" /><meta property="og:image" content="https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-19T10:58:08-04:00" />
+<meta property="article:modified_time" content="2021-03-19T10:58:08-04:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg"/>
+
+<meta name="twitter:title" content="Tg使用指南"/>
+<meta name="twitter:description" content="记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。"/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+<link rel="icon" href="https://shenyiminghfut.github.io/static/images/bird.jpg">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/journal.min.4911cdba6f1b7c77b7747bb468ef07239bca7b881cf2045f88da04c5f72e36bf.css" integrity="sha256-SRHNum8bfHe3dHu0aO8HI5vKe4gc8gRfiNoExfcuNr8=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/dark-mode.min.241cce2dfc0c6e4b9a64f3bb73e005e4a357d3313342d2805681faf6a78d679b.css" integrity="sha256-JBzOLfwMbkuaZPO7c&#43;AF5KNX0zEzQtKAVoH69qeNZ5s=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '87b383f0bc03d41e07fe',
+  clientSecret: 'ebd8d74511e37d50021fa2decc3d65f19cbe5445',
+  repo: 'BlogComment',
+  owner: 'ShenYimingHFUT',
+  admin: ['ShenYimingHFUT'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://shenyiminghfut.github.io">
+    
+        <div class="nav-title">
+            摆人日寄
+        </div>
+        
+        <div class="nav-subtitle">
+            啊对对对。
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#_1-telegram-%e7%ae%80%e4%bb%8b-1-telegram-%e7%ae%80%e4%bb%8b" onclick="onNavClick(`#_1-telegram-简介-1-telegram-简介-nav`)" id="_1-telegram-简介-1-telegram-简介-nav">
+									# 1 Telegram 简介
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_2-telegram-%e5%ae%a2%e6%88%b7%e7%ab%af-2-telegram-%e5%ae%a2%e6%88%b7%e7%ab%af" onclick="onNavClick(`#_2-telegram-客户端-2-telegram-客户端-nav`)" id="_2-telegram-客户端-2-telegram-客户端-nav">
+									# 2 Telegram 客户端
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_3-%e8%a8%bb%e5%86%8c-3-%e8%a8%bb%e5%86%8c" onclick="onNavClick(`#_3-註册-3-註册-nav`)" id="_3-註册-3-註册-nav">
+									# 3 註册
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#_3-1-%e8%99%9f%e7%a0%81%e9%80%89%e6%8b%a9-31-%e8%99%9f%e7%a0%81%e9%80%89%e6%8b%a9" onclick="onNavClick(`#_3-1-號码选择-31-號码选择-nav`)" id="_3-1-號码选择-31-號码选择-nav">
+									# 3.1 號码选择
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_3-2-%e8%a8%bb%e5%86%8c%e5%89%8d%e6%8f%90-32-%e8%a8%bb%e5%86%8c%e5%89%8d%e6%8f%90" onclick="onNavClick(`#_3-2-註册前提-32-註册前提-nav`)" id="_3-2-註册前提-32-註册前提-nav">
+									# 3.2 註册前提
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_3-3-%e8%a8%bb%e5%86%8c%e6%ad%a5%e9%aa%a4-33-%e8%a8%bb%e5%86%8c%e6%ad%a5%e9%aa%a4" onclick="onNavClick(`#_3-3-註册步骤-33-註册步骤-nav`)" id="_3-3-註册步骤-33-註册步骤-nav">
+									# 3.3 註册步骤
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#_4-%e9%9a%b1%e7%a7%81%e4%b8%8e%e5%ae%89%e5%85%a8%e8%ae%be%e7%bd%ae-4-%e9%9a%b1%e7%a7%81%e4%b8%8e%e5%ae%89%e5%85%a8%e8%ae%be%e7%bd%ae" onclick="onNavClick(`#_4-隱私与安全设置-4-隱私与安全设置-nav`)" id="_4-隱私与安全设置-4-隱私与安全设置-nav">
+									# 4 隱私与安全设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#_4-1-%e9%9a%b1%e7%a7%81%e8%ae%be%e7%bd%ae-41-%e9%9a%b1%e7%a7%81%e8%ae%be%e7%bd%ae" onclick="onNavClick(`#_4-1-隱私设置-41-隱私设置-nav`)" id="_4-1-隱私设置-41-隱私设置-nav">
+									# 4.1 隱私设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_4-2-%e5%ae%89%e5%85%a8%e8%ae%be%e7%bd%ae-42-%e5%ae%89%e5%85%a8%e8%ae%be%e7%bd%ae" onclick="onNavClick(`#_4-2-安全设置-42-安全设置-nav`)" id="_4-2-安全设置-42-安全设置-nav">
+									# 4.2 安全设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_4-3-%e8%87%aa%e5%8a%a8%e9%94%80%e6%af%81%e6%9c%ba%e5%88%b6-43-%e8%87%aa%e5%8a%a8%e9%94%80%e6%af%81%e6%9c%ba%e5%88%b6" onclick="onNavClick(`#_4-3-自动销毁机制-43-自动销毁机制-nav`)" id="_4-3-自动销毁机制-43-自动销毁机制-nav">
+									# 4.3 自动销毁机制
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_4-4-%e9%80%9a%e8%ae%af%e5%bd%95-44-%e9%80%9a%e8%ae%af%e5%bd%95" onclick="onNavClick(`#_4-4-通讯录-44-通讯录-nav`)" id="_4-4-通讯录-44-通讯录-nav">
+									# 4.4 通讯录
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_4-5-%e7%a7%81%e5%af%86%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e9%93%be%e6%8e%a5%e9%a2%84%e8%a7%88-45-%e7%a7%81%e5%af%86%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e9%93%be%e6%8e%a5%e9%a2%84%e8%a7%88" onclick="onNavClick(`#_4-5-私密模式下的链接预览-45-私密模式下的链接预览-nav`)" id="_4-5-私密模式下的链接预览-45-私密模式下的链接预览-nav">
+									# 4.5 私密模式下的链接预览
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#_5-%e5%85%b6%e4%bb%96%e8%ae%be%e7%bd%ae-5-%e5%85%b6%e4%bb%96%e8%ae%be%e7%bd%ae" onclick="onNavClick(`#_5-其他设置-5-其他设置-nav`)" id="_5-其他设置-5-其他设置-nav">
+									# 5 其他设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#_5-1-%e4%b8%aa%e4%ba%ba%e4%bf%a1%e6%81%af%e8%ae%be%e7%bd%ae-51-%e4%b8%aa%e4%ba%ba%e4%bf%a1%e6%81%af%e8%ae%be%e7%bd%ae" onclick="onNavClick(`#_5-1-个人信息设置-51-个人信息设置-nav`)" id="_5-1-个人信息设置-51-个人信息设置-nav">
+									# 5.1 个人信息设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_5-2-%e6%95%b0%e6%8d%ae%e4%b8%8e%e5%ad%98%e5%82%a8-52-%e6%95%b0%e6%8d%ae%e4%b8%8e%e5%ad%98%e5%82%a8" onclick="onNavClick(`#_5-2-数据与存储-52-数据与存储-nav`)" id="_5-2-数据与存储-52-数据与存储-nav">
+									# 5.2 数据与存储
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_5-3-%e5%a4%96%e8%a7%82-53-%e5%a4%96%e8%a7%82" onclick="onNavClick(`#_5-3-外观-53-外观-nav`)" id="_5-3-外观-53-外观-nav">
+									# 5.3 外观
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_5-4-%e8%af%ad%e8%a8%80-54-%e8%af%ad%e8%a8%80" onclick="onNavClick(`#_5-4-语言-54-语言-nav`)" id="_5-4-语言-54-语言-nav">
+									# 5.4 语言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_5-5-%e5%85%a7%e7%bd%ae%e4%bb%a3%e7%90%86-55-%e5%85%a7%e7%bd%ae%e4%bb%a3%e7%90%86" onclick="onNavClick(`#_5-5-內置代理-55-內置代理-nav`)" id="_5-5-內置代理-55-內置代理-nav">
+									# 5.5 內置代理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#_6-%e5%9f%ba%e7%a1%80%e5%8a%9f%e8%83%bd-6-%e5%9f%ba%e7%a1%80%e5%8a%9f%e8%83%bd" onclick="onNavClick(`#_6-基础功能-6-基础功能-nav`)" id="_6-基础功能-6-基础功能-nav">
+									# 6 基础功能
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#_6-1-%e6%99%ae%e9%80%9a%e8%81%8a%e5%a4%a9%e6%a8%a1%e5%bc%8f-61-%e6%99%ae%e9%80%9a%e8%81%8a%e5%a4%a9%e6%a8%a1%e5%bc%8f" onclick="onNavClick(`#_6-1-普通聊天模式-61-普通聊天模式-nav`)" id="_6-1-普通聊天模式-61-普通聊天模式-nav">
+									# 6.1 普通聊天模式
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-2-%e7%a7%81%e5%af%86%e8%81%8a%e5%a4%a9%e6%a8%a1%e5%bc%8f-62-%e7%a7%81%e5%af%86%e8%81%8a%e5%a4%a9%e6%a8%a1%e5%bc%8f" onclick="onNavClick(`#_6-2-私密聊天模式-62-私密聊天模式-nav`)" id="_6-2-私密聊天模式-62-私密聊天模式-nav">
+									# 6.2 私密聊天模式
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-3-saved-messages-63-saved-messages" onclick="onNavClick(`#_6-3-saved-messages-63-saved-messages-nav`)" id="_6-3-saved-messages-63-saved-messages-nav">
+									# 6.3 Saved Messages
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-4-%e7%be%a4%e8%81%8a-64-%e7%be%a4%e8%81%8a" onclick="onNavClick(`#_6-4-群聊-64-群聊-nav`)" id="_6-4-群聊-64-群聊-nav">
+									# 6.4 群聊
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-5-%e9%a2%91%e9%81%93-65-%e9%a2%91%e9%81%93" onclick="onNavClick(`#_6-5-频道-65-频道-nav`)" id="_6-5-频道-65-频道-nav">
+									# 6.5 频道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-6-%e6%9c%ba%e5%99%a8%e4%ba%ba-66-%e6%9c%ba%e5%99%a8%e4%ba%ba" onclick="onNavClick(`#_6-6-机器人-66-机器人-nav`)" id="_6-6-机器人-66-机器人-nav">
+									# 6.6 机器人
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-7-%e8%b4%b4%e7%ba%b8-67-%e8%b4%b4%e7%ba%b8" onclick="onNavClick(`#_6-7-贴纸-67-贴纸-nav`)" id="_6-7-贴纸-67-贴纸-nav">
+									# 6.7 贴纸
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-8-gif-68-gif" onclick="onNavClick(`#_6-8-gif-68-gif-nav`)" id="_6-8-gif-68-gif-nav">
+									# 6.8 GIF
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-9-telegraph-69-telegraph" onclick="onNavClick(`#_6-9-telegraph-69-telegraph-nav`)" id="_6-9-telegraph-69-telegraph-nav">
+									# 6.9 Telegraph
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-10-instant-view-610-instant-view" onclick="onNavClick(`#_6-10-instant-view-610-instant-view-nav`)" id="_6-10-instant-view-610-instant-view-nav">
+									# 6.10 Instant View
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-11-%e6%8a%95%e7%a5%a8-611-%e6%8a%95%e7%a5%a8" onclick="onNavClick(`#_6-11-投票-611-投票-nav`)" id="_6-11-投票-611-投票-nav">
+									# 6.11 投票
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#_1-telegram-%e7%ae%80%e4%bb%8b-1-telegram-%e7%ae%80%e4%bb%8b" onclick="onNavClick(`#_1-telegram-简介-1-telegram-简介-nav`)" id="_1-telegram-简介-1-telegram-简介-nav">
+									# 1 Telegram 简介
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_2-telegram-%e5%ae%a2%e6%88%b7%e7%ab%af-2-telegram-%e5%ae%a2%e6%88%b7%e7%ab%af" onclick="onNavClick(`#_2-telegram-客户端-2-telegram-客户端-nav`)" id="_2-telegram-客户端-2-telegram-客户端-nav">
+									# 2 Telegram 客户端
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_3-%e8%a8%bb%e5%86%8c-3-%e8%a8%bb%e5%86%8c" onclick="onNavClick(`#_3-註册-3-註册-nav`)" id="_3-註册-3-註册-nav">
+									# 3 註册
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#_3-1-%e8%99%9f%e7%a0%81%e9%80%89%e6%8b%a9-31-%e8%99%9f%e7%a0%81%e9%80%89%e6%8b%a9" onclick="onNavClick(`#_3-1-號码选择-31-號码选择-nav`)" id="_3-1-號码选择-31-號码选择-nav">
+									# 3.1 號码选择
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_3-2-%e8%a8%bb%e5%86%8c%e5%89%8d%e6%8f%90-32-%e8%a8%bb%e5%86%8c%e5%89%8d%e6%8f%90" onclick="onNavClick(`#_3-2-註册前提-32-註册前提-nav`)" id="_3-2-註册前提-32-註册前提-nav">
+									# 3.2 註册前提
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_3-3-%e8%a8%bb%e5%86%8c%e6%ad%a5%e9%aa%a4-33-%e8%a8%bb%e5%86%8c%e6%ad%a5%e9%aa%a4" onclick="onNavClick(`#_3-3-註册步骤-33-註册步骤-nav`)" id="_3-3-註册步骤-33-註册步骤-nav">
+									# 3.3 註册步骤
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#_4-%e9%9a%b1%e7%a7%81%e4%b8%8e%e5%ae%89%e5%85%a8%e8%ae%be%e7%bd%ae-4-%e9%9a%b1%e7%a7%81%e4%b8%8e%e5%ae%89%e5%85%a8%e8%ae%be%e7%bd%ae" onclick="onNavClick(`#_4-隱私与安全设置-4-隱私与安全设置-nav`)" id="_4-隱私与安全设置-4-隱私与安全设置-nav">
+									# 4 隱私与安全设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#_4-1-%e9%9a%b1%e7%a7%81%e8%ae%be%e7%bd%ae-41-%e9%9a%b1%e7%a7%81%e8%ae%be%e7%bd%ae" onclick="onNavClick(`#_4-1-隱私设置-41-隱私设置-nav`)" id="_4-1-隱私设置-41-隱私设置-nav">
+									# 4.1 隱私设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_4-2-%e5%ae%89%e5%85%a8%e8%ae%be%e7%bd%ae-42-%e5%ae%89%e5%85%a8%e8%ae%be%e7%bd%ae" onclick="onNavClick(`#_4-2-安全设置-42-安全设置-nav`)" id="_4-2-安全设置-42-安全设置-nav">
+									# 4.2 安全设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_4-3-%e8%87%aa%e5%8a%a8%e9%94%80%e6%af%81%e6%9c%ba%e5%88%b6-43-%e8%87%aa%e5%8a%a8%e9%94%80%e6%af%81%e6%9c%ba%e5%88%b6" onclick="onNavClick(`#_4-3-自动销毁机制-43-自动销毁机制-nav`)" id="_4-3-自动销毁机制-43-自动销毁机制-nav">
+									# 4.3 自动销毁机制
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_4-4-%e9%80%9a%e8%ae%af%e5%bd%95-44-%e9%80%9a%e8%ae%af%e5%bd%95" onclick="onNavClick(`#_4-4-通讯录-44-通讯录-nav`)" id="_4-4-通讯录-44-通讯录-nav">
+									# 4.4 通讯录
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_4-5-%e7%a7%81%e5%af%86%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e9%93%be%e6%8e%a5%e9%a2%84%e8%a7%88-45-%e7%a7%81%e5%af%86%e6%a8%a1%e5%bc%8f%e4%b8%8b%e7%9a%84%e9%93%be%e6%8e%a5%e9%a2%84%e8%a7%88" onclick="onNavClick(`#_4-5-私密模式下的链接预览-45-私密模式下的链接预览-nav`)" id="_4-5-私密模式下的链接预览-45-私密模式下的链接预览-nav">
+									# 4.5 私密模式下的链接预览
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#_5-%e5%85%b6%e4%bb%96%e8%ae%be%e7%bd%ae-5-%e5%85%b6%e4%bb%96%e8%ae%be%e7%bd%ae" onclick="onNavClick(`#_5-其他设置-5-其他设置-nav`)" id="_5-其他设置-5-其他设置-nav">
+									# 5 其他设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#_5-1-%e4%b8%aa%e4%ba%ba%e4%bf%a1%e6%81%af%e8%ae%be%e7%bd%ae-51-%e4%b8%aa%e4%ba%ba%e4%bf%a1%e6%81%af%e8%ae%be%e7%bd%ae" onclick="onNavClick(`#_5-1-个人信息设置-51-个人信息设置-nav`)" id="_5-1-个人信息设置-51-个人信息设置-nav">
+									# 5.1 个人信息设置
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_5-2-%e6%95%b0%e6%8d%ae%e4%b8%8e%e5%ad%98%e5%82%a8-52-%e6%95%b0%e6%8d%ae%e4%b8%8e%e5%ad%98%e5%82%a8" onclick="onNavClick(`#_5-2-数据与存储-52-数据与存储-nav`)" id="_5-2-数据与存储-52-数据与存储-nav">
+									# 5.2 数据与存储
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_5-3-%e5%a4%96%e8%a7%82-53-%e5%a4%96%e8%a7%82" onclick="onNavClick(`#_5-3-外观-53-外观-nav`)" id="_5-3-外观-53-外观-nav">
+									# 5.3 外观
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_5-4-%e8%af%ad%e8%a8%80-54-%e8%af%ad%e8%a8%80" onclick="onNavClick(`#_5-4-语言-54-语言-nav`)" id="_5-4-语言-54-语言-nav">
+									# 5.4 语言
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_5-5-%e5%85%a7%e7%bd%ae%e4%bb%a3%e7%90%86-55-%e5%85%a7%e7%bd%ae%e4%bb%a3%e7%90%86" onclick="onNavClick(`#_5-5-內置代理-55-內置代理-nav`)" id="_5-5-內置代理-55-內置代理-nav">
+									# 5.5 內置代理
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+							
+								</ul>
+							
+						
+						
+						
+							<li>
+								<a href="#_6-%e5%9f%ba%e7%a1%80%e5%8a%9f%e8%83%bd-6-%e5%9f%ba%e7%a1%80%e5%8a%9f%e8%83%bd" onclick="onNavClick(`#_6-基础功能-6-基础功能-nav`)" id="_6-基础功能-6-基础功能-nav">
+									# 6 基础功能
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#_6-1-%e6%99%ae%e9%80%9a%e8%81%8a%e5%a4%a9%e6%a8%a1%e5%bc%8f-61-%e6%99%ae%e9%80%9a%e8%81%8a%e5%a4%a9%e6%a8%a1%e5%bc%8f" onclick="onNavClick(`#_6-1-普通聊天模式-61-普通聊天模式-nav`)" id="_6-1-普通聊天模式-61-普通聊天模式-nav">
+									# 6.1 普通聊天模式
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-2-%e7%a7%81%e5%af%86%e8%81%8a%e5%a4%a9%e6%a8%a1%e5%bc%8f-62-%e7%a7%81%e5%af%86%e8%81%8a%e5%a4%a9%e6%a8%a1%e5%bc%8f" onclick="onNavClick(`#_6-2-私密聊天模式-62-私密聊天模式-nav`)" id="_6-2-私密聊天模式-62-私密聊天模式-nav">
+									# 6.2 私密聊天模式
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-3-saved-messages-63-saved-messages" onclick="onNavClick(`#_6-3-saved-messages-63-saved-messages-nav`)" id="_6-3-saved-messages-63-saved-messages-nav">
+									# 6.3 Saved Messages
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-4-%e7%be%a4%e8%81%8a-64-%e7%be%a4%e8%81%8a" onclick="onNavClick(`#_6-4-群聊-64-群聊-nav`)" id="_6-4-群聊-64-群聊-nav">
+									# 6.4 群聊
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-5-%e9%a2%91%e9%81%93-65-%e9%a2%91%e9%81%93" onclick="onNavClick(`#_6-5-频道-65-频道-nav`)" id="_6-5-频道-65-频道-nav">
+									# 6.5 频道
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-6-%e6%9c%ba%e5%99%a8%e4%ba%ba-66-%e6%9c%ba%e5%99%a8%e4%ba%ba" onclick="onNavClick(`#_6-6-机器人-66-机器人-nav`)" id="_6-6-机器人-66-机器人-nav">
+									# 6.6 机器人
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-7-%e8%b4%b4%e7%ba%b8-67-%e8%b4%b4%e7%ba%b8" onclick="onNavClick(`#_6-7-贴纸-67-贴纸-nav`)" id="_6-7-贴纸-67-贴纸-nav">
+									# 6.7 贴纸
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-8-gif-68-gif" onclick="onNavClick(`#_6-8-gif-68-gif-nav`)" id="_6-8-gif-68-gif-nav">
+									# 6.8 GIF
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-9-telegraph-69-telegraph" onclick="onNavClick(`#_6-9-telegraph-69-telegraph-nav`)" id="_6-9-telegraph-69-telegraph-nav">
+									# 6.9 Telegraph
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-10-instant-view-610-instant-view" onclick="onNavClick(`#_6-10-instant-view-610-instant-view-nav`)" id="_6-10-instant-view-610-instant-view-nav">
+									# 6.10 Instant View
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#_6-11-%e6%8a%95%e7%a5%a8-611-%e6%8a%95%e7%a5%a8" onclick="onNavClick(`#_6-11-投票-611-投票-nav`)" id="_6-11-投票-611-投票-nav">
+									# 6.11 投票
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://shenyiminghfut.github.io">
+            摆人日寄
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://shenyiminghfut.github.io">
+        <div class="single-column-header-title">摆人日寄</div>
+        
+        <div class="single-column-header-subtitle">啊对对对。</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg')"
+                    
+                
+            >
+                <div class="post-title">
+                    Tg使用指南
+                    
+                    <div class="post-subtitle">
+                        记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-03-19 10:58
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/story">Story</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/scene">scene</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            36 min
+                            
+                            38 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <blockquote>
+<p>Telegram 是一款著重速度与安全性的即时通讯软体。</p>
+</blockquote>
+<h2 id="_1-telegram-简介-1-telegram-简介"><a href="#_1-telegram-%E7%AE%80%E4%BB%8B">#</a> 1 Telegram 简介</h2>
+<blockquote>
+<p>Telegram 是一款著重速度与安全性的即时通讯软体。快速、简单，而且完全免费。你可以<strong>同时</strong>在任何装置上使用 Telegram－你的讯息会在任意数量的手机，平板或电脑上无缝同步。Telegram 已经拥有超过 <strong>5 亿</strong>月活用户，是<strong>下载量全球前十的应用程式</strong>之一。</p>
+<p>有了 Telegram，你可以传送讯息、照片、影片或任何类型的档案（doc、zip、mp3 等等），以及建立可容纳 200,000 人的群组，或可对<strong>无限量</strong>观眾广播的频道。你可以传讯息给你的手机联络人，及透过人们的<a href="https://telegram.how/faq#usernames-and-t-me"><strong>用户名称</strong> (opens new window)</a>(usernames) 找到他们。这样一来，Telegram 就像是手机简讯和电子邮件的结合，而且可以照顾到你的所有个人或商业讯息需求。除此之外，Telegram 还支持端对端加密的音频和视频通话，以及可供数千人参与的视频群聊。</p>
+</blockquote>
+<p>（以上文字是对 <a href="https://telegram.org/faq#q-what-is-telegram-what-do-i-do-here">Telegram FAQ - What is Telegram? What do I do here? (opens new window)</a> 的翻译，参考了 <a href="https://telegram.how/faq">什么是 Telegram？ 我能用它做些什么？ (opens new window)</a>）</p>
+<p>更多参见：<br>
+<strong><a href="https://telegram.org/">Telegram 官网 (opens new window)</a><br>
+<a href="https://telegram.org/faq">Telegram FQA (opens new window)</a><br>
+<a href="https://t.me/telegram">Telegram News (opens new window)</a><br>
+<a href="https://t.me/TelegramTips">Telegram Tips (opens new window)</a><br>
+<a href="https://t.me/durov">Durov&rsquo;s Channel (opens new window)</a></strong></p>
+<h2 id="_2-telegram-客户端-2-telegram-客户端"><a href="#_2-telegram-%E5%AE%A2%E6%88%B7%E7%AB%AF">#</a> 2 Telegram 客户端</h2>
+<p>Telegram 提供全平台<a href="https://www.telegram.org/apps">客户端 (opens new window)</a>，包括 Android、iOS、Windows Phone、macOS、Desktop 版（macOS/Windows/Linux）以及<a href="https://web.telegram.org/">网页版 (opens new window)</a>。</p>
+<p>建议从 App Store、Google Play Store 以及 <a href="https://telegram.org/">Telegram 官网 (opens new window)</a> 等渠道下载的官方客户端以规避潜在风险，不推荐使用第三方客户端（已有幣用、butterfly.im（蝴蝶 IM）、Teleplus（v5.4.2 之前版本）等多款 Telegram 第三方客户端被曝上传用家信息，参见详见 <a href="https://t.me/TGCNPSA">PSA - 安全公告专栏 (opens new window)</a>）。</p>
+<p>Telegram 群组中流传的安装包及类似客户端文件很有可能被植入了后门，切勿安装使用。</p>
+<h2 id="_3-註册-3-註册"><a href="#_3-%E8%A8%BB%E5%86%8C">#</a> 3 註册</h2>
+<h3 id="_3-1-號码选择-31-號码选择"><a href="#_3-1-%E8%99%9F%E7%A0%81%E9%80%89%E6%8B%A9">#</a> 3.1 號码选择</h3>
+<p>建议使用虚擬號码或者太空卡註册 Telegram 以保证相对的匿名性。</p>
+<h3 id="_3-2-註册前提-32-註册前提"><a href="#_3-2-%E8%A8%BB%E5%86%8C%E5%89%8D%E6%8F%90">#</a> 3.2 註册前提</h3>
+<p>Telegram 在香港尚未被封锁，出於安全与私隱考量仍建议配合 VPN 等网络代理工具使用。Telegram 在中国大陆被 GFW 屏蔽，需要使用代理工具才能註册。</p>
+<h3 id="_3-3-註册步骤-33-註册步骤"><a href="#_3-3-%E8%A8%BB%E5%86%8C%E6%AD%A5%E9%AA%A4">#</a> 3.3 註册步骤</h3>
+<p>输入你的手机號码，Telegram 会自动向你发送短信验证码，输入短信验证码就可完成註册，进入应用界面。Telegram 每次登录时都会在应用內向已登陆装置发送验证码，如果没有已登录装置，则会通过 SMS 发送 OTP；如果你开启了两步验证（two-step verification），输入验证码后还要再输入两步验证密码。</p>
+<h2 id="_4-隱私与安全设置-4-隱私与安全设置"><a href="#_4-%E9%9A%B1%E7%A7%81%E4%B8%8E%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE">#</a> 4 隱私与安全设置</h2>
+<h3 id="_4-1-隱私设置-41-隱私设置"><a href="#_4-1-%E9%9A%B1%E7%A7%81%E8%AE%BE%E7%BD%AE">#</a> 4.1 隱私设置</h3>
+<p>Settings &gt; Privacy and Security</p>
+<p>4.1.1 黑名单 (Blocked Users)<br>
+此处可以添加 / 查看被屏蔽拉黑的用家</p>
+<p>4.1.2 显示在线情况 (Last Seen)<br>
+默认设置下，你的联繫人可以看到你的在线情况，可分为四种类型：</p>
+<ul>
+<li>不久前在线 (last seen recently)</li>
+<li>一星期前在线 (last seen within a week)</li>
+<li>一个月前在线 (last seen within a month)</li>
+<li>长时间未上线 (last seen a long time ago)</li>
+</ul>
+<p>用家可以在隱私与安全设置中选择向哪些人展示你的真实在线情况，可供选择的对象有所有人 (Everybody)、我的联繫人 (My Contacts) 和任何人都不可见 (Nobody)，此外还可以自行设置白名单（即 Always Share With）选项，只向该名单上的用家展示你的真实在线状况。</p>
+<p>4.1.3 语音通话权限 (Voice Call)<br>
+Telegram 在 2017 年提供了语音通话功能，而隱私与安全设置中的 Voice Call 选项可以让你选择谁有权和你进行，可选择的有所有人 (Everybody)、我的联繫人 (My Contacts) 和任何人都不 (Nobody)，另外你可以自行设置语音通话权限的黑名单 (Never Allow) 和白名单 (Always Allow)。</p>
+<p>PEER-TO-PEER 选项是对通话时数据模式的选择，P2P 模式指通话数据直接两台装置间传输，非 P2P 模式下通话数据会由 Telegram 的服务器进行中转以免直接暴露你的 IP 地址，从而保护用家的隱私与安全，但该模式会降低通话质量。你可以选择对所有人 (Everybody)、我的联繫人 (My Contacts) 和任何人都不 (Nobody) 通话时使用 PEER-TO-PEER 模式。</p>
+<p>iOS 客户端上的 iOS Call Integration 是指將 IM 应用的语音通话接入 Apple 的 CallKit 框架，开启该选项后来自 Telegram 的语音通话会像普通来电一样在锁定屏幕上显示，通话会被存储在系统的通话记录中；如果你开启了 iCloud 同步，这些通话记录会被上传到 Apple 的 iCloud 云服务器上。</p>
+<p>4.1.4 群组权限 (Groups) 群组权限指你可以选择那些用家有权將你加入新的群聊，可选择的只有所有人 (Everybody) 与我的联繫人 (My Contacts)，此外你可以设置自己的黑名单 (Never Allow) 和白名单 (Always Allow)。</p>
+<h3 id="_4-2-安全设置-42-安全设置"><a href="#_4-2-%E5%AE%89%E5%85%A8%E8%AE%BE%E7%BD%AE">#</a> 4.2 安全设置</h3>
+<p>4.2.1 本地密码和生物验证 (Passcode &amp; Touch ID)<br>
+你可以对 Telegram 客户端应用设置独立的解锁密码，之后每次需要解锁才能进入该客户端。如果你的装置配备了 Face ID、Touch ID 或者其他生物识別传感器，你可以使用生物验证来代替数字密码解锁客户端。</p>
+<p>4.2.2 两步验证 (Two-Step Verification)<br>
+设置两步验证后，每次你重新登录 Telegram 账號时，在输入，你还需要额外输入自己设置的密码才能完成登录。在登录认证中加入两步验证是对单纯短信验证风险漏洞的填补——政府情报部门和黑客等潜在攻击者在获知你用於註册 Telegram 的手机號码后可以通过 <a href="https://www.solidot.org/story?sid=48167">SS7 攻击 (opens new window)</a> 劫持验证短信的方式来获取验证码，进而登入你的 Telegram 帐號並读取该账號上的所有消息。因此，编者建议所有 Telegram 用家开启两步验证。</p>
+<p>两步验证是指用家重新登录 Telegram 账號时，在输入 Telegram 发送到其他已登陆装置上的验证码或者 SMS 短信验证码（没有已登录装置的情况下）后，还需额外输入设置的密码才能登录账號。</p>
+<p>设置两步验证的方式非常简单，在 Settings &gt; Privacy and Security &gt; Two-Step Verification 中设置密码，然后添加密保邮箱（以便在遗忘两步验证密码后还能重新找回账號），然后在验证邮件中確认即可。</p>
+<p>4.2.3 当前在线 (Active Sessions)<br>
+用家可以在此处查看本帐號当前登录了多少台装置，所使用的 Telegram 客户端版本、装置的 IP 地址和位置，以及装置运行的作业系统版本。</p>
+<p>部分客户端的 Active Sessions 的位置位於 Settings &gt; Devices。</p>
+<h3 id="_4-3-自动销毁机制-43-自动销毁机制"><a href="#_4-3-%E8%87%AA%E5%8A%A8%E9%94%80%E6%AF%81%E6%9C%BA%E5%88%B6">#</a> 4.3 自动销毁机制</h3>
+<p>Telegram 设置了帐號自动销毁，长时间未登录达到设置期限后 Telegram 会自动註销你的帐號以及该账號之前產生的所有数据，以此保证用家数据不会泄露。Telegram 的默认期限是 6 个月，此外有 1 个月、3 个月、6 个月和 12 个月可选。</p>
+<h3 id="_4-4-通讯录-44-通讯录"><a href="#_4-4-%E9%80%9A%E8%AE%AF%E5%BD%95">#</a> 4.4 通讯录</h3>
+<p>4.4.1 通讯录的功能<br>
+对 Telegram 开启通讯录权限后，之后通讯录中的联繫人新註册了 Telegram 后，你將会收到「xxx joined Telegram」的通知；所有已经註册联繫人都会显示与你的通讯录记录相一致的身份信息，不再显示该用家自己设置的姓名。</p>
+<p>4.4.2 同步通讯录<br>
+在默认设置下 Telgram 会把你的通讯录上传到云端並同步，在新版本中 Telegram 为遵守欧盟的 GDPR 推出了新的隱私与安全权限，允许用家选择是否同步同步通讯录，並提供了刪除已同步通讯录的选项 (Delete Synced Contacts)。</p>
+<p>4.4.3 使用通讯录进行备注<br>
+Telegram 没有提供对联繫人进行备注的功能，但你可以借助通讯录，將 Telegram 联繫人的姓名和手机號码存入自己的通讯录，从而间接实现对 Telegram 联繫人身份信息进行自定义的功能。如果你关闭了 Telegram 的通讯录权限，你仍可编辑製作仅適用於 Telegram 的通讯录。</p>
+<h3 id="_4-5-私密模式下的链接预览-45-私密模式下的链接预览"><a href="#_4-5-%E7%A7%81%E5%AF%86%E6%A8%A1%E5%BC%8F%E4%B8%8B%E7%9A%84%E9%93%BE%E6%8E%A5%E9%A2%84%E8%A7%88">#</a> 4.5 私密模式下的链接预览</h3>
+<p>你可以选择是否在私密模式中开启链接预览，此项也是为符合 GDPR 而推出的新权限。链接预览 (link preview) 由 Telegram 的服务器生成，但 Telegram 不会存储链接数据。</p>
+<h2 id="_5-其他设置-5-其他设置"><a href="#_5-%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE">#</a> 5 其他设置</h2>
+<h3 id="_5-1-个人信息设置-51-个人信息设置"><a href="#_5-1-%E4%B8%AA%E4%BA%BA%E4%BF%A1%E6%81%AF%E8%AE%BE%E7%BD%AE">#</a> 5.1 个人信息设置</h3>
+<p>5.1.1 姓名<br>
+姓和名是註册时需要填写的信息，登录后隨时可以在设置中更改姓名。</p>
+<p>5.1.2 头像<br>
+Telegram 会自动生成由你的姓、名首字母组成的图片作为头像，你可以在设置中上传图片更换头像。需要注意的是 Telegram 会默认保留曾经使用过的所有头像，所有人都可以点击进入你的头像后通过划动来查看你的曾用头像。你如果不希望別人看到你的歷史头像，需要在设置中手动刪除。</p>
+<p>5.1.3 签名<br>
+bio 是供选填的个性签名和自我介绍。</p>
+<p>5.1.4 更换號码<br>
+你可以在 Change Number 中更换註册 Telegram 的手机號码。需要注意的是如果他人在自己的通讯录里存储了你的號码，当你使用 Change Number 更换號码后他可以看到更新后的號码。 如果你怀疑自己的 Telegram 账號被怀有恶意的第三方知悉，或者原先使用中国大陆 +86 开头的號码註册而需要更换號码的，不要对原账號使用更换號码，而应登录 Telegram 网站註销原帐號，然后使用新的號码另行註册一个 Telegram 账號。</p>
+<p>5.1.5 用家名<br>
+你可以设置一个 Username（用家名）来方便別人找到你。在 Telegram 中对方可以直接通过「@你的用家名」（例如 @username）来搜索到你的帐號；Telegram 还会为你生成一个「https://t.me/username」的链接，以便你將自己的 Telegram 帐號直接分享到 Twitter、Facebook 等其他社交平台。所有人都可以通过你的 username 找到你，但他们不会看到你的手机號码，除非你自己选择了「Share My Contact」。</p>
+<p>5.1.6 退出登录<br>
+点击「Log Out」来退出当前帐號</p>
+<p>5.1.7 小结<br>
+如果你对匿名性要求较高，建议隨机填写姓名信息，不填写 bio 或填入无关信息，不要在 Telegram 上使用与其他社交 / 即时通讯帐號相同的姓名、用家名、暱称、个性签名和头像，以免对方可以通过关联確定的你的真实身份；除非你有意公开自己在网络上的虚擬身份。</p>
+<h3 id="_5-2-数据与存储-52-数据与存储"><a href="#_5-2-%E6%95%B0%E6%8D%AE%E4%B8%8E%E5%AD%98%E5%82%A8">#</a> 5.2 数据与存储</h3>
+<p>Telegram 默认將所有信息存储在云端，每次进入应用 Telegram 都会自动从云端同步数据，相比微信和 QQ 的存储佔用会从刚下载时的 100 MB + 逐渐膨胀至 1 GB +，Telegram 只不佔用较少的本地存储空间。</p>
+<p>在 Settings &gt; Data and Storage 中，你可以查看 Telegram 的存储 (Storage) 与网络 (Network) 使用情况，选择自动下载 (Auto-Download Media) 的媒体类型（默认自动下载图片，视频、文件、语音消息、视频消息需要手动点击下载），是否自动下载还可以根据上网方式（无线网络 / 蜂窝移动数据网络）。此外你可以选择是否將新收到的图片自动保存到本地、是否保存经 Telegram 编辑过的图片和是否自动播放 GIF。</p>
+<h3 id="_5-3-外观-53-外观"><a href="#_5-3-%E5%A4%96%E8%A7%82">#</a> 5.3 外观</h3>
+<p>在外观设置中，你可以选择字体大小、聊天背景（除 Telegram 提供的背景图片外，用家可以通过相册上传自己的图片作背景）、是否自动启用黑夜主题 (Auto-Night Theme) 以及色彩模式。</p>
+<h3 id="_5-4-语言-54-语言"><a href="#_5-4-%E8%AF%AD%E8%A8%80">#</a> 5.4 语言</h3>
+<p>前往 Settings &gt; Language 进行设置，或者直接点击翻译包连结 tg://setlanguage?lang=xxx</p>
+<p>参见：<a href="https://t.me/YinxiangBiji_News/606">印象笔记 | 科技 NEWS 606 (opens new window)</a></p>
+<h3 id="_5-5-內置代理-55-內置代理"><a href="#_5-5-%E5%85%A7%E7%BD%AE%E4%BB%A3%E7%90%86">#</a> 5.5 內置代理</h3>
+<p>Telegram 支持內置代理，其突破网络封锁的意义较为有限，但可以起到保护私隱的作用（令 VPN 提供商无法得知你在使用 Telegram）。</p>
+<p>Telegram 的內置代理有 Socks5 和 MTProto 两种代理方式，后者是 Telegram 自主研发的专用网络传输协议。</p>
+<p>5.5.2 设置內置代理</p>
+<p>设置方法是 Settings &gt; Data and Storage &gt; Use Proxy 一项中选择「SOCKS5」或「MTPROTO 」填入代理服务器节点信息；或者直接点击代理链接。</p>
+<p>以 Project V 之前提供过的 SOCKS5 代理（tg://socks?server=51.15.125.253&amp;port=7777&amp;user=telegram&amp;pass=tgpassword，已失效）为例，在 Telegram 输入该文本后点击链接就可完成添加；如手动输入信息，可照 Server: 51.15.125.253, Port: 7777, Username: telegram, Password: tgpassword 填写。</p>
+<p>5.5.2 获取內置代理</p>
+<p>与使用 V2Ray、Shadowsocks 节点相似，获取 Telegram 內置代理的方式也可以分为自建和获取现成的代理两种。 你可以在租用的 VPS 上搭建自己的 Telegram 专用代理，相关教程可以参考：<br>
+<a href="https://github.com/TelegramMessenger/MTProxy">https://github.com/TelegramMessenger/MTProxy</a><br>
+<a href="https://lala.im/3598.html">MTProxy：专为 Telegram 打造的代理工具 - 荒岛 (opens new window)</a></p>
+<p>Telegram 专用代理可以在 <a href="https://t.me/SSRlist">V2ray,SSR 节点最新发佈🚀🚀🚀🚀🚀 (opens new window)</a>、<a href="https://t.me/MTProxy">MTProto Proxy (opens new window)</a> 等频道获取，可靠性请自行判断。</p>
+<h2 id="_6-基础功能-6-基础功能"><a href="#_6-%E5%9F%BA%E7%A1%80%E5%8A%9F%E8%83%BD">#</a> 6 基础功能</h2>
+<h3 id="_6-1-普通聊天模式-61-普通聊天模式"><a href="#_6-1-%E6%99%AE%E9%80%9A%E8%81%8A%E5%A4%A9%E6%A8%A1%E5%BC%8F">#</a> 6.1 普通聊天模式</h3>
+<p>普通聊天模式並未开启端到端加密，所有的聊天记录都会被存储到 Telegram 云端服务器。</p>
+<p>6.1.1 发送消息类型<br>
+Telegram 支持发送文字消息、表情贴纸 (Stickers)、GIF、视频、文件，並支持发起语音通话。</p>
+<p>对於文字消息，你可以通过右键或快捷键自定义字体格式，可选择粗体或斜体，支持在文字中植入网页链接。 对於在 Telegram 中直接输入並发送的链接，Telegram 会根据链接网页类型提供相应的页面预览，如链接支持 Insstant View 快速预览功能（例如 Telegraph），Telegram 会提供网页標题、首段文字摘录和第一张图片，並在下方生成「Instant View」按钮；对於一般的网页链接，Telegram 会提供標题、文字摘录和首张图片的预览；微信公眾號推文等少数的网页链接完全不支持预览，只能以链接形式呈现。</p>
+<p>在 Telegram 发送图片时，发送点击图片可以进入图片编辑模式，提供画笔、马赛克等简单的图片標注功能。如果需要发送的图片数量大於等於 2 张，你可以选择单张发送图片，也可以选择將数张图片拼成图集后一次性发送。如果你担心图片被压缩后质量下降，，可以选择以文件形式发送图片 (Send as a file)，对方收到后需要下载解压后查看。</p>
+<p>你可以发送任何形式的文件，单个文件大小不能超过 1.5 GB。</p>
+<p>6.1.2 编辑 (Edit)<br>
+Telegram 允许用家在消息发送后 48 小时內编辑修改已发送的消息，编辑过的文字仍会留在原处。（微信的「编辑功能」只是「撤回」的增强版，即在消息撤回后將该消息自动粘贴到你的输入栏中以供修改）</p>
+<p>6.1.3 刪除 (Delete)<br>
+Telegram 没有微信那样的撤回机制，只提供刪除功能。在一对一对话中，你在「Delete」时可以选择同时为自己和对方刪除还是仅对自己刪除，前者相当於「撤回」，支持在发送后 48 小时內刪除已发送消息，后者相当於刪除自己的聊天记录，不及於对方（此选项也会导致后续无法为对方刪除消息，因此选择时需慎重）。在群聊中，「刪除」的效力是「delete for everyone」，可以等同於「撤回」。</p>
+<p>6.1.4 回復 (Reply)<br>
+无论是一对一还是在群聊中，你都可以选中他人发送的消息后选择「Reply」（回復），之后你发送的回復会附上对方之前的消息，使得聊天时的回復更有针对性。</p>
+<p>6.1.5 转发 (Forward Message)<br>
+你可以选中他人发送的消息后选择「Forward Message」，將该消息转发到他处。被转发的消息上注有「Forward from xxx（原作者的名字）」。</p>
+<h3 id="_6-2-私密聊天模式-62-私密聊天模式"><a href="#_6-2-%E7%A7%81%E5%AF%86%E8%81%8A%E5%A4%A9%E6%A8%A1%E5%BC%8F">#</a> 6.2 私密聊天模式</h3>
+<p>在 chats 界面点击右上角的新建按钮（如果你关闭了 Telegram 的通讯录权限將无法新建对话，Telegram X 和 Desktop 版本不受此限），选择 New Secret Chat 来新建私密聊天；或者在联繫人的名片页点击「Start Secret Chat」。之后 Telegram 会向对方发送私密聊天请求 (secret chat request)，只有对方同意进入后双方才能交换端到端加密 (end-to-end encrypted) 密钥，进入私密聊天模式。进入私密聊天模式后，在 chats 主界面上该联繫人的姓名为绿色，姓名左侧有绿锁標记。</p>
+<p>私密聊天受限於创建该对话的装置，產生的聊天记录不会上传存储到 Telegram 云端服务器，也不会同步到你的其他装置上。</p>
+<p>私聊聊天模式中不允许使用转发功能 (don’t allow forwarding)，同时可以设置消息自毁计时器（self-destruct timer, 相当於阅后即焚），可供选择的时间有 1 - 15 秒、30 秒、1 分钟、1 小时、1 天和 1 周，你也可以选择「Off」，即不开启。</p>
+<h3 id="_6-3-saved-messages-63-saved-messages"><a href="#_6-3-saved-messages">#</a> 6.3 Saved Messages</h3>
+<p>向 Saved Messages 发送消息就是用家自己跟自己对话，你可以把 Saved Messages 当成自己的收藏夹或者私人网盘来使用。</p>
+<h3 id="_6-4-群聊-64-群聊"><a href="#_6-4-%E7%BE%A4%E8%81%8A">#</a> 6.4 群聊</h3>
+<p>6.4.1 创建群组<br>
+你可以在新建消息中选择「New Group」来创建群组，最初必须有两人以上才能创建成功。如果你关闭了通讯录权限，你將无法在 Telegram iOS 客户端中新建群组，但部分桌面版客户端不受限制。如果你暂无联繫人，可以將自己创建的 Bot（机器人）拉入群组。</p>
+<p>Telegram 群组有私有群租与公共群组、普通群组和超级群组之分。</p>
+<p>6.4.2 私有群租与公开群组<br>
+私有群组与公开群组的差別在於公开性，私有群组的邀请链接的形式是「t.me/joinchat/」，而公开群组（公海）的链接的形式是「t.me」的短链接；打开私有群组的邀请链接后，必须入群 (Join) 才能查看消息，而打开公开群组的链接后即便不入群也可以查看歷史消息。</p>
+<p>公开群组的链接是 <a href="https://t.me/abc">https://t.me/abc</a>，加入前可以瀏览群组內容；私有群组的链接是 <a href="https://t.me/joinchat/abc">https://t.me/joinchat/abc</a>，加入前无法查看群组內容。</p>
+<p>公开群组提供 Copy Link 的功能，即群聊中每位成员发送的消息都有对应的链接，选中一则消息后选择「Copy Link」以获取链接。</p>
+<p>6.4.3 普通群组与超级群组<br>
+普通群组与超级群组的差別在於人数与功能，和是否为私有 / 公开群组之间没有必然联繫（私有群也可以是超级群）。</p>
+<p>普通群组的人数上限为 200 人，任何人都可以邀请新成员並编辑群名和群头像。超级群组 (Supergroup) 的人数上限高达 200,000 人，並拥有一些普通群组所不具备的功能。</p>
+<p>超级群组为用家提供个性化的通知权限，你可以设置为群中有人提到你（即「@」）或者回復 (Reply) 你的消息时才通知你。超级群组的创建者可以授权给管理员来协助管理（机器人同样可以拥有管理员权限），管理员可以在群中置顶消息 (Pinned Messages)。</p>
+<p>普通群组可以升级到超级群组，但该操作不可逆。</p>
+<h3 id="_6-5-频道-65-频道"><a href="#_6-5-%E9%A2%91%E9%81%93">#</a> 6.5 频道</h3>
+<p>Telegram Channel（频道）的使用模式与用 Telegram 聊天高度相似，差別只在於只有频道所有者及其授权的管理员有权发佈消息，其他关注频道的用家只有只读权限。</p>
+<p>6.5.1 公开频道与私有频道<br>
+频道和群聊一样分为公开频道和私有频道，二者的差別和群聊基本一致。公开频道提供的 Copy Post Link 功能类似公开群组的 Copy Link 功能，可以直接以链接形式分享该消息。</p>
+<p>6.5.2 频道添加评论功能<br>
+进入频道 &gt; 点击频道头像 &gt; Edit &gt; Discussion &gt; Add &gt; 关连已有群组或者新建群组。设置完成后发送的內容会出现评论选项。</p>
+<p>6.5.3 官方认证频道<br>
+少数由 Telegram 官方创建的 Channel 有蓝色八角形、白色对勾的认证標识（如 Telegram、<a href="https://t.me/durov">Durov’s Channel (opens new window)</a>、<a href="https://t.me/telegram">Telegram News (opens new window)</a>、<a href="http://t.me/gamee">Gamee (opens new window)</a>）。</p>
+<h3 id="_6-6-机器人-66-机器人"><a href="#_6-6-%E6%9C%BA%E5%99%A8%E4%BA%BA">#</a> 6.6 机器人</h3>
+<p>bot 是 Telegram 上的机器人账户，通常具有 AI 属性並可充当自动化工具，进而扩展 Telegram 的功能。</p>
+<p>Telegram 开放了 bot 的 API，用家可以根据自身需要开发自己的 bot。</p>
+<p>名称右侧有蓝色八角形、內有白色对勾图標的 bot 是由 Telegram 官方出品或经 Telegram 官方认证的 bot，相对安全可靠。</p>
+<p>@BotFather 官方认证。创建和管理机器人。<br>
+@IFTTT 官方认证。IFTTT 的官方机器人，可以连接各类 IFTTT 服务。<br>
+@GmailBot 官方认证。Gmail 客户端<br>
+@telegraph 官方认证。发送、管理 Telegram 文章及查看统计数据<br>
+@gamee 官方认证。游戏平台</p>
+<h3 id="_6-7-贴纸-67-贴纸"><a href="#_6-7-%E8%B4%B4%E7%BA%B8">#</a> 6.7 贴纸</h3>
+<p>Telegram 的 Stickers（贴纸）功能类似於微信的表情包。在「表情包」上，Telegram 与微信的差別在於区分了 Stickers 和 GIF，Sticker 是静態的图片，GIF 是动图，不像微信表情包那样动静混杂。</p>
+<p>6.7.1 获取贴纸<br>
+点击他人发送的单张贴纸就可查看整套贴纸，点击下方的「Add Stickers」就可將它保存到自己的贴纸库。Telegram Stickers 同样存储在云端，一经添加会自动同步到你的所有装置上。</p>
+<p>你也可以借助 Stickers Pack bot 来製作自己的贴纸包。教程参见：<a href="https://blog.phoenixlzx.com/2015/06/06/make-telegram-sticker-the-lazy-way/">懒 (烂) 办法製作 Telegram Sticker Pack (opens new window)</a></p>
+<p>6.7.2 发送贴纸<br>
+你可以直接在自己的贴纸库中选取贴纸，也可以输入 emoji 表情后选择该 emoji 映射的贴纸，因为每张贴纸都有与之对应的 emoji 表情。</p>
+<p>6.7.3 分享贴纸<br>
+点击已保存在贴纸库中的贴纸包时会显示「Share Stickers」的按钮，点按后会生成形如「<a href="https://t.me/addstickers/TelegramGreatMinds">https://t.me/addstickers/example (opens new window)</a>」的贴纸分享链接。</p>
+<h3 id="_6-8-gif-68-gif"><a href="#_6-8-gif">#</a> 6.8 GIF</h3>
+<p>Telegram 会將 GIF 转码成 MPEG 4 格式，在相同画质下至多可节省 95% 的存储佔用空间，使你能够在 Telegram 上以比以往快 20 倍的速度下载 GIF 。得益於开发者的优化， Telegram 可以同时流畅播放几十个 GIF 。</p>
+<p>6.8.1 发送 GIF<br>
+GIF 按钮与贴纸按钮並列，点击后可以查看你自己的 GIF 图库。</p>
+<p>6.8.2 保存 GIF<br>
+以 iOS 为例，点按 GIF 查看大图，再点按右下方的「➕」就能將此 GIF 保存到自己的 GIF 栏中。</p>
+<p>6.8.3 GIF 搜索引擎<br>
+Telegram 內置了 GIF 动態搜索功能，你可以在输入栏中输入「@gif 关键词」（例如「@gif cat」）来搜索相关的 GIF。</p>
+<h3 id="_6-9-telegraph-69-telegraph"><a href="#_6-9-telegraph">#</a> 6.9 Telegraph</h3>
+<p><a href="https://telegra.ph/">Telegraph (opens new window)</a> 是 Telegram 提供的匿名博客服务，你可以通过 Telegram 中的 Telegraph bot (@telegraph) 或者在瀏览器中输入「telegra.ph」来使用它。Telegraph 的匿名体现在它只根据瀏览器缓存来识別作者，Telegraph 文章刚发佈时还可重新编辑，一旦瀏览器缓存被清除后就不可再编辑，同时无法溯源到原作者。</p>
+<p>Telegraph 支持大小標题、粗体 / 斜体文字、图片、网页链接和视频链接，对链接没有任何限制。</p>
+<p>如果你需要在 Telegram 群组中发送长段文字，可以考虑使用 Telegraph 链接或 pastebin 在线剪贴板类工具，以免佔据过多屏幕空间对他人造成影响。</p>
+<h3 id="_6-10-instant-view-610-instant-view"><a href="#_6-10-instant-view">#</a> 6.10 Instant View</h3>
+<p>Instant View 是 Telegram 內置的网页快速瀏览功能。支持 Instant View 功能的网页链接会在標题、摘要和图片下方会显示「Instant View」按钮，点击后即进入 Instant View 模式，网页文章会被渲染成类似阅读模式的风格，用家可选择文字背景顏色和字体大小等。</p>
+<p>Instant View 的意义在於可以极大缩短 Telegram 內置瀏览器或跳转外部瀏览器加载、打开链接的时间，同时为用家提供了更好的阅读体验。</p>
+<h3 id="_6-11-投票-611-投票"><a href="#_6-11-%E6%8A%95%E7%A5%A8">#</a> 6.11 投票</h3>
+<p>公海与频道內可以发起匿名投票 (Anonymous Poll)，支持单选、多选和预先设定正確答案的 quiz 模式。</p>
+<p>参见：<br>
+<a href="https://sspai.com/post/37491">少数派 | Telegram——真正定义即时通讯 (opens new window)</a> | <a href="https://archive.is/mOIXX">archive (opens new window)</a><br>
+<a href="https://telegra.ph/Checkpoint-Confusion-NEWS">Telegraph - Telegram｜Unlike in WhatsApp, nobody could take over your Telegram account by simply sending you a photo (opens new window)</a>（2017-03-22）<br>
+<a href="https://telegra.ph/%E8%AF%B7%E5%B8%AE%E5%8A%A9%E4%BD%A0%E7%9A%84%E6%9C%8B%E5%8F%8B%E4%BD%BF%E7%94%A8-Telegram-06-22">Telegraph -resistance M｜请帮助你的朋友使用 Telegram (opens new window)</a>（2018-06-22）<br>
+<a href="https://congcong0806.github.io/2018/04/24/Telegram/#%E6%9C%BA%E5%99%A8%E4%BA%BA-bot">聪聪 | Telegram 群组、频道、机器人 - 匯总分享 - 机器人 Bot (opens new window)</a><br>
+<a href="https://congcong0806.github.io/2019/04/11/Telegram/">聪聪 | Telegram 知识 (opens new window)</a><br>
+<a href="https://sspai.com/post/37489">少数派 | 我的 Telegram 小工具集：「统一聊天平台，各种工具，和监控提醒」 (opens new window)</a></p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">上次修改於 2021-03-19</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://shenyiminghfut.github.io/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/">
+			下回<br>命令行Clash指南
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://shenyiminghfut.github.io/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/">
+			上回<br>会用 Markdown 还不够，还得知道排版规范
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+ 
+<div id="gitalk-container"></div>
+    
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

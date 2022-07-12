@@ -1,0 +1,396 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>摆人日寄</title>
+    <link>https://shenyiminghfut.github.io/</link>
+    <description>Recent content on 摆人日寄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Fri, 08 Jul 2022 10:58:08 -0400</lastBuildDate>
+    
+        <atom:link href="https://shenyiminghfut.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    
+        <item>
+        <title>Tmux教程</title>
+        <link>https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+        <pubDate>Mon, 09 Mar 2020 10:58:08 -0400</pubDate>
+        
+        <guid>https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
+        <description>摆人日寄 https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/ -&lt;p&gt;Tmux 是一个终端复用器（terminal multiplexer），非常有用，属于常用的开发工具。&lt;/p&gt;
+&lt;p&gt;本文介绍如何使用 Tmux。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.wangbase.com/blogimg/asset/201910/bg2019102005.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;一tmux-是什么&#34;&gt;一、Tmux 是什么？&lt;/h2&gt;
+&lt;h3 id=&#34;11-会话与进程&#34;&gt;1.1 会话与进程&lt;/h3&gt;
+&lt;p&gt;命令行的典型使用方式是，打开一个终端窗口（terminal window，以下简称 &amp;ldquo;窗口&amp;rdquo;），在里面输入命令。&lt;strong&gt;用户与计算机的这种临时的交互，称为一次 &amp;ldquo;会话&amp;rdquo;（session）&lt;/strong&gt; 。&lt;/p&gt;
+&lt;p&gt;会话的一个重要特点是，窗口与其中启动的进程是&lt;a href=&#34;https://www.ruanyifeng.com/blog/2016/02/linux-daemon.html&#34;&gt;连在一起&lt;/a&gt;的。打开窗口，会话开始；关闭窗口，会话结束，会话内部的进程也会随之终止，不管有没有运行完。&lt;/p&gt;
+&lt;p&gt;一个典型的例子就是，&lt;a href=&#34;https://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html&#34;&gt;SSH 登录&lt;/a&gt;远程计算机，打开一个远程窗口执行命令。这时，网络突然断线，再次登录的时候，是找不回上一次执行的命令的。因为上一次 SSH 会话已经终止了，里面的进程也随之消失了。&lt;/p&gt;
+&lt;p&gt;为了解决这个问题，会话与窗口可以 &amp;ldquo;解绑&amp;rdquo;：窗口关闭时，会话并不终止，而是继续运行，等到以后需要的时候，再让会话 &amp;ldquo;绑定&amp;rdquo; 其他窗口。&lt;/p&gt;
+&lt;h3 id=&#34;12-tmux-的作用&#34;&gt;1.2 Tmux 的作用&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Tmux 就是会话与窗口的 &amp;ldquo;解绑&amp;rdquo; 工具，将它们彻底分离。&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;（1）它允许在单个窗口中，同时访问多个会话。这对于同时运行多个命令行程序很有用。&lt;/p&gt;
+&lt;p&gt;（2） 它可以让新窗口 &amp;ldquo;接入&amp;rdquo; 已经存在的会话。&lt;/p&gt;
+&lt;p&gt;（3）它允许每个会话有多个连接窗口，因此可以多人实时共享会话。&lt;/p&gt;
+&lt;p&gt;（4）它还支持窗口任意的垂直和水平拆分。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;类似的终端复用器还有 GNU Screen。Tmux 与它功能相似，但是更易用，也更强大。&lt;/p&gt;
+&lt;h2 id=&#34;二基本用法&#34;&gt;二、基本用法&lt;/h2&gt;
+&lt;h3 id=&#34;21-安装&#34;&gt;2.1 安装&lt;/h3&gt;
+&lt;p&gt;Tmux 一般需要自己安装。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# Ubuntu 或 Debian
+$ sudo apt-get install tmux
+
+# CentOS 或 Fedora
+$ sudo yum install tmux
+
+# Mac
+$ brew install tmux
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;22-启动与退出&#34;&gt;2.2 启动与退出&lt;/h3&gt;
+&lt;p&gt;安装完成后，键入&lt;code&gt;tmux&lt;/code&gt;命令，就进入了 Tmux 窗口。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tmux
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;上面命令会启动 Tmux 窗口，底部有一个状态栏。状态栏的左侧是窗口信息（编号和名称），右侧是系统信息。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.wangbase.com/blogimg/asset/201910/bg2019102006.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;按下&lt;code&gt;Ctrl+d&lt;/code&gt;或者显式输入&lt;code&gt;exit&lt;/code&gt;命令，就可以退出 Tmux 窗口。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ exit
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;23-前缀键&#34;&gt;2.3 前缀键&lt;/h3&gt;
+&lt;p&gt;Tmux 窗口有大量的快捷键。所有快捷键都要通过前缀键唤起。默认的前缀键是&lt;code&gt;Ctrl+b&lt;/code&gt;，即先按下&lt;code&gt;Ctrl+b&lt;/code&gt;，快捷键才会生效。&lt;/p&gt;
+&lt;p&gt;举例来说，帮助命令的快捷键是&lt;code&gt;Ctrl+b ?&lt;/code&gt;。它的用法是，在 Tmux 窗口中，先按下&lt;code&gt;Ctrl+b&lt;/code&gt;，再按下&lt;code&gt;?&lt;/code&gt;，就会显示帮助信息。&lt;/p&gt;
+&lt;p&gt;然后，按下 ESC 键或&lt;code&gt;q&lt;/code&gt;键，就可以退出帮助。&lt;/p&gt;
+&lt;h2 id=&#34;三会话管理&#34;&gt;三、会话管理&lt;/h2&gt;
+&lt;h3 id=&#34;31-新建会话&#34;&gt;3.1 新建会话&lt;/h3&gt;
+&lt;p&gt;第一个启动的 Tmux 窗口，编号是&lt;code&gt;0&lt;/code&gt;，第二个窗口的编号是&lt;code&gt;1&lt;/code&gt;，以此类推。这些窗口对应的会话，就是 0 号会话、1 号会话。&lt;/p&gt;
+&lt;p&gt;使用编号区分会话，不太直观，更好的方法是为会话起名。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tmux new -s &amp;lt;session-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;上面命令新建一个指定名称的会话。&lt;/p&gt;
+&lt;h3 id=&#34;32-分离会话&#34;&gt;3.2 分离会话&lt;/h3&gt;
+&lt;p&gt;在 Tmux 窗口中，按下&lt;code&gt;Ctrl+b d&lt;/code&gt;或者输入&lt;code&gt;tmux detach&lt;/code&gt;命令，就会将当前会话与窗口分离。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tmux detach
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;上面命令执行后，就会退出当前 Tmux 窗口，但是会话和里面的进程仍然在后台运行。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;tmux ls&lt;/code&gt;命令可以查看当前所有的 Tmux 会话。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tmux ls
+# or
+$ tmux list-session
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;33-接入会话&#34;&gt;3.3 接入会话&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tmux attach&lt;/code&gt;命令用于重新接入某个已存在的会话。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 使用会话编号
+$ tmux attach -t 0
+
+# 使用会话名称
+$ tmux attach -t &amp;lt;session-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;34-杀死会话&#34;&gt;3.4 杀死会话&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tmux kill-session&lt;/code&gt;命令用于杀死某个会话。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 使用会话编号
+$ tmux kill-session -t 0
+
+# 使用会话名称
+$ tmux kill-session -t &amp;lt;session-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;35-切换会话&#34;&gt;3.5 切换会话&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tmux switch&lt;/code&gt;命令用于切换会话。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 使用会话编号
+$ tmux switch -t 0
+
+# 使用会话名称
+$ tmux switch -t &amp;lt;session-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;36-重命名会话&#34;&gt;3.6 重命名会话&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tmux rename-session&lt;/code&gt;命令用于重命名会话。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tmux rename-session -t 0 &amp;lt;new-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;上面命令将 0 号会话重命名。&lt;/p&gt;
+&lt;h3 id=&#34;37-会话快捷键&#34;&gt;3.7 会话快捷键&lt;/h3&gt;
+&lt;p&gt;下面是一些会话相关的快捷键。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b d&lt;/code&gt;：分离当前会话。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b s&lt;/code&gt;：列出所有会话。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b $&lt;/code&gt;：重命名当前会话。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;四最简操作流程&#34;&gt;四、最简操作流程&lt;/h2&gt;
+&lt;p&gt;综上所述，以下是 Tmux 的最简操作流程。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;新建会话&lt;code&gt;tmux new -s my_session&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;在 Tmux 窗口运行所需的程序。&lt;/li&gt;
+&lt;li&gt;按下快捷键&lt;code&gt;Ctrl+b d&lt;/code&gt;将会话分离。&lt;/li&gt;
+&lt;li&gt;下次使用时，重新连接到会话&lt;code&gt;tmux attach-session -t my_session&lt;/code&gt;。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;五窗格操作&#34;&gt;五、窗格操作&lt;/h2&gt;
+&lt;p&gt;Tmux 可以将窗口分成多个窗格（pane），每个窗格运行不同的命令。以下命令都是在 Tmux 窗口中执行。&lt;/p&gt;
+&lt;h3 id=&#34;51-划分窗格&#34;&gt;5.1 划分窗格&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tmux split-window&lt;/code&gt;命令用来划分窗格。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 划分上下两个窗格
+$ tmux split-window
+
+# 划分左右两个窗格
+$ tmux split-window -h
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.wangbase.com/blogimg/asset/201910/bg2019102007.jpg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;52-移动光标&#34;&gt;5.2 移动光标&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tmux select-pane&lt;/code&gt;命令用来移动光标位置。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 光标切换到上方窗格
+$ tmux select-pane -U
+
+# 光标切换到下方窗格
+$ tmux select-pane -D
+
+# 光标切换到左边窗格
+$ tmux select-pane -L
+
+# 光标切换到右边窗格
+$ tmux select-pane -R
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;53-交换窗格位置&#34;&gt;5.3 交换窗格位置&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tmux swap-pane&lt;/code&gt;命令用来交换窗格位置。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 当前窗格上移
+$ tmux swap-pane -U
+
+# 当前窗格下移
+$ tmux swap-pane -D
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;54-窗格快捷键&#34;&gt;5.4 窗格快捷键&lt;/h3&gt;
+&lt;p&gt;下面是一些窗格操作的快捷键。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b %&lt;/code&gt;：划分左右两个窗格。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b &amp;quot;&lt;/code&gt;：划分上下两个窗格。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b &amp;lt;arrow key&amp;gt;&lt;/code&gt;：光标切换到其他窗格。&lt;code&gt;&amp;lt;arrow key&amp;gt;&lt;/code&gt;是指向要切换到的窗格的方向键，比如切换到下方窗格，就按方向键&lt;code&gt;↓&lt;/code&gt;。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b ;&lt;/code&gt;：光标切换到上一个窗格。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b o&lt;/code&gt;：光标切换到下一个窗格。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b {&lt;/code&gt;：当前窗格与上一个窗格交换位置。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b }&lt;/code&gt;：当前窗格与下一个窗格交换位置。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b Ctrl+o&lt;/code&gt;：所有窗格向前移动一个位置，第一个窗格变成最后一个窗格。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b Alt+o&lt;/code&gt;：所有窗格向后移动一个位置，最后一个窗格变成第一个窗格。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b x&lt;/code&gt;：关闭当前窗格。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b !&lt;/code&gt;：将当前窗格拆分为一个独立窗口。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b z&lt;/code&gt;：当前窗格全屏显示，再使用一次会变回原来大小。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b Ctrl+&amp;lt;arrow key&amp;gt;&lt;/code&gt;：按箭头方向调整窗格大小。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b q&lt;/code&gt;：显示窗格编号。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;六窗口管理&#34;&gt;六、窗口管理&lt;/h2&gt;
+&lt;p&gt;除了将一个窗口划分成多个窗格，Tmux 也允许新建多个窗口。&lt;/p&gt;
+&lt;h3 id=&#34;61-新建窗口&#34;&gt;6.1 新建窗口&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tmux new-window&lt;/code&gt;命令用来创建新窗口。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tmux new-window
+
+# 新建一个指定名称的窗口
+$ tmux new-window -n &amp;lt;window-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;62-切换窗口&#34;&gt;6.2 切换窗口&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tmux select-window&lt;/code&gt;命令用来切换窗口。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 切换到指定编号的窗口
+$ tmux select-window -t &amp;lt;window-number&amp;gt;
+
+# 切换到指定名称的窗口
+$ tmux select-window -t &amp;lt;window-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;63-重命名窗口&#34;&gt;6.3 重命名窗口&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;tmux rename-window&lt;/code&gt;命令用于为当前窗口起名（或重命名）。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;$ tmux rename-window &amp;lt;new-name&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h3 id=&#34;64-窗口快捷键&#34;&gt;6.4 窗口快捷键&lt;/h3&gt;
+&lt;p&gt;下面是一些窗口操作的快捷键。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b c&lt;/code&gt;：创建一个新窗口，状态栏会显示多个窗口的信息。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b p&lt;/code&gt;：切换到上一个窗口（按照状态栏上的顺序）。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b n&lt;/code&gt;：切换到下一个窗口。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b &amp;lt;number&amp;gt;&lt;/code&gt;：切换到指定编号的窗口，其中的&lt;code&gt;&amp;lt;number&amp;gt;&lt;/code&gt;是状态栏上的窗口编号。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b w&lt;/code&gt;：从列表中选择窗口。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;Ctrl+b ,&lt;/code&gt;：窗口重命名。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;七其他命令&#34;&gt;七、其他命令&lt;/h2&gt;
+&lt;p&gt;下面是一些其他命令。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;# 列出所有快捷键，及其对应的 Tmux 命令
+$ tmux list-keys
+
+# 列出所有 Tmux 命令及其参数
+$ tmux list-commands
+
+# 列出当前所有 Tmux 会话的信息
+$ tmux info
+
+# 重新加载当前的 Tmux 配置
+$ tmux source-file ~/.tmux.conf
+&lt;/code&gt;&lt;/pre&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;八参考链接&#34;&gt;八、参考链接&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.hamvocke.com/blog/a-quick-and-easy-guide-to-tmux/&#34;&gt;A Quick and Easy Guide to tmux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://danielmiessler.com/study/tmux/&#34;&gt;Tactical tmux: The 10 Most Important Commands&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://linuxize.com/post/getting-started-with-tmux/&#34;&gt;Getting started with Tmux&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+- https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>ssh端口转发</title>
+        <link>https://shenyiminghfut.github.io/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/</link>
+        <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
+        
+        <guid>https://shenyiminghfut.github.io/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/</guid>
+        <description>摆人日寄 https://shenyiminghfut.github.io/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/ -&lt;p&gt;SSH 端口转发（隧道）功能强大、用途广泛，仅仅一行代码便可以将两台主机联系起来，对特定的访问请求进行代理。正确书写 SSH 命令是实现一切的基础。然而许多关于端口转发命令参数的介绍都是浅入深出：罗列名词却不加解释，给出实例却不讲如何举一反三。因而在此尝试整理一份更清晰的使用指引，不涉及原理。不足之处欢迎评论区交流。&lt;/p&gt;
+&lt;h2 id=&#34;一基本连接&#34;&gt;一　基本连接&lt;/h2&gt;
+&lt;p&gt;SSH 基本的连接命令是：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh username@hostname
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这里牵扯到了两台主机，一是执行命令、运行 SSH 客户端的主机，我们称为本地主机 A【Host A】；二是接收连接请求、运行 SSH 服务器的主机，我们称为远程主机 B【Host B】。通过密码或密钥等方式验证后，SSH 连接建立，主机 A 可以使用命令行对主机 B 实施远程控制。&lt;/p&gt;
+&lt;p&gt;以上命令中，username 是主机 B 上已登录的用户名，hostname 则是主机 B 的设备名、域名或 IP 等可以在网络（局域网或互联网）上定位的名称。&lt;/p&gt;
+&lt;p&gt;端口转发涉及的主机较多，这是引起名词混乱的原因之一。在此不深究用词问题，仅以字母代表之。如无特殊说明，SSH 连接都建立在由主机 A 到主机 B 间，SSH 命令都在主机 A 上被执行。&lt;/p&gt;
+&lt;h2 id=&#34;二本地端口转发&#34;&gt;二　本地端口转发&lt;/h2&gt;
+&lt;p&gt;顾名思义，本地端口转发是将应用【application client】对于本地主机 A 指定端口 X 的访问请求转发给主机 B，交由主机 B 对另一指定主机 C 的指定端口 Z 发起访问。命令如下：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh -L 主机A端口X:主机C:主机C端口Z username@hostname
+# 简单理解为：将对A:X的访问转变成对C:Z的访问
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;客户端在执行端口转发命令的同时，实际上也执行了基本的连接命令。多出来的部分中，「-L」旗标表示使用「本地端口转发」选项，之后是用冒号分隔开的三个需要指定的项。原理上，主机 C 可以是任何能够被主机 B 识别到的设备，也可以是主机 B 自身。&lt;/p&gt;
+&lt;p&gt;当主机 C 在其某端口提供某服务【application server】，主机 A 需要使用该服务却无法直接访问主机 C 或该端口时，如果发现有 SSH：A→B 的连接，且主机 B 能够直接访问主机 C 的该端口，本地端口转发就派上用场。&lt;/p&gt;
+&lt;p&gt;此时，访问请求在主机 A 一侧发生，可以来自于主机 A 自身，也可以是其他与 A 连接的设备。图中 Host A 或 Host B 的阴影指代主机 A 或主机 B 一侧的网络系统。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;补充说明&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;实际上 ssh 本地端口转发命令的「-L」旗标后可以填写四个参数，完整格式为：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh -L [收听接口:]收听端口:目标主机:目标端口 username@hostname
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;命令中方括号内的部分，即第一个参数可以不写；它的默认值一般是 0.0.0.0（OpenSSH 客户端配置文件「ssh_config」中「GatewayPorts」选项的值一般为「yes」），意味着 SSH 隧道会收听所有接口，接受来自任何地址的应用访问请求并进行转发。而如果在此处填写了绑定地址（bind address），SSH 隧道连接就会只处理来自绑定地址的应用请求，而对其他地址发来的请求置之不理；如同在（真实世界的）隧道入口设立哨卡，只对白名单牌号的车辆放行。例如在此处填写 127.0.0.1，即可实现只有来自主机 A 本机的应用请求才被 SSH 隧道转发的效果。&lt;/p&gt;
+&lt;p&gt;需留意，收听接口是站在主机 A 的视角上去规定允许与 A 连接的设备，解决「能够使用 SSH 端口转发的应用请求从何处来」的问题，类似防火墙的入站；收听端口则依旧是主机 A 上的那个端口 X，不能够跑到别的主机上去。&lt;/p&gt;
+&lt;p&gt;类似地，远程端口转发和动态端口转发也具有「收听接口」这一可不指明的参数，下文不再赘述。从安全或控制流量的角度，规定绑定地址是一项实用的功能。&lt;/p&gt;
+&lt;h3 id=&#34;场景&#34;&gt;场景①&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;主机 B 与主机 C 处于同一内网中，主机 B 能够与外界联系而主机 C 不能。这时不处于内网中的主机 A 如果想要访问主机 C，就可以通过 SSH 连接主机 B＋端口转发来进行。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;台式机 B 上运行着虚拟机 C，虚拟机使用虚拟机软件搭建的虚拟网络与宿主主机 B 相连接，但在主机 B 以外无法直接访问该虚拟网络。想要通过 SSH，用与台式机 B 处于同一 WiFi 下的笔记本 A 来远程控制虚拟机 C，（在 A 上）执行端口转发命令：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh -L 22022:10.0.2.15:22 desktop_user@192.168.1.11	# cmd.1-1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中，22022 号端口是随便选的一个没被占用的端口；192.168.1.11 是台式机 B 在 WiFi 中的 IP；desktop_user 是主机 B 上的用户名；10.0.2.15 是虚拟机 C 在主机 B 为其搭建的虚拟网络中的 IP；22 号端口是默认的 SSH 端口。已知 virtual_user 是虚拟机 C 上的用户名，这时在笔记本 A 上执行应用的访问请求命令：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh -p 22022 virtual_user@localhost	# cmd.1-2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;我们在笔记本 A 上以 SSH 协议访问本机（localhost）的 22022 号端口，这个请求就像通过了隧道（SSH 隧道）一样抵达台式机 B，台式机 B 则把这个请求变为对虚拟机 C 的 22 号端口的访问，并为 A 返回结果。其中，使用「-p」旗标是为了访问主机 A 的特定端口而不是 SSH 默认的 22 号端口；由于我们在主机 A 上执行命令，A 管自己叫 localhost，假如在其他主机上执行则需相应地改为主机 A 的域名或 IP 等他们对 A 的称呼。&lt;/p&gt;
+&lt;p&gt;cmd.1-2 中我们是将 SSH 当作普通应用使用的。参考 Fig.1，cmd.1-1 在 A 与 B 之间建立 SSH 隧道，此时 A 上的 SSH 客户端和 B 上的 SSH 服务器对应图中的 SSH Client 和 SSH Server；cmd.1-2 则表达应用的访问请求，此时 A 上的 SSH 客户端和 C 上的 SSH 服务器对应图中的 application client 和 application server。&lt;/p&gt;
+&lt;p&gt;以上 cmd.1-1 和 cmd.1-2 合起来实际是想（在 A 上）进行：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh -p 22 virtual_user@10.0.2.15	# cmd.1-3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当然，如果这 cmd.1-3 能被成功执行的话，就不需要端口转发了。&lt;/p&gt;
+&lt;h3 id=&#34;场景-1&#34;&gt;场景②&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;防火墙阻止了主机 A 对主机 B 一些端口的连接，但主机 B 仍有部分端口是对主机 A 开放的。这时主机 A 如果需要访问主机 B 上被防火墙阻挡的端口，就可以通过 SSH 连接主机 B＋端口转发来进行。需注意，这时所谓的主机 C 就是主机 B。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;某某云的云服务器 B 默认的防火墙设置仅开放了 22 号端口，其他入方向的访问都被屏蔽了。我们为云服务器 B 安装了桌面环境，现在想要在自己的计算机 A 上，通过 VNC 远程控制云服务器 B 的桌面。（在 A 上）执行端口转发命令：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh -L 5920:localhost:5901 cloud_user@server.example.com	# cmd.2-1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;因为 C 就是 B 自己，所以 C 的位置填 localhost；5920 随便选；5901 是云服务器 B 上 VNC 服务进程收听的端口；cloud_user 是 B 上的用户名；http://server.example.com 是 B 的域名，换成公网 IP 也行。&lt;/p&gt;
+&lt;p&gt;下面在计算机 A 上打开 RealVNC VNC Viewer（VNC 客户端），输入 VNC 服务器地址：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;localhost:20
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;20=5920−5900，这是采用 5901 到 5999 之间端口时 RealVNC 的特殊设定。开始使用优雅（或许吧）的 GUI 来操作云服务器吧！&lt;/p&gt;
+&lt;h2 id=&#34;三远程端口转发&#34;&gt;三　远程端口转发&lt;/h2&gt;
+&lt;p&gt;当主机 C 在其某端口提供某服务，主机 B 需要使用该服务却无法直接访问主机 C 或该端口时，如果发现有 SSH：A→B 的连接，且主机 A 能够直接访问主机 C 的该端口，远程端口转发就派上用场。&lt;/p&gt;
+&lt;p&gt;需注意，此时访问请求在主机 B 一侧发生，而 SSH 连接的方向却没有变化，仍是由 A 到 B 的。因此「本地与远程端口转发互为镜像」的说法并不完全准确；严格意义上的镜像，SSH 连接也要变为由 B 到 A，那时则应该是在 B 上采用本地端口转发。可以看出，采取哪种端口转发主要取决于 SSH 连接建立的方向。&lt;/p&gt;
+&lt;p&gt;与本地端口转发的流动方向相反，远程端口转发是将对于远程主机 B 指定端口 Y 的访问请求转发给主机 A，交由主机 A 对另一指定主机 C 的指定端口 Z 发起访问。命令如下：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh -R 主机B端口Y:主机C:主机C端口Z username@hostname
+# 简单理解为：将对B:Y的访问转变成对C:Z的访问
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;username@hostname 不变，因为我们仍然以从主机 A 对主机 B 发起 SSH 连接为基础；「-R」旗标表示使用「远程端口转发」选项，之后是用冒号分隔开的三个需要指定的项。原理上，主机 C 可以是任何能够被主机 A 识别到的设备，也可以是主机 A 自身。&lt;/p&gt;
+&lt;h3 id=&#34;场景-2&#34;&gt;场景③&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;主机 A 与主机 C 处于同一内网中，主机 A 能够与外界联系而主机 C 不能。这时（在主机 A 上）如果想让不处于内网中的主机 B 访问主机 C，就可以通过 SSH 连接主机 B＋端口转发来进行。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;台式机 A 上运行着虚拟机 C，虚拟机使用虚拟机软件搭建的虚拟网络与宿主主机 A 相连接，但在主机 A 以外无法直接访问该虚拟网络。想要通过 SFTP，用与台式机 A 处于同一 WiFi 下的笔记本 B 来向虚拟机 C 传输文件，（在 A 上）执行端口转发命令：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh -R 22122:10.0.2.16:22 laptop_user@192.168.1.233	# cmd.3-1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;其中，22122 号端口是随便选的一个没被占用的端口；192.168.1.233 是笔记本 B 在 WiFi 中的 IP；laptop_user 是主机 B 上的用户名；10.0.2.16 是虚拟机 C 在主机 A 为其搭建的虚拟网络中的 IP；22 号端口是默认的 SFTP 端口。已知 virtual_user 是虚拟机 C 上的用户名，这时在笔记本 B 上执行应用的访问请求命令：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sftp -P 22122 virtual_user@localhost	# cmd.3-2
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;请注意这是一条运行在 B 上的应用命令；B 上的 SFTP 客户端这时充当 Fig.2 中的 application client。此处 localhost 是主机 B 对自己的称呼。对 B 的 22122 号端口的访问被转发至 A，A 访问 C，即 10.0.2.16 的 22 号端口并将结果返回给 B。于是 B 就通过远程端口转发成功访问了 C 上的 SFTP 服务器。&lt;/p&gt;
+&lt;p&gt;以上 cmd.3-1 和 cmd.3-2 合起来实际是想（在 B 上）进行：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;sftp -P 22 virtual_user@10.0.2.15	# cmd.3-3
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;当然，这 cmd.3-3 也是不能被直接成功执行的。&lt;/p&gt;
+&lt;h3 id=&#34;场景-3&#34;&gt;场景④&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;处于内网之中的主机 A 可以访问公网，但不具有公网 IP；公网中的主机 B 无法找到 A，但为 A 开放各个端口的访问（A 可以直接连接 B，反之则不行）。这时 A 想要让 B 访问自己，就可以通过 SSH 连接主机 B＋端口转发来进行。需注意，这时所谓的主机 C 就是主机 A。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;注意：OpenSSH 服务器对于远程端口转发的设定，默认只接受远程主机 B 本机上的应用发起的请求。想要从其他连接到 B 的设备发起请求，需将「sshd_config」文件中「GatewayPorts」选项后的「no」修改为「yes」。&lt;/p&gt;
+&lt;p&gt;手头上计算机 A 运行着 http 服务，但 A 没有公网 IP，其他设备不能使用该服务。恰好云服务器 B 有公网 IP（甚至域名），便于被访问。在不将 http 服务迁移至云服务器 B 的前提下，可以使用 SSH 端口转发使其他设备通过访问 B 的方式访问 A 上的 http 服务。（在 A 上）执行端口转发命令：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh -R 80:localhost:80 cloud_user@server.example.com	# cmd.4-1
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这时 C 便是 A 自己（localhost）；80 号端口是 http 默认端口，为简便两个都用默认；cloud_user 还是 B 上的用户名；http://server.example.com 还是 B 的域名。&lt;/p&gt;
+&lt;p&gt;接下来在其他设备上打开浏览器，输入地址：&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;http://server.example.com/
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;于是大家可以通过访问 &lt;a href=&#34;http://server.example.com&#34;&gt;http://server.example.com&lt;/a&gt; 来访问本地计算机 A 提供的 http 服务了。&lt;/p&gt;
+&lt;h2 id=&#34;四动态端口转发&#34;&gt;四　动态端口转发&lt;/h2&gt;
+&lt;p&gt;动态端口转发可以把本地主机 A 上运行的 SSH 客户端转变成一个 SOCKS 代理服务器；实际上它是一种特殊的本地端口转发，或者说叫它「动态本地端口转发」更科学。这个动态，就动在这种转发不规定目标地址（主机 C）和目标端口（端口 Z），而是去读取应用发起的请求，从请求中获取目标信息。&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh -D 主机A端口X username@hostname
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;好像很强，但有一个问题：之前使用固定的端口转发时，应用的访问请求都是指向被转发的那个端口 X 的，但现在应用的访问请求必须指向目标，以指定动态端口转发的目标。可如果不指向端口 X，如何让数据走 SSH 隧道呢？这就要求我们在系统或应用（浏览器等）中设置一个使用 SOCKS5 协议、服务器为 localhost、端口为 X 的代理，利用代理使请求走端口 X。&lt;/p&gt;
+&lt;p&gt;这样应用的请求就从 X 进入隧道，抵达 B 后其中的目标信息被解析出来，B 访问目标后再将结果通过隧道返回给 A。比如在开启代理的 A 上的浏览器中访问 &lt;a href=&#34;http://zhihu.com&#34;&gt;http://zhihu.com&lt;/a&gt;，经过端口转发，相当于是 B 在帮 A 访问 &lt;a href=&#34;http://zhihu.com&#34;&gt;http://zhihu.com&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;五端口转发的停止&#34;&gt;五　端口转发的停止&lt;/h2&gt;
+&lt;p&gt;SSH 端口转发完全基于基本的 SSH 连接，因此，通过在远程终端上执行 exit 命令、暴力关闭本地终端窗口、远程主机 B 关机、本地主机 A 关机等可以切断 SSH 连接的方式，即可停止 SSH 端口转发。就是这样。&lt;/p&gt;
+- https://shenyiminghfut.github.io/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>中文文本测试</title>
+        <link>https://shenyiminghfut.github.io/posts/chinese/</link>
+        <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
+        
+        <guid>https://shenyiminghfut.github.io/posts/chinese/</guid>
+        <description>摆人日寄 https://shenyiminghfut.github.io/posts/chinese/ -&lt;p&gt;　　这样看来， 邓拓在不经意间这样说过，越是没有本领的就越加自命不凡。这不禁令我深思。 我们不得不面对一个非常尴尬的事实，那就是， 一般来说， 所谓中午吃什么，关键是中午吃什么需要如何写。 伏尔泰说过一句富有哲理的话，坚持意志伟大的事业需要始终不渝的精神。这启发了我， 那么， 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。 这样看来， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 一般来讲，我们都必须务必慎重的考虑考虑。 黑格尔说过一句富有哲理的话，只有永远躺在泥坑里的人，才不会再掉进坑里。这启发了我， 我们不得不面对一个非常尴尬的事实，那就是， 既然如何， 在这种困难的抉择下，本人思来想去，寝食难安。&lt;/p&gt;
+&lt;p&gt;　　我认为， 而这些并不是完全重要，更加重要的问题是， 了解清楚中午吃什么到底是一种怎么样的存在，是解决一切问题的关键。 中午吃什么因何而发生？ 而这些并不是完全重要，更加重要的问题是， 卢梭在不经意间这样说过，浪费时间是一桩大罪过。这启发了我， 既然如此， 从这个角度来看， 歌德在不经意间这样说过，意志坚强的人能把世界放在手中像泥块一样任意揉捏。我希望诸位也能好好地体会这句话。 我认为， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 莎士比亚在不经意间这样说过，人的一生是短的，但如果卑劣地过这一生，就太长了。带着这句话，我们还要更加慎重的审视这个问题： 带着这些问题，我们来审视一下中午吃什么。 中午吃什么因何而发生？ 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 布尔沃曾经说过，要掌握书，莫被书掌握；要为生而读，莫为读而生。这似乎解答了我的疑惑。 而这些并不是完全重要，更加重要的问题是， 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 带着这些问题，我们来审视一下中午吃什么。 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 我认为， 一般来说， 中午吃什么，到底应该如何实现。 我们不得不面对一个非常尴尬的事实，那就是， 所谓中午吃什么，关键是中午吃什么需要如何写。 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 现在，解决中午吃什么的问题，是非常非常重要的。　　我认为， 而这些并不是完全重要，更加重要的问题是， 了解清楚中午吃什么到底是一种怎么样的存在，是解决一切问题的关键。 中午吃什么因何而发生？ 而这些并不是完全重要，更加重要的问题是， 卢梭在不经意间这样说过，浪费时间是一桩大罪过。这启发了我， 既然如此， 从这个角度来看， 歌德在不经意间这样说过，意志坚强的人能把世界放在手中像泥块一样任意揉捏。我希望诸位也能好好地体会这句话。 我认为， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 莎士比亚在不经意间这样说过，人的一生是短的，但如果卑劣地过这一生，就太长了。带着这句话，我们还要更加慎重的审视这个问题： 带着这些问题，我们来审视一下中午吃什么。 中午吃什么因何而发生？ 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 布尔沃曾经说过，要掌握书，莫被书掌握；要为生而读，莫为读而生。这似乎解答了我的疑惑。 而这些并不是完全重要，更加重要的问题是， 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 带着这些问题，我们来审视一下中午吃什么。 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 我认为， 一般来说， 中午吃什么，到底应该如何实现。 我们不得不面对一个非常尴尬的事实，那就是， 所谓中午吃什么，关键是中午吃什么需要如何写。 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 现在，解决中午吃什么的问题，是非常非常重要的。&lt;/p&gt;
+&lt;p&gt;　　我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 可是，即使是这样，中午吃什么的出现仍然代表了一定的意义。 带着这些问题，我们来审视一下中午吃什么。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 我认为， 问题的关键究竟为何？ 非洲曾经提到过，最灵繁的人也看不见自己的背脊。这启发了我， 易卜生说过一句富有哲理的话，伟大的事业，需要决心，能力，组织和责任感。这似乎解答了我的疑惑。 一般来说， 在这种困难的抉择下，本人思来想去，寝食难安。 中午吃什么，到底应该如何实现。 经过上述讨论， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 中午吃什么因何而发生？
+带着这些问题，我们来审视一下中午吃什么。 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。那就是， 一般来说， 所谓中午吃什么，关键是中午吃什么需要如何写。 伏尔泰说过一句富有哲理的话，坚持意志伟大的事业需要始终不渝的精神。这启发了我， 那么， 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。 这样看来， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 一般来讲，我们都必须务必慎重的考虑考虑。 黑格尔说过一句富有哲理的话，只有永远躺在泥坑里的人，才不会再掉进坑里。这启发了我， 我们不得不面对一个非常尴尬的事实，那就是， 既然如何， 在这种困难的抉择下，本人思来想去，寝食难安。&lt;/p&gt;
+&lt;p&gt;　　我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 可是，即使是这样，中午吃什么的出现仍然代表了一定的意义。 带着这些问题，我们来审视一下中午吃什么。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 我认为， 问题的关键究竟为何？ 非洲曾经提到过，最灵繁的人也看不见自己的背脊。这启发了我， 易卜生说过一句富有哲理的话，伟大的事业，需要决心，能力，组织和责任感。这似乎解答了我的疑惑。 一般来说， 在这种困难的抉择下，本人思来想去，寝食难安。 中午吃什么，到底应该如何实现。 经过上述讨论， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 中午吃什么因何而发生？
+带着这些问题，我们来审视一下中午吃什么。 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。&lt;/p&gt;
+- https://shenyiminghfut.github.io/posts/chinese/ - This is a customized copyright.</description>
+        </item>
+    
+    
+    
+        <item>
+        <title>Git命令速查表</title>
+        <link>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <pubDate>Tue, 09 Apr 2019 10:58:08 -0400</pubDate>
+        
+        <guid>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <description>摆人日寄 https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ -&lt;h2 id=&#34;创建命令&#34;&gt;创建命令&lt;/h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git clone &amp;lt;url&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;克隆远程仓库&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/td&gt;&lt;td&gt;初始化本地 git 仓库（即创建新的本地仓库）&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&#34;本地更改&#34;&gt;本地更改&lt;/h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看当前分支状态&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看已跟踪文件的变更&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git add &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;将指定的文件添加到暂存区&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git add .&lt;/code&gt;&lt;/td&gt;&lt;td&gt;将所有有变更的文件添加到暂存区&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git commit -a&lt;/code&gt;&lt;/td&gt;&lt;td&gt;提交所有本地修改&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git commit -m &#34;xxx&#34;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把已添加至暂存区的文件执行提交，并以 xxx 作为本次提交的描述&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git commit --amend -m &#34;xxx&#34;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;修改上一次提交（请勿用该命令修改已发布的提交）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git commit -am &#34;xxx&#34;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;该命令是 &lt;code&gt;git add .&lt;/code&gt; 和 &lt;code&gt;git commit -m &#34;xxx&#34;&lt;/code&gt; 的快捷方式&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git stash&lt;/code&gt;&lt;/td&gt;&lt;td&gt;暂存当前修改，将所有置为 HEAD 状态&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git stash list&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看所有暂存列表&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git stash push&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把当前工作区的文件暂存到临时空间&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git stash pop&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把文件从临时空间中恢复到当前工作区&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&#34;提交历史&#34;&gt;提交历史&lt;/h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git log&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看提交日志&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git log -n&lt;/code&gt;&lt;/td&gt;&lt;td&gt;显示 n 行日志，n 为整数&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git log --stat&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看本地提交日志&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git show &amp;lt;commit&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看提交日志及相关变动文件&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git show HEAD&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看 HEAD 提交日志&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git show HEAD^&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看 HEAD 的上一个版本提交日志。另外，&lt;code&gt;git show HEAD^^&lt;/code&gt; 是查看上 2 个版本的提交日志；&lt;code&gt;git show HEAD^5&lt;/code&gt; 是查看上 5 个版本的提交日志&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git blame &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;对于指定文件，逐行显示提交的哈希 ID、提交者、提交日期以及修改的内容&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git whatchanged&lt;/code&gt;&lt;/td&gt;&lt;td&gt;显示提交历史，以及每次提交变更的文件&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&#34;分支和标签&#34;&gt;分支和标签&lt;/h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看本地分支&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch -r&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看远程分支&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch -a&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看所有分支（本地和远程）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch --merged&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看所有分支已合并到当前分支的分支&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch --no-merged&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看所有分支未合并到当前分支的分支&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch -m &amp;lt;new-branch&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把当前分支的名称改成 &lt;code&gt;new-branch&lt;/code&gt;；如果 &lt;code&gt;new-branch&lt;/code&gt; 已存在，将不会执行改名&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch -M &amp;lt;new-branch&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;强制把当前分支的名称改成 &lt;code&gt;new-branch&lt;/code&gt;（即使 &lt;code&gt;new-branch&lt;/code&gt; 已存在）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch -m &amp;lt;old-branch&amp;gt; &amp;lt;new-branch&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把分支 &lt;code&gt;old-branch&lt;/code&gt; 的名称改成 &lt;code&gt;new-branch&lt;/code&gt;，如果 &lt;code&gt;new-branch&lt;/code&gt; 已存在，将不会执行改名&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch -M &amp;lt;old-branch&amp;gt; &amp;lt;new-branch&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;强制把分支 &lt;code&gt;old-branch&lt;/code&gt; 的名称改成 &lt;code&gt;new-branch&lt;/code&gt;（即使 &lt;code&gt;new-branch&lt;/code&gt; 已存在）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git checkout &amp;lt;branch-name&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;切换到 &lt;code&gt;branch-name&lt;/code&gt; 分支&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch &amp;lt;new-branch&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;新建分支（也可以用 &lt;code&gt;git checkout -b &amp;lt;new-branch&amp;gt;&lt;/code&gt;）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch --track &amp;lt;new&amp;gt; &amp;lt;remote&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;基于远程分支创建一个新分支，同 &lt;code&gt;git checkout --track &amp;lt;remote/branch&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git branch -d &amp;lt;branch-name&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;删除本地分支&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git tag&lt;/code&gt;&lt;/td&gt;&lt;td&gt;列出所有本地标签&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git tag &amp;lt;tag-name&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;基于最新的提交创建标签&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git tag -d &amp;lt;tag-name&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;删除标签&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&#34;删除命令&#34;&gt;删除命令&lt;/h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git rm &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;删除文件（将从磁盘中删除文件）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git rm -r &amp;lt;directory&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;递归删除指定目录下的文件&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git rm --cached &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;停止跟踪文件，不会从磁盘中删除&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&#34;合并和衍合&#34;&gt;合并和衍合&lt;/h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git merge &amp;lt;branch&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;合并指定分支到当前分支，保留两个&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git rebase &amp;lt;branch&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;合并指定分支到当前分支，只保留一个&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git rebase --abort&lt;/code&gt;&lt;/td&gt;&lt;td&gt;终止 rebase 操作，即回到执行 rebase 之前的状态&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git rebase --continue&lt;/code&gt;&lt;/td&gt;&lt;td&gt;解决冲突后继续执行 rebase&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git mergetool&lt;/code&gt;&lt;/td&gt;&lt;td&gt;使用配置文件指定的 mergetool 解决冲突&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git add &amp;lt;resolved-file&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;code&gt;git rm &amp;lt;resolved-file&amp;gt;&lt;/code&gt;&lt;br&gt;&lt;/td&gt;&lt;td&gt;使用编辑器手动解决文件冲突，并在冲突解决后，把文件标记为 resolved&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&#34;撤销命令&#34;&gt;撤销命令&lt;/h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git reset --hard HEAD&lt;/code&gt;&lt;/td&gt;&lt;td&gt;将当前版本重置为 HEAD（用于 merge 失败的时候）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git reset &amp;lt;commit&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;将当前版本重置为某一个提交状态，代码不变&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git reset --hard &amp;lt;commit&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;强制将当前版本重置为某一个提交状态，并丢弃那个状态之后的所有修改（请谨慎使用该命令）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git reset --merge &amp;lt;commit&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;将当前版本重置为某一个提交状态，并保留版本库中不同的文件&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git reset --keep &amp;lt;commit&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;将当前版本重置为某一个提交状态，并保留未提交的本地修改&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git revert &amp;lt;commit&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;撤销提交&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git restore &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;丢弃指定文件的修改信息，即恢复到文件修改前的状态&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git checkout -- &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;同 &lt;code&gt;git restore &amp;lt;file&amp;gt;&lt;/code&gt; 命令&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git checkout HEAD &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;对于指定文件，丢弃该文件的本地修改信息&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git clean&lt;/code&gt;&lt;/td&gt;&lt;td&gt;清除工作目录中未跟踪的文件&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git clean -n&lt;/code&gt;&lt;/td&gt;&lt;td&gt;列出哪些文件将从工作目录中删除&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&#34;配置命令&#34;&gt;配置命令&lt;/h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --list&lt;/code&gt;&lt;/td&gt;&lt;td&gt;列出当前 Git 配置&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --global user.name &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把参数 &lt;code&gt;name&lt;/code&gt; 设置为当前用户使用的提交者的姓名；如果未指定 &lt;code&gt;name&lt;/code&gt; 参数，则显示当前用户使用的提交者姓名&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --global user.email &amp;lt;email&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把参数 &lt;code&gt;email&lt;/code&gt; 设置为当前用户使用的提交者的邮箱；如果未指定 &lt;code&gt;email&lt;/code&gt; 参数，则显示当前用户使用的提交者邮箱&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --global alias.&amp;lt;alias&amp;gt; &amp;lt;command&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;为 Git 命令创建全局的别名。比如，执行 &lt;code&gt;alias.glog log --graph --oneline --decorate&lt;/code&gt; 命令后，&lt;code&gt;git glog&lt;/code&gt; 就相当于 &lt;code&gt;git log --graph --oneline --decorate&lt;/code&gt;。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --system core.editor &amp;lt;editor&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;对于本机的所有用户，设置命令使用的编辑器（比如 &lt;code&gt;vim&lt;/code&gt;）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --global --edit&lt;/code&gt;&lt;/td&gt;&lt;td&gt;在编辑器中打开全局配置文件（用于手动修改）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --global color.ui auto&lt;/code&gt;&lt;/td&gt;&lt;td&gt;使用不同的颜色渲染 Git 命令的输出结果&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+&lt;h2 id=&#34;其他命令&#34;&gt;其他命令&lt;/h2&gt;
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git var -l&lt;/code&gt;&lt;/td&gt;&lt;td&gt;列出 Git 环境变量&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git help &amp;lt;command&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;显示指定命令的帮助（将呼出该命令的 man 文件）&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
+- https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ - This is a customized copyright.</description>
+        </item>
+    
+    
+  </channel>
+</rss> 

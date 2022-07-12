@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html><head>
+<title>命令行Clash指南</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="命令行Clash指南" />
+<meta property="og:description" content="记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shenyiminghfut.github.io/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/" /><meta property="og:image" content="https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-29T10:58:08-04:00" />
+<meta property="article:modified_time" content="2021-03-29T10:58:08-04:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg"/>
+
+<meta name="twitter:title" content="命令行Clash指南"/>
+<meta name="twitter:description" content="记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。"/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+<link rel="icon" href="https://shenyiminghfut.github.io/static/images/bird.jpg">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/journal.min.4911cdba6f1b7c77b7747bb468ef07239bca7b881cf2045f88da04c5f72e36bf.css" integrity="sha256-SRHNum8bfHe3dHu0aO8HI5vKe4gc8gRfiNoExfcuNr8=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/dark-mode.min.241cce2dfc0c6e4b9a64f3bb73e005e4a357d3313342d2805681faf6a78d679b.css" integrity="sha256-JBzOLfwMbkuaZPO7c&#43;AF5KNX0zEzQtKAVoH69qeNZ5s=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '87b383f0bc03d41e07fe',
+  clientSecret: 'ebd8d74511e37d50021fa2decc3d65f19cbe5445',
+  repo: 'BlogComment',
+  owner: 'ShenYimingHFUT',
+  admin: ['ShenYimingHFUT'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://shenyiminghfut.github.io">
+    
+        <div class="nav-title">
+            摆人日寄
+        </div>
+        
+        <div class="nav-subtitle">
+            啊对对对。
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://shenyiminghfut.github.io">
+            摆人日寄
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://shenyiminghfut.github.io">
+        <div class="single-column-header-title">摆人日寄</div>
+        
+        <div class="single-column-header-subtitle">啊对对对。</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg')"
+                    
+                
+            >
+                <div class="post-title">
+                    命令行Clash指南
+                    
+                    <div class="post-subtitle">
+                        记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-03-29 10:58
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/story">Story</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/scene">scene</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            4 min
+                            
+                            34 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <blockquote>
+<p>去年年中的时候切换到 macOS，一直用 ClashX，时隔半年又迁移回了 Linux，发现原先使用的 V2rayL 虽然能用，但是有些简陋，并且不支持分流，并且如果一个地址失效了，还需要手动地进行切换。</p>
+</blockquote>
+<p>去年年中的时候切换到 macOS，一直用 ClashX，时隔半年又迁移回了 Linux，发现原先使用的 V2rayL 虽然能用，但是有些简陋，并且不支持分流，并且如果一个地址失效了，还需要手动地进行切换。所以看到 Linux 的 Clash 可以自动进行流量切换的时候，就试一下。</p>
+<p>Clash 是 Go 语言实现的，跨平台代理工具，支持 Shadowsocks/v2ray，支持规则分流等等。</p>
+<p>可以在官方页面<a href="https://github.com/Dreamacro/clash/releases">下载</a>。</p>
+<p>Linux 下载对应的 <code>linux-amd64</code> 即可。</p>
+<p>在用了很长一段时间的 Clash 命令行之后，我发现 <a href="https://github.com/Fndroid/clash_for_windows_pkg/releases">Clash For Windows</a> 这个应用也能够在 Linux 下使用。所以最近就切换到了这个应用上。</p>
+<p>另外欢迎订阅使用 <a href="https://board.gtk.pw/">EV Proxy</a> 注册之后一键订阅即可使用。</p>
+<p>下载对应的二进制，比如默认放到 <code>~/Downloads</code> 目录，在终端进入该目录。</p>
+<pre tabindex="0"><code>gunzip clash-linux-amd64-v0.18.0.gz
+sudo mv clash-linux-amd64-v1.4.2 /usr/local/bin/clash
+sudo chmod +x /usr/local/bin/clash
+./clash
+</code></pre><p>clash 启动后会在 <code>~/.config/clash</code> 目录生成配置文件。</p>
+<pre tabindex="0"><code>ls -al ~/.config/clash
+.rw-r--r--   10 einverne 23 Mar 19:30 config.yaml
+.rw-r--r-- 4.0M einverne 23 Mar 19:30 Country.mmdb
+</code></pre><p>比如说对于我使用的 <a href="https://portal.wallless.xyz/#/register?code=nlyM4OSi">Wallless 代理</a>，在后台复制地址之后，在网址的后面增加 <code>&amp;flag=clash</code> 获取 clash 的配置文件，右击网页 Save as，选择仅网页内容，下载到本地， <code>sub.html</code>。</p>
+<p>另外还有一个代理，有兴趣的可以<a href="https://board.gtk.pw/">试用一下</a>。</p>
+<p>然后将查看 <code>sub.html</code> 内容，应该是一个 yaml 格式的文件。将此格式的文件替换默认的配置。</p>
+<pre tabindex="0"><code>cat ~/Downloads/sub.html &gt; ~/.config/clash/config.yaml
+</code></pre><p>然后重新执行 <code>/usr/local/bin/clash</code>。</p>
+<p>此时检查一下配置中的 socks 端口，我一般用本地的 1080，修改一下:</p>
+<p>然后再运行。去浏览器中，访问 youtube.com 检查一下。</p>
+<p>如果正常访问即完成了配置。</p>
+<p>在配置开机启动之前，将配置文件移动到 <code>/etc</code> 目录：</p>
+<pre tabindex="0"><code>socks-port: 1080
+</code></pre><p>以后修改配置都记住修改 <code>/etc/clash</code> 目录下的这个配置文件。</p>
+<p>然后使用 <code>vi</code> 增加 systemd 配置 <code>sudo vi /systemd/system/clash.service</code> 放入如下内容：</p>
+<pre tabindex="0"><code>sudo mv ~/.config/clash /etc
+</code></pre><p>启用 clash service:</p>
+<pre tabindex="0"><code>[Unit]
+Description=Clash Daemon
+
+[Service]
+ExecStart=/usr/local/bin/clash -d /etc/clash/
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><p>手动启动 clash.service:</p>
+<pre tabindex="0"><code>sudo systemctl enable clash.service
+</code></pre><p>可以使用 systemd 提供的 <code>disable</code>, <code>stop</code> 等等命令来管理。</p>
+<p>如果要查看 Clash service 的日志可以使用：</p>
+<pre tabindex="0"><code>sudo systemctl start clash.service
+</code></pre><p>如果想要将日志单独记录到文件，可以使用 systemd 的 <code>StandardOutput</code> 和 <code>StandardError</code> 将日志定向到文件中。这部分可以参考 <a href="https://www.freedesktop.org/software/systemd/man/systemd.exec.html#StandardOutput=">systemd 的文档</a></p>
+<pre tabindex="0"><code>journalctl -e -u clash.service
+</code></pre><p>Clash 提供了默认的 9090 端口作为远端管理端口，在配置中可以看到：</p>
+<pre tabindex="0"><code># Works only in systemd v240 and newer!
+StandardOutput=append:/var/log/clash/log.log
+StandardError=append:/var/log/clash/error.log
+</code></pre><p>这样的配置。</p>
+<p>可以使用 Clash 远程管理的页面进行管理: <a href="http://clash.razord.top/#/proxies">http://clash.razord.top/#/proxies</a></p>
+<p>这个页面要求提供，Host,Port,Secret 三个输入：</p>
+<ul>
+<li>Host: 127.0.0.1</li>
+<li>Port: 9090</li>
+<li>Secret: 配置文件配置的 secret</li>
+</ul>
+<p>其中 Secret 是在配置文件中通过：</p>
+<p>进行配置的。</p>
+<ul>
+<li><a href="https://einverne.github.io/post/2017/02/terminal-sock5-proxy.html">在终端下使用 socks 代理</a></li>
+<li>你还可以在终端下对代理进行<a href="https://einverne.github.io/post/2020/04/how-to-speed-test-a-proxy-socks-or-http-proxy.html">测速</a></li>
+</ul>
+<p>感谢 BobMaster 在评论里面提供其他解决方式，有兴趣可以尝试 <a href="https://github.com/v2rayA/v2rayA">v2rayA</a>， 或 <a href="https://github.com/Qv2ray/Qv2ray">Qv2ray</a></p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">上次修改於 2021-03-29</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://shenyiminghfut.github.io/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8-/">
+			下回<br> busybox
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://shenyiminghfut.github.io/posts/tg%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+			上回<br>Tg使用指南
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+ 
+<div id="gitalk-container"></div>
+    
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>
