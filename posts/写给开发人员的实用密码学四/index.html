@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html><head>
+<title>写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="本文主要翻译自 [Practical-Cryptography-for-Developers-Book](https://github.com/nakov/Practical-Cryptography-for-Developers-Book)">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG" />
+<meta property="og:description" content="本文主要翻译自 [Practical-Cryptography-for-Developers-Book](https://github.com/nakov/Practical-Cryptography-for-Developers-Book)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-11-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-11-04T00:00:00+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG"/>
+<meta name="twitter:description" content="本文主要翻译自 [Practical-Cryptography-for-Developers-Book](https://github.com/nakov/Practical-Cryptography-for-Developers-Book)"/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+<link rel="icon" href="https://shenyiminghfut.github.io/static/images/bird.jpg">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/journal.min.4911cdba6f1b7c77b7747bb468ef07239bca7b881cf2045f88da04c5f72e36bf.css" integrity="sha256-SRHNum8bfHe3dHu0aO8HI5vKe4gc8gRfiNoExfcuNr8=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/dark-mode.min.241cce2dfc0c6e4b9a64f3bb73e005e4a357d3313342d2805681faf6a78d679b.css" integrity="sha256-JBzOLfwMbkuaZPO7c&#43;AF5KNX0zEzQtKAVoH69qeNZ5s=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '87b383f0bc03d41e07fe',
+  clientSecret: 'ebd8d74511e37d50021fa2decc3d65f19cbe5445',
+  repo: 'BlogComment',
+  owner: 'ShenYimingHFUT',
+  admin: ['ShenYimingHFUT'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://shenyiminghfut.github.io">
+    
+        <div class="nav-title">
+            摆人日寄
+        </div>
+        
+        <div class="nav-subtitle">
+            啊对对对。
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://shenyiminghfut.github.io">
+            摆人日寄
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://shenyiminghfut.github.io">
+        <div class="single-column-header-title">摆人日寄</div>
+        
+        <div class="single-column-header-subtitle">啊对对对。</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://shenyiminghfut.github.io/images/key.webp')"
+                    
+                
+            >
+                <div class="post-title">
+                    写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG
+                    
+                    <div class="post-subtitle">
+                        本文主要翻译自 [Practical-Cryptography-for-Developers-Book](https://github.com/nakov/Practical-Cryptography-for-Developers-Book)
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2021-11-04 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/test">Test</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/linux">Linux</a>
+                                &nbsp;
+                            
+                                <a href="/tags/tool">tool</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            9 min
+                            
+                            44 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <blockquote>
+<p>本文主要翻译自 <a href="https://github.com/nakov/Practical-Cryptography-for-Developers-Book">Practical-Cryptography-for-Developers-Book</a></p>
+</blockquote>
+<p>《写给开发人员的实用密码学》系列文章目录：</p>
+<ul>
+<li><a href="/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/">写给开发人员的实用密码学（一）—— 概览</a></li>
+<li><a href="/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%8C/">写给开发人员的实用密码学（二）—— 哈希函数</a></li>
+<li><a href="/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/">写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF</a></li>
+<li><a href="/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/">写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG</a></li>
+<li><a href="/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/">写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS</a></li>
+<li><a href="/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AD/">写给开发人员的实用密码学（六）—— 对称密钥加密算法</a></li>
+<li><a href="/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%83/">写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC</a></li>
+<li><a href="/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AB/">写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议</a></li>
+<li>待续</li>
+</ul>
+<p>在密码学中，随机性（熵）扮演了一个非常重要的角色，许多密码学算法都要求使用一个不可预测的随机数，只有在生成的随机数不可预测时，这些算法才能保证其安全性。</p>
+<p>比如 MAC 算法中的 key 就必须是一个不可预测的值，在这个条件下 MAC 值才是不可伪造的。</p>
+<p>另外许多的高性能算法如快速排序、布隆过滤器、蒙特卡洛方法等，都依赖于随机性，如果随机性可以被预测，或者能够找到特定的输入值使这些算法变得特别慢，那黑客就能借此对服务进行 DDoS 攻击，以很小的成本达到让服务不可用的目的。</p>
+<p>Pseudo-Random Number Generators(PRNG) 是一种数字序列的生成算法，它生成出的数字序列的统计学属性跟真正的随机数序列非常相似，但它生成的伪随机数序列并不是真正的随机数序列！因为该序列完全依赖于提供给 PRNG 的初始值，这个值被称为 PRNG 的种子。</p>
+<p>算法流程如下，算法的每次迭代都生成出一个新的伪随机数：</p>
+<p><img src="data:image/webp;base64,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" alt=""></p>
+<p>如果输入的初始种子是相同的，PRNG 总是会生成出相同的伪随机数序列，因此 PRNG 也被称为 Deterministic Random Bit Generator (DRBG)，即确定性随机比特生成器。</p>
+<p>实际上目前也有所谓的「硬件随机数生成器 TRNG」能生成出真正的随机数，但是因为 PRNG 的高速、低成本、可复现等原因，它仍然被大量使用在现代软件开发中。</p>
+<p>PRNG 可用于从一个很小的初始随机性（熵）生成出大量的伪随机性，这被称做「拉伸（Stretching）」。</p>
+<p>PRNG 被广泛应用在前面提到的各种依赖随机性的高性能算法以及密码学算法中。</p>
+<p>我们在上一篇文章的「MAC 的应用」一节中提到，一个最简单的 PRNG 可以直接使用 MAC 算法实现，用 Python 实现如下：</p>
+<pre tabindex="0"><code>import hmac, hashlib
+def random_number_generator(seed: bytes, max_num: int):
+  state = seed
+  counter = 0
+
+  while True:
+    state = hmac.new(state, bytes(counter), hashlib.sha1).digest()    
+    counter += 1
+
+    # 这里取余实际上是压缩了信息，某种程度上说，这可以保证内部的真实状态 state 不被逆向出来
+    yield int.from_bytes(state, byteorder=&#34;big&#34;) % max_num
+
+# 测试下，计算 20 个 100 以内的随机数
+gen = random_number_generator(b&#34;abc&#34;, 100)
+print([next(gen) for _ in range(20)])
+# =&gt; [71, 41, 52, 18, 51, 14, 58, 30, 70, 20, 59, 93, 3, 10, 81, 63, 48, 67, 18, 36]
+</code></pre><p>如果初始的 PRNG 种子是完全不可预测的，PRNG 就能保证整个随机序列都不可预测。</p>
+<p>因此在 PRNG 中，生成出一个足够随机的种子，就变得非常重要了。</p>
+<p>一个最简单的方法，就是收集随机性。对于桌面电脑，随机性可以从鼠标的移动点击、按键事件、网络状况等随机输入来收集。这个事情是由操作系统在内核中处理的，内核会直接为应用程序提供随机数获取的 API，比如 Linux/MacOSX 的 <code>/dev/random</code> 虚拟设备。</p>
+<p>如果这个熵的生成有漏洞，就很可能造成严重的问题，一个现实事件就是<a href="https://bitcoinmagazine.com/technical/critical-vulnerability-found-in-android-wallets-1376273924">安卓的 <code>java.security.SecureRandom</code> 漏洞导致安卓用户的比特币钱包失窃</a>。</p>
+<p>Python 的 <code>random</code> 库默认会使用当前时间作为初始 seed，这显然是不够安全的——黑客如果知道你运行程序的大概时间，就能通过遍历的方式暴力破解出你的随机数来！</p>
+<p>Cryptography Secure Random Number Generators(CSPRNG) 是一种适用于密码学领域的 PRNG，一个 PRNG 如果能够具备如下两个条件，它就是一个 CSPRNG:</p>
+<ul>
+<li>能通过「下一比特测试 next-bit test」：即使有人获知了该 PRNG 的 k 位，他也无法使用合理的资源预测第 k+1 位的值</li>
+<li>如果攻击者猜出了 PRNG 的内部状态或该状态因某种原因而泄漏，攻击者也无法重建出内部状态泄漏之前生成的所有随机数</li>
+</ul>
+<p>有许多的设计都被证明可以用于构造一个 CSPRNG:</p>
+<ul>
+<li>基于计数器 (CTR) 模式下的<strong>安全<a href="https://zh.wikipedia.org/wiki/%E5%88%86%E7%BB%84%E5%AF%86%E7%A0%81">分组密码</a></strong>、<strong><a href="https://zh.wikipedia.org/wiki/%E6%B5%81%E5%AF%86%E7%A0%81">流密码</a><strong>或</strong>安全散列函数</strong>的 CSPRNG</li>
+<li>基于数论设计的 CSPRNG，它依靠整数分解问题（IFP）、离散对数问题（DLP）或椭圆曲线离散对数问题（ECDLP）的高难度来确保安全性</li>
+<li>CSPRNG 基于加密安全随机性的特殊设计，例如 Yarrow algorithm 和 Fortuna，这俩分别被用于 MacOS 和 FreeBSD.</li>
+</ul>
+<p>大多数的 CSPRNG 结合使用来自 OS 的熵与高质量的 PRNG，并且一旦系统生成了新的熵（这可能来自用户输入、磁盘 IO、系统中断、或者硬件 RNG），CSPRNG 会立即使用新的熵来作为 PRNG 新的种子。 这种不断重置 PRNG 种子的行为，使随机数变得非常难以预测。</p>
+<ul>
+<li>加密程序：因为 OS 中熵的收集很缓慢，等待收集到足够多的熵再进行运算是不切实际的，因此很多的加密程序都使用 CSPRNG 来从系统的初始熵生成出足够多的伪随机熵。</li>
+<li>其他需要安全随机数的场景 emmmm</li>
+</ul>
+<p>多数系统都内置了 CSPRNG 算法并提供了内核 API，Unix-like 系统都通过如下两个虚拟设备提供 CSPRNG:</p>
+<ul>
+<li><code>/dev/random</code>（受限阻塞随机生成器）: 从这个设备中读取到的是内核熵池中已经收集好的熵，如果熵池空了，此设备会一直阻塞，直到收集到新的环境噪声。</li>
+<li><code>/dev/urandom</code>（不受限非阻塞随机生成器）: 它可能会返回内核熵池中的熵，也可能返回使用「之前收集的熵 + CSPRNG」计算出的安全伪随机数。它不会阻塞。</li>
+</ul>
+<p>编程语言的 CSPRNG 接口或库如下：</p>
+<ul>
+<li>Java: <code>java.security.SecureRandom</code></li>
+<li>Python: <code>secrets</code> 库或者 <code>os.urandom()</code></li>
+<li>C#: <code>System.Security.Cryptography.RandomNumberGenerator.Create()</code></li>
+<li>JavaScript: 客户端可使用 <code>window.crypto.getRandomValues(Uint8Array)</code>，服务端可使用 <code>crypto.randomBytes()</code></li>
+</ul>
+<p>比如使用 Python 实现一个简单但足够安全的随机密码生成器：</p>
+<pre tabindex="0"><code>import secrets
+import string
+
+chars = string.digits + &#34;your_custom_-content&#34; +  string.ascii_letters
+def random_string(length: int):
+    &#34;&#34;&#34;生成随机字符串&#34;&#34;&#34;
+    # 注意，这里不应该使用 random 库！而应该使用 secrets
+    code = &#34;&#34;.join(secrets.choice(chars) for _ in range(length))
+    return code
+
+random_string(24)
+# =&gt; _rebBfgYs4OtkrPbYtnGmc4n
+</code></pre><ul>
+<li><a href="https://github.com/nakov/Practical-Cryptography-for-Developers-Book">Practical-Cryptography-for-Developers-Book</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">上次修改於 2021-11-04</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/">
+			下回<br>写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/">
+			上回<br>写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+ 
+<div id="gitalk-container"></div>
+    
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

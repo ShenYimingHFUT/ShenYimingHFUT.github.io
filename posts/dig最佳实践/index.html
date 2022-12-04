@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html><head>
+<title>Dig最佳实践</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="dig 是个DNS 查找工具，也是跟CDN 打交道时最常用的指令之一。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="Dig最佳实践" />
+<meta property="og:description" content="dig 是个DNS 查找工具，也是跟CDN 打交道时最常用的指令之一。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-22T11:25:05-04:00" />
+<meta property="article:modified_time" content="2022-11-22T11:25:05-04:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dig最佳实践"/>
+<meta name="twitter:description" content="dig 是个DNS 查找工具，也是跟CDN 打交道时最常用的指令之一。"/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+<link rel="icon" href="https://shenyiminghfut.github.io/static/images/bird.jpg">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/journal.min.4911cdba6f1b7c77b7747bb468ef07239bca7b881cf2045f88da04c5f72e36bf.css" integrity="sha256-SRHNum8bfHe3dHu0aO8HI5vKe4gc8gRfiNoExfcuNr8=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/dark-mode.min.241cce2dfc0c6e4b9a64f3bb73e005e4a357d3313342d2805681faf6a78d679b.css" integrity="sha256-JBzOLfwMbkuaZPO7c&#43;AF5KNX0zEzQtKAVoH69qeNZ5s=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '87b383f0bc03d41e07fe',
+  clientSecret: 'ebd8d74511e37d50021fa2decc3d65f19cbe5445',
+  repo: 'BlogComment',
+  owner: 'ShenYimingHFUT',
+  admin: ['ShenYimingHFUT'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://shenyiminghfut.github.io">
+    
+        <div class="nav-title">
+            摆人日寄
+        </div>
+        
+        <div class="nav-subtitle">
+            啊对对对。
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#nameserver" onclick="onNavClick(`#nameserver-nav`)" id="nameserver-nav">
+									@nameserver
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#any" onclick="onNavClick(`#any-nav`)" id="any-nav">
+									ANY
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#trace" onclick="onNavClick(`#trace-nav`)" id="trace-nav">
+									&#43;trace
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#whatsmydns" onclick="onNavClick(`#whatsmydns-nav`)" id="whatsmydns-nav">
+									whatsmydns
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bd%91%e7%bb%9c%e7%89%88%e7%9a%84-dig" onclick="onNavClick(`#网络版的-dig-nav`)" id="网络版的-dig-nav">
+									网络版的 Dig
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#nameserver" onclick="onNavClick(`#nameserver-nav`)" id="nameserver-nav">
+									@nameserver
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#any" onclick="onNavClick(`#any-nav`)" id="any-nav">
+									ANY
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#trace" onclick="onNavClick(`#trace-nav`)" id="trace-nav">
+									&#43;trace
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#whatsmydns" onclick="onNavClick(`#whatsmydns-nav`)" id="whatsmydns-nav">
+									whatsmydns
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e7%bd%91%e7%bb%9c%e7%89%88%e7%9a%84-dig" onclick="onNavClick(`#网络版的-dig-nav`)" id="网络版的-dig-nav">
+									网络版的 Dig
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://shenyiminghfut.github.io">
+            摆人日寄
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://shenyiminghfut.github.io">
+        <div class="single-column-header-title">摆人日寄</div>
+        
+        <div class="single-column-header-subtitle">啊对对对。</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://shenyiminghfut.github.io/images/dig.webp')"
+                    
+                
+            >
+                <div class="post-title">
+                    Dig最佳实践
+                    
+                    <div class="post-subtitle">
+                        dig 是个DNS 查找工具，也是跟CDN 打交道时最常用的指令之一。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-11-22 11:25
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/test">Test</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/linux">Linux</a>
+                                &nbsp;
+                            
+                                <a href="/tags/tool">tool</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            5 min
+                            
+                            27 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <blockquote>
+<p>dig — DNS lookup utility</p>
+</blockquote>
+<p>man page 开宗明义的说，dig 是个DNS 查找工具，也是跟CDN 打交道时最常用的指令之一。</p>
+<p>白话的说明就是：用来查某个网址会连到哪台主机。</p>
+<p>dig 最基本的使用方式是</p>
+<pre tabindex="0"><code>dig example.com
+</code></pre><p>加上一点点的参数，则是</p>
+<pre tabindex="0"><code>dig [@server] [name] [type]
+</code></pre><p>name 代表你想查询的domain； type 代表record 类型，包含了A, AAAA, CNAME, ANY … 等，预设为A ；@server 则是指你想query 的DNS 服务器。</p>
+<p>有趣的是，后面参数似乎是可以互换位置的，例如说</p>
+<pre tabindex="0"><code>dig @168.95.1.1 any www.apple.com
+dig @168.95.1.1 www.apple.com any
+dig www.apple.com @168.95.1.1 any
+</code></pre><p>以上三种输入会得到一样的结果，所以可能会在不同的用户或是说明页上看到不同的顺序。</p>
+<p>以 <a href="http://www.google.com/">www.google.com</a> 为例，从我所在的地方得到这个结果(省去部份输出，以下皆同)：<code>dig [www.google.com](http://www.google.com/)</code></p>
+<pre tabindex="0"><code>; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; www.google.com
+;; QUESTION SECTION:
+;www.google.com. IN A
+;; ANSWER SECTION:
+www.google.com. 208 IN A 172.217.160.100
+;; SERVER: 1.1.1.1#53(1.1.1.1)
+</code></pre><p>其中看到 <code>[www.google.com.](http://www.google.com./) 208 IN A 172.217.160.100</code> 这是一笔A record，代表DNS 解析出来的主机，代表你在浏览器输入 <a href="http://www.apple.com/">www.google.com</a>  ，DNS 会告诉你把request 送到该主机。</p>
+<p>而 <code>SERVER: 1.1.1.1#53(1.1.1.1)</code> 则是我使用的Public DNS ，如果你设定为google 或中华电信，那就会是8.8.8.8 之类的。53 Port 是DNS 预设的Port 。(突然就知道AWS Route 53 这样命名的原因了！)</p>
+<h2 id="nameserver">@nameserver</h2>
+<p>有时候因为各式各样的原因，你希望把query 送给不同的DNS ，请加上这个参数。例如说</p>
+<pre tabindex="0"><code>dig www.apple.com @1.1.1.1
+</code></pre><h2 id="any">ANY</h2>
+<p>一种特殊的record type，ANY 会列出所有找到的record。</p>
+<p>… 本来应该是这样的，但是我在整理这篇笔记的时候却发现，希望拿到 anything 的时候, dig 却给你 nothing。</p>
+<p>看看 <code>dig [www.apple.com](http://www.apple.com/)</code> 的输出：</p>
+<pre tabindex="0"><code>; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; www.apple.com
+;; ANSWER SECTION:
+www.apple.com.  1794 IN CNAME www.apple.com.edgekey.net.
+www.apple.com.edgekey.net. 21594 IN CNAME www.apple.com.edgekey.net.globalredir.akadns.net.
+www.apple.com.edgekey.net.globalredir.akadns.net. 3594 IN CNAME e6858.dscx.akamaiedge.net.
+e6858.dscx.akamaiedge.net. 14 IN A 23.48.141.18
+</code></pre><p>这代表 <a href="http://www.apple.com/">www.apple.com</a> 设置了 cname ，一路找到最后拿到 A record 是 23.48.141.18 。</p>
+<p>再看看加上 ANY <code>dig [www.apple.com](http://www.apple.com/) ANY</code> 的结果：</p>
+<pre tabindex="0"><code>; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; 
+www.apple.com any
+;; QUESTION SECTION:
+;www.apple.com.   IN ANY
+</code></pre><p>蛤？不止没有结果，连 ANSWER SECTION 都不见了？</p>
+<p>后来找到 <a href="https://blog.cloudflare.com/rfc8482-saying-goodbye-to-any/">Cloudflare 的说明</a>，ANY 已经在 RFC8482 中正式弃用，而且对于弃用后的 response 没有明确的标准，也就是说，会根据 DNS 有所不同</p>
+<p>例如说，如果用中华电信的 DNS 会得到不太一样的结果：</p>
+<pre tabindex="0"><code>; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; www.apple.com ANY @168.95.1.1
+...
+;; ANSWER SECTION:
+www.apple.com.  1758 IN CNAME www.apple.com.edgekey.net.
+</code></pre><p>大部份关于 dig 的说明都会提到这个 ANY ，拿来使用也不会拿到很明显的错误消息，但因为结果有很高的不确定性，使用上必需特别注意。</p>
+<h2 id="trace">+trace</h2>
+<p>列出 Query 一路过关斩将的历程，我们还是用 <a href="http://www.apple.co%2C/">www.apple.co</a>m 来看看：</p>
+<pre tabindex="0"><code>dig www.apple.com +trace
+; &lt;&lt;&gt;&gt; DiG 9.10.6 &lt;&lt;&gt;&gt; www.apple.com A +trace
+...
+.   510971 IN NS f.root-servers.net.
+.   510971 IN NS g.root-servers.net.
+.   510971 IN NS h.root-servers.net.
+...
+;; Received 525 bytes from 1.1.1.1#53(1.1.1.1) in 10 ms
+...
+com.   172800 IN NS c.gtld-servers.net.
+...
+;; Received 1173 bytes from 192.5.5.241#53(f.root-servers.net) in 11 ms
+apple.com.  172800 IN NS a.ns.apple.com.
+apple.com.  172800 IN NS b.ns.apple.com.
+;; Received 778 bytes from 192.35.51.30#53(f.gtld-servers.net) in 45 ms
+www.apple.com.  1800 IN CNAME www.apple.com.edgekey.net.
+;; Received 81 bytes from 204.26.57.1#53(d.ns.apple.com) in 88 ms
+</code></pre><p>(这次的输出很长，删掉满多的)，但仍可以看到一路转发的过程：</p>
+<p>从 root (.) 的 13 台 server，查到 .com. gTLD ， 再从 gTLD 的 server 查到 apple.com. 最后拿到 <code>[www.apple.com.edgekey.net.](http://www.apple.com.edgekey.net./)</code> 详细的 Name Server 架构可以参考<a href="http://linux.vbird.org/linux_server/0350dns.php#DNS_search">鸟哥的文章</a>。</p>
+<hr>
+<p>一点个人开发配着用的小手段 &amp; 好用工具</p>
+<p>配合 watch 使用 <code>watch -n 10 dig [www.apple.com](http://www.apple.com/)</code></p>
+<p>科技始终来自于惰性。DNS 生效常常需要一定的时间，每十秒自动挖一次就不用三不五时自己看了。</p>
+<h2 id="whatsmydns">whatsmydns</h2>
+<p>网络服务，可以快速的从世界各处查 DNS 解析</p>
+<p><a href="https://www.whatsmydns.net/">DNS Checker</a></p>
+<h2 id="网络版的-dig">网络版的 Dig</h2>
+<p>让业务之类的非技术人员，电脑没有装 dig 又临时需要用到的人使用</p>
+<p><a href="https://toolbox.googleapps.com/apps/dig/">https://toolbox.googleapps.com/apps/dig/</a></p>
+<p><a href="https://blog.cloudflare.com/rfc8482-saying-goodbye-to-any/">RFC8482 – Saying goodbye to ANYLadies and gentlemen, I would like you to welcome the new shiny RFC8482, which effectively deprecates DNS ANY query…blog.cloudflare.com</a></p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">上次修改於 2022-11-22</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts">
+			下回<br>已經到底啦。
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://shenyiminghfut.github.io/posts/curl/">
+			上回<br>Curl简单实践
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+ 
+<div id="gitalk-container"></div>
+    
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

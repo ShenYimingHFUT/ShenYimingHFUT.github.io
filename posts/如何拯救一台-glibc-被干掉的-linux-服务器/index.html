@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html><head>
-<title> busybox</title>
+<title>如何拯救一台 glibc 被干掉的 Linux 服务器</title>
 
 
 
@@ -16,10 +16,10 @@
 
 
 
-<meta property="og:title" content=" busybox" />
+<meta property="og:title" content="如何拯救一台 glibc 被干掉的 Linux 服务器" />
 <meta property="og:description" content="记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://shenyiminghfut.github.io/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8-/" /><meta property="og:image" content="https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://shenyiminghfut.github.io/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/" /><meta property="og:image" content="https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2021-05-09T10:58:08-04:00" />
 <meta property="article:modified_time" content="2021-05-09T10:58:08-04:00" /><meta property="og:site_name" content="My Blog" />
 
@@ -31,7 +31,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://shenyiminghfut.github.io/images/Pope-Edouard-de-Beaumont-1844.jpg"/>
 
-<meta name="twitter:title" content=" busybox"/>
+<meta name="twitter:title" content="如何拯救一台 glibc 被干掉的 Linux 服务器"/>
 <meta name="twitter:description" content="记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。"/>
 
 
@@ -317,7 +317,7 @@ PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
                 
             >
                 <div class="post-title">
-                     busybox
+                    如何拯救一台 glibc 被干掉的 Linux 服务器
                     
                     <div class="post-subtitle">
                         记录了 Vim 编辑器常用命令速查功能，这些命令分为全局命令、光标移动、插入模式、文本编辑、缩进、复制、查找 / 替换、宏、寄存器、标签、差异比较等常用的 Vim 命令，是每位 Vim 使用者必备的参考资料。
@@ -351,9 +351,9 @@ PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
                             
 
                             
-                            4 min
+                            3 min
                             
-                            1 second.
+                            49 s.
                         
                     </div>
                 </div>
@@ -363,9 +363,8 @@ PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
                 
                 <div class="post-body" v-pre>
                 
-                    <p>今天正要下班，旁边部门的 PM 过来问我：</p>
-<p>『我们有个小伙子把生产系统上的 glibc 给删了，现在什么命令都跑不了了，还有救吗？』</p>
-<p>(更正：今天又问了一下，是正在准备要上线的服务器，所以还不是生产系统)</p>
+                    <p>今天正要下班，群里有人问我：</p>
+<p>『我们有个新管理员上的 glibc 给删了，现在什么命令都跑不了了，还有救吗？』</p>
 <p>我说，glibc 也能弄掉，莫不是 rpm &ndash;force?</p>
 <p>回答是肯定的。</p>
 <p>glibc 被卸载，负责加载所有. so 的 ld.so 也就没了，因此运行几乎所有外部命令时都会得到一句『找不到 ld-linux-x-y-z.so.2』的出错提示。比如 ls，比如 cp，以及所有动态链接的命令。</p>
@@ -409,8 +408,8 @@ ln -s cp sh
             <nav class="post-pagination">
 
                 
-                <a class="newer-posts" href="https://shenyiminghfut.github.io/posts/%E5%88%A9%E7%94%A8-github-actions-%E8%87%AA%E5%8A%A8%E4%B8%BA-readme-%E6%B7%BB%E5%8A%A0-toc-%E7%9B%AE%E5%BD%95-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/">
-			下回<br>利用 GitHub Actions 自动为 README 添加 TOC 目录
+                <a class="newer-posts" href="https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/">
+			下回<br>写给开发人员的实用密码学（一）—— 概览
                 </a>
                 
                 

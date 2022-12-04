@@ -10,10 +10,10 @@
     <lastBuildDate>Fri, 08 Jul 2022 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/categories/story/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[译] NAT 穿透是如何工作的：技术原理及企业级实践（Tailscale, 2020）</title>
-      <link>https://shenyiminghfut.github.io/posts/nat%E7%A9%BF%E9%80%8F%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</link>
+      <link>https://shenyiminghfut.github.io/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</link>
       <pubDate>Fri, 08 Jul 2022 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/nat%E7%A9%BF%E9%80%8F%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</guid>
+      <guid>https://shenyiminghfut.github.io/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</guid>
       <description>译者序 本文翻译自 2020 年的一篇英文博客： How NAT traversal works。
 设想这样一个问题：在北京和上海各有一台局域网的机器（例如一台是家里的台式机，一 台是连接到星巴克 WiFi 的笔记本），二者都是私网 IP 地址，但可以访问公网， 如何让这两台机器通信呢？
 既然二者都能访问公网，那最简单的方式当然是在公网上架设一个中继服务器： 两台机器分别连接到中继服务，后者完成双向转发。这种方式显然有很大的性能开销，而 且中继服务器很容易成为瓶颈。
@@ -25,40 +25,13 @@
     </item>
     
     <item>
-      <title>利用 GitHub Actions 自动为 README 添加 TOC 目录</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%88%A9%E7%94%A8-github-actions-%E8%87%AA%E5%8A%A8%E4%B8%BA-readme-%E6%B7%BB%E5%8A%A0-toc-%E7%9B%AE%E5%BD%95-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</link>
-      <pubDate>Wed, 09 Mar 2022 10:58:08 -0400</pubDate>
-      
-      <guid>https://shenyiminghfut.github.io/posts/%E5%88%A9%E7%94%A8-github-actions-%E8%87%AA%E5%8A%A8%E4%B8%BA-readme-%E6%B7%BB%E5%8A%A0-toc-%E7%9B%AE%E5%BD%95-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</guid>
-      <description>GitHub 的 Markdown 目前不支持直接 [TOC] 渲染文章的目录，有些 README 则需要这样的效果，可以借助外部工具进行生成，也可以借助 GitHub Actions 自动生成，本文就介绍这种方式。
-GitHub 的 Markdown 目前不支持直接[TOC]渲染文章的目录，有些 README 则需要这样的效果，可以借助外部工具进行生成，也可以借助 GitHub Actions 自动生成，本文就介绍这种方式。
-所用 Actions：TOC Generator (opens new window)
-使用配置其实非常简单，基本上阅读完官方介绍文档就可以上手使用了，这里说一两个需要注意的地方。
-首先需要在将要生成目录的文件内，指定目录生成位置，e.g. README.md，在要生成的地方添加如下内容：
-&amp;lt;!-- START doctoc --&amp;gt; &amp;lt;!-- END doctoc --&amp;gt; 1
-2
-项目运行之后，会将目录添加在如上两段注释的中间。
-然后添加 Actions 配置文件，e.g. .github/workflows/toc.yml：
-on: push name: TOC Generator jobs: generateTOC: name: TOC Generator runs-on: ubuntu-latest steps: - uses: technote-space/toc-generator@v4 1
-2
-3
-4
-5
-6
-7
-8
-接着需要调整下项目的 Actions 权限，在 GitHub 上点击settings&amp;ndash;&amp;gt; actions &amp;ndash;&amp;gt; General &amp;ndash;&amp;gt; Workflow permissions &amp;ndash;&amp;gt; 选择 Read and write permissions。</description>
-    </item>
-    
-    <item>
-      <title> busybox</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8-/</link>
+      <title>如何拯救一台 glibc 被干掉的 Linux 服务器</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sun, 09 May 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8-/</guid>
-      <description>今天正要下班，旁边部门的 PM 过来问我：
-『我们有个小伙子把生产系统上的 glibc 给删了，现在什么命令都跑不了了，还有救吗？』
-(更正：今天又问了一下，是正在准备要上线的服务器，所以还不是生产系统)
+      <guid>https://shenyiminghfut.github.io/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>今天正要下班，群里有人问我：
+『我们有个新管理员上的 glibc 给删了，现在什么命令都跑不了了，还有救吗？』
 我说，glibc 也能弄掉，莫不是 rpm &amp;ndash;force?
 回答是肯定的。
 glibc 被卸载，负责加载所有. so 的 ld.so 也就没了，因此运行几乎所有外部命令时都会得到一句『找不到 ld-linux-x-y-z.so.2』的出错提示。比如 ls，比如 cp，以及所有动态链接的命令。
@@ -87,24 +60,6 @@ ls -al ~/.config/clash .rw-r--r-- 10 einverne 23 Mar 19:30 config.yaml .rw-r--r-
     </item>
     
     <item>
-      <title>Tg使用指南</title>
-      <link>https://shenyiminghfut.github.io/posts/tg%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
-      <pubDate>Fri, 19 Mar 2021 10:58:08 -0400</pubDate>
-      
-      <guid>https://shenyiminghfut.github.io/posts/tg%E4%B8%8D%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
-      <description>Telegram 是一款著重速度与安全性的即时通讯软体。
-# 1 Telegram 简介 Telegram 是一款著重速度与安全性的即时通讯软体。快速、简单，而且完全免费。你可以同时在任何装置上使用 Telegram－你的讯息会在任意数量的手机，平板或电脑上无缝同步。Telegram 已经拥有超过 5 亿月活用户，是下载量全球前十的应用程式之一。
-有了 Telegram，你可以传送讯息、照片、影片或任何类型的档案（doc、zip、mp3 等等），以及建立可容纳 200,000 人的群组，或可对无限量观眾广播的频道。你可以传讯息给你的手机联络人，及透过人们的用户名称 (opens new window)(usernames) 找到他们。这样一来，Telegram 就像是手机简讯和电子邮件的结合，而且可以照顾到你的所有个人或商业讯息需求。除此之外，Telegram 还支持端对端加密的音频和视频通话，以及可供数千人参与的视频群聊。
-（以上文字是对 Telegram FAQ - What is Telegram? What do I do here? (opens new window) 的翻译，参考了 什么是 Telegram？ 我能用它做些什么？ (opens new window)）
-更多参见：
-Telegram 官网 (opens new window)
-Telegram FQA (opens new window)
-Telegram News (opens new window)
-Telegram Tips (opens new window)
-Durov&amp;rsquo;s Channel (opens new window)</description>
-    </item>
-    
-    <item>
       <title> Vim命令速查</title>
       <link>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
       <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
@@ -112,21 +67,6 @@ Durov&amp;rsquo;s Channel (opens new window)</description>
       <guid>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
       <description>本速查表按分类列出了 Vim 常用的命令和快捷键，数量较多，可使用 Ctrl + F 进行查找。
 全局命令 命令 / 快捷键功能描述:h[elp] 关键字显示指定关键字的帮助:sav[eas] 文件名另存为...:clo[se]关闭当前窗口:ter[minal]打开新的终端窗口K打开光标所在单词对应的 man 页面 移动光标 命令 / 快捷键功能描述h左移光标j下移光标k上移光标l右移光标H移动到当前页面顶部M移动到当前页面中间L移动到当前页面底部w移动到下个单词开头W移动到下个单词开头（单词含标点）e移动到下个单词结尾E移动到下个单词结尾（单词含标点）b移动到上个单词开头B移动到上个单词开头（单词含标点）%跳转到配对的符号0移动到行首^移动到行首的非空白符$移动到行尾g_移动到行内最后一个非空白符gg移动到文件第一行G移动到文件最后一行5gg 或 5G移动到第 5 行fx移动到字符 x 下次出现的位置tx移动到字符 x 下次出现的位置的前一个字符Fx移动到字符 x 上次出现的位置Tx移动到字符 x 上次出现的位置的后一个字符;重复之前的 f、t、F、T 操作,反向重复之前的 f、t、F、T 操作}移动到下一个段落（当编辑代码时则为函数／代码块）{移动到上一个段落（当编辑代码时则为函数／代码块）zz移动屏幕使光标居中Ctrl + e向下移动屏幕一行（保持光标不动）Ctrl + y向上移动屏幕一行（保持光标不动）Ctrl + b向上滚动一屏Ctrl + f向下滚动一屏Ctrl + d向下滚动半屏Ctrl + u向上滚动半屏 插入模式（插入 / 追加文本） 命令 / 快捷键功能描述i从光标前开始插入字符I从行首开始插入字符a从光标后开始插入字符A从行尾开始插入字符o在当前行之下另起一行，开始插入字符O在当前行之上另起一行，开始插入字符ea从当前单词末尾开始插入Ctrl + h在插入模式下，删除光标前的字符Ctrl + w在插入模式下，删除光标前的单词Ctrl + j在插入模式下，另起一行Ctrl + t在插入模式下，向右缩进，宽度由 shiftwidth 控制Ctrl + d在插入模式下，向左缩进，宽度由 shiftwidth 控制Ctrl + n在插入模式下，在光标之前插入自动补全的下一个匹配项Ctrl + p在插入模式下，在光标之前插入自动补全的上一个匹配项Ctrl + rx在当前光标处插入 x 寄存器的内容Esc退出插入模式 编辑文本 命令 / 快捷键功能描述r替换当前字符J将下一行合并到当前行，并在两部分文本之间插入一个空格gJ将下一行合并到当前行，两部分文本之间不含空格gwip重新调整段落g~切换整个文本的大小写（即大写变小写，小写变大写）gu把整个文本改成小写gU把整个文本改成大写cc 或 S将光标所在的行删除，然后进入插入模式C 或 c$删除光标所在位置到行尾的所有文本，然后进入插入模式ciw将光标所在的单词删除，然后进入插入模式cw从光标位置开始，修改单词s删除当前字符，然后进入插入模式xp将当前字符后移uundo - 撤销最近一次操作U恢复 / 撤销最后修改的行Ctrl + rredo - 重做（和 u 相反）.</description>
-    </item>
-    
-    <item>
-      <title> 利用 GitHub Actions 自动优雅地为项目构建 Releases</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%88%A9%E7%94%A8-github-actions-%E8%87%AA%E5%8A%A8%E4%BC%98%E9%9B%85%E5%9C%B0%E4%B8%BA%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA-releases-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</link>
-      <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
-      
-      <guid>https://shenyiminghfut.github.io/posts/%E5%88%A9%E7%94%A8-github-actions-%E8%87%AA%E5%8A%A8%E4%BC%98%E9%9B%85%E5%9C%B0%E4%B8%BA%E9%A1%B9%E7%9B%AE%E6%9E%84%E5%BB%BA-releases-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</guid>
-      <description>基于 git 管理的项目，通常在分支管理之外，还会通过 tag 来对代码进行管理，尤其像 go 语言，go mod 更是依赖 tag 来对项目的版本进行管理，因此合理的版本管理，对于项目的发展也会是更加健康的一个激励。
-# 前言 基于 git 管理的项目，通常在分支管理之外，还会通过 tag 来对代码进行管理，尤其像 go 语言，go mod 更是依赖 tag 来对项目的版本进行管理，因此合理的版本管理，对于项目的发展也会是更加健康的一个激励。GitHub 中有一个 Releases 的概念，其实与 tag 差不多，简单理解就是在打一个 tag 的基础之上，用 releases 来进行管理。如果你没有了解过这里边的概念，那么要想成功打一个 release 还是有点难度的。
-本文就来讲一下，如何借助 Github Actions 自动且优雅地为项目构建 Release。
-# 配置 所用 Actions： release-drafter (opens new window)
-使用配置其实非常简单，基本上阅读完官方介绍文档就可以上手使用了，这里说一两个需要注意的地方。
-首先添加 Actions 配置文件，e.g. .github/workflows/release.yml：
-name: Release Drafter on: push: branches: - main pull_request: types: [opened, reopened, synchronize] permissions: contents: read jobs: update_release_draft: permissions: contents: write # for release-drafter/release-drafter to create a github release pull-requests: write # for release-drafter/release-drafter to add label to PR runs-on: ubuntu-latest steps: - uses: release-drafter/release-drafter@v5 env: GITHUB_TOKEN: ${{ secrets.</description>
     </item>
     
     <item>

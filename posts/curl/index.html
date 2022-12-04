@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html><head>
+<title>Curl简单实践</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="url 是一个通过网络协定传输数据的指令，用很白话的说法就是让你「连接到网站」。">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="Curl简单实践" />
+<meta property="og:description" content="url 是一个通过网络协定传输数据的指令，用很白话的说法就是让你「连接到网站」。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shenyiminghfut.github.io/posts/curl/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-11-04T00:00:00+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Curl简单实践"/>
+<meta name="twitter:description" content="url 是一个通过网络协定传输数据的指令，用很白话的说法就是让你「连接到网站」。"/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+<link rel="icon" href="https://shenyiminghfut.github.io/static/images/bird.jpg">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/journal.min.4911cdba6f1b7c77b7747bb468ef07239bca7b881cf2045f88da04c5f72e36bf.css" integrity="sha256-SRHNum8bfHe3dHu0aO8HI5vKe4gc8gRfiNoExfcuNr8=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/dark-mode.min.241cce2dfc0c6e4b9a64f3bb73e005e4a357d3313342d2805681faf6a78d679b.css" integrity="sha256-JBzOLfwMbkuaZPO7c&#43;AF5KNX0zEzQtKAVoH69qeNZ5s=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '87b383f0bc03d41e07fe',
+  clientSecret: 'ebd8d74511e37d50021fa2decc3d65f19cbe5445',
+  repo: 'BlogComment',
+  owner: 'ShenYimingHFUT',
+  admin: ['ShenYimingHFUT'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://shenyiminghfut.github.io">
+    
+        <div class="nav-title">
+            摆人日寄
+        </div>
+        
+        <div class="nav-subtitle">
+            啊对对对。
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#基本使用-nav`)" id="基本使用-nav">
+									基本使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%be%93%e5%87%ba%e6%9b%b4%e5%a4%9a%e6%b6%88%e6%81%af" onclick="onNavClick(`#输出更多消息-nav`)" id="输出更多消息-nav">
+									输出更多消息
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%8c%87%e5%ae%9a%e8%a6%81%e8%bf%9e%e6%8e%a5%e7%9a%84%e4%b8%bb%e6%9c%ba" onclick="onNavClick(`#指定要连接的主机-nav`)" id="指定要连接的主机-nav">
+									指定要连接的主机
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%bf%bd%e7%95%a5ssl-%e5%87%ad%e8%af%81" onclick="onNavClick(`#忽略ssl-凭证-nav`)" id="忽略ssl-凭证-nav">
+									忽略SSL 凭证
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8%e4%b8%8d%e5%90%8c%e7%9a%84request-method" onclick="onNavClick(`#使用不同的request-method-nav`)" id="使用不同的request-method-nav">
+									使用不同的Request Method
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%98%be%e7%a4%ba%e8%8a%b1%e8%b4%b9%e6%97%b6%e9%97%b4" onclick="onNavClick(`#显示花费时间-nav`)" id="显示花费时间-nav">
+									显示花费时间
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+	<div class="toc-content">
+	
+		
+		
+		
+		<center>- 目錄 -</center>
+		
+		
+		<ul>
+			
+				
+				
+					
+						
+						
+						
+						
+							
+								
+									<ul>
+								
+							
+						
+						
+							<li>
+								<a href="#%e5%9f%ba%e6%9c%ac%e4%bd%bf%e7%94%a8" onclick="onNavClick(`#基本使用-nav`)" id="基本使用-nav">
+									基本使用
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e8%be%93%e5%87%ba%e6%9b%b4%e5%a4%9a%e6%b6%88%e6%81%af" onclick="onNavClick(`#输出更多消息-nav`)" id="输出更多消息-nav">
+									输出更多消息
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%8c%87%e5%ae%9a%e8%a6%81%e8%bf%9e%e6%8e%a5%e7%9a%84%e4%b8%bb%e6%9c%ba" onclick="onNavClick(`#指定要连接的主机-nav`)" id="指定要连接的主机-nav">
+									指定要连接的主机
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e5%bf%bd%e7%95%a5ssl-%e5%87%ad%e8%af%81" onclick="onNavClick(`#忽略ssl-凭证-nav`)" id="忽略ssl-凭证-nav">
+									忽略SSL 凭证
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e4%bd%bf%e7%94%a8%e4%b8%8d%e5%90%8c%e7%9a%84request-method" onclick="onNavClick(`#使用不同的request-method-nav`)" id="使用不同的request-method-nav">
+									使用不同的Request Method
+								</a>
+							</li>
+						
+						
+					
+				
+			
+				
+				
+					
+						
+						
+						
+						
+						
+							<li>
+								<a href="#%e6%98%be%e7%a4%ba%e8%8a%b1%e8%b4%b9%e6%97%b6%e9%97%b4" onclick="onNavClick(`#显示花费时间-nav`)" id="显示花费时间-nav">
+									显示花费时间
+								</a>
+							</li>
+						
+						
+					
+				
+			
+		</ul>
+	</div>
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://shenyiminghfut.github.io">
+            摆人日寄
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://shenyiminghfut.github.io">
+        <div class="single-column-header-title">摆人日寄</div>
+        
+        <div class="single-column-header-subtitle">啊对对对。</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://shenyiminghfut.github.io/images/curl.webp')"
+                    
+                
+            >
+                <div class="post-title">
+                    Curl简单实践
+                    
+                    <div class="post-subtitle">
+                        url 是一个通过网络协定传输数据的指令，用很白话的说法就是让你「连接到网站」。
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-11-04 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/test">Test</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/linux">Linux</a>
+                                &nbsp;
+                            
+                                <a href="/tags/tool">tool</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            4 min
+                            
+                            39 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <blockquote>
+<p>curl 是一个通过网络协定传输数据的指令，用很白话的说法就是让你「连接到网站」。</p>
+</blockquote>
+<h2 id="基本使用">基本使用</h2>
+<pre tabindex="0"><code>curl http://www.example.com
+</code></pre><p>这样会将 response body print 出来，为了要快速验证网站的回应是否正常，我比较常用的形式是</p>
+<pre tabindex="0"><code>curl -iL http://www.example.com
+</code></pre><p>-i 代表显示 header + body ，如果只要 header 的话，可以使用大写的 I 。</p>
+<p>-L 则代表跟随网址的 redirect 规则。例如说，现在的主流网站用 HTTP 连接会自动转成 HTTPs 就可以通过 curl 来观察。</p>
+<pre tabindex="0"><code>curl -IL http://google.com
+
+---
+
+HTTP/1.1 301 Moved Permanently
+Location: http://www.google.com/
+Content-Type: text/html; charset=UTF-8
+Date: Mon, 30 Aug 2021 23:42:39 GMT
+Expires: Wed, 29 Sep 2021 23:42:39 GMT
+Cache-Control: public, max-age=2592000
+Server: gws
+Content-Length: 219
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+
+HTTP/1.1 200 OK
+Content-Type: text/html; charset=ISO-8859-1
+P3P: CP=&#34;This is not a P3P policy! See g.co/p3phelp for more info.&#34;
+Date: Mon, 30 Aug 2021 23:42:39 GMT
+Server: gws
+X-XSS-Protection: 0
+X-Frame-Options: SAMEORIGIN
+Transfer-Encoding: chunked
+Expires: Mon, 30 Aug 2021 23:42:39 GMT
+Cache-Control: private
+</code></pre><p>以 google 为例，你可以看到第一个 request 的 header 是 301 Move Permanently，且包含了 Location ，有加上 -L 参数的话 curl 就会跟随 redirect 的 location 继续 request。</p>
+<h2 id="输出更多消息">输出更多消息</h2>
+<p>可以用 -v 或 –verbose 让 curl 输出更详细的消息，我都拿来看它实际上连接到哪一台主机</p>
+<pre tabindex="0"><code>curl -v https://example.com
+
+curl --verbose https://example.com
+
+~ ❯ curl -v https://example.com                                                                            at 08:04:25
+*   Trying 93.184.216.34...
+* TCP_NODELAY set
+* Connected to example.com (93.184.216.34) port 443 (#0)
+* ALPN, offering h2
+* ALPN, offering http/1.1
+* successfully set certificate verify locations:
+*   CAfile: /etc/ssl/cert.pem
+  CApath: none
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+
+…下略
+</code></pre><h2 id="指定要连接的主机">指定要连接的主机</h2>
+<p>curl 缺省会使用 DNS resolve 来决定要使用哪一台主机。</p>
+<p>CDN 的开发上，常会需要将 request 送到特定的主机，可以用修改 host 档的方式，也可以用参数 –resolve 直接将 DNS resolve 加进参数，方便程序化。</p>
+<pre tabindex="0"><code>curl --resolve google.com:443:127.0.0.1 --resolve google.com:80:127.0.0.1 https://google.com -v
+ 
+* Added google.com:443:127.0.0.1 to DNS cache
+ * Added google.com:80:127.0.0.1 to DNS cache
+ * Hostname google.com was found in DNS cache
+ *    Trying 127.0.0.1...
+ * TCP_NODELAY set
+ * Connection failed
+ * connect to 127.0.0.1 port 443 failed: Connection refused
+ * Failed to connect to google.com port 443: Connection refused
+ * Closing connection 0
+</code></pre><p>连线到google.com ，80 port 及443 port 都连线到127.0.0.1 。加上-v 就可以看到curl 确实将request 送到127.0.0.1。</p>
+<p>用指定Header 的方式也可以达成类似的效果：</p>
+<pre tabindex="0"><code>curl -H &#34;Host: www.google.com&#34;  http: / /127.0.0.1/path /to/resource
+</code></pre><p>但使用时要注意这样跟client 实际送出的request 是不完全相同的，如果用的是HTTPs ， certificate 就不能顺利生效，可以配合-k 使用。</p>
+<p>比较适合快速验证，要完整的话还是用–resolve 为佳。</p>
+<h2 id="忽略ssl-凭证">忽略SSL 凭证</h2>
+<p>如果要连线的网站凭证过期，或是因为其他原因你并不在乎凭证是否有效，可以使用-k (或是更有表达力的–insecure)</p>
+<pre tabindex="0"><code># 试着curl 一个凭证过期的网站，会产生错误
+curl  https://certificate.expired.net/
+
+curl : (60) SSL certificate problem: certificate has expired 
+More  details here: https://curl.haxx.se/docs/sslcerts.html
+
+curl  failed to verify the legitimacy of the server and therefore could not 
+establish  a secure connection to it. To learn more about this situation and 
+how  to fix it, please visit the web page mentioned above. 
+
+# 视需求，你可能并不在乎凭证时，可以略过它
+curl  -k https://certificate.expired.net/
+
+curl  --insecure https://certificate.expired.net/
+</code></pre><h2 id="使用不同的request-method">使用不同的Request Method</h2>
+<p>curl 预设使用GET ，有时候可能会需要以POST 或其他不同的method 发送request</p>
+<pre tabindex="0"><code>curl -X POST https: //example.com
+</code></pre><h2 id="显示花费时间">显示花费时间</h2>
+<p>如果需要时间资讯，可以使用-w</p>
+<pre tabindex="0"><code>curl -I example.com -w %{time_connect} -% &#34;{time_starttransfer}-%{time_total}\n&#34;
+</code></pre><p>man curl 可以看到更多能用的variables</p>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">上次修改於 2022-11-04</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+			下回<br>Dig最佳实践
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://shenyiminghfut.github.io/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/">
+			上回<br>通过Systemctl自定义Service
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+ 
+<div id="gitalk-container"></div>
+    
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

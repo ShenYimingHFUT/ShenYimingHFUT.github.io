@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on 摆人日寄</title>
+    <link>https://shenyiminghfut.github.io/tags/linux/</link>
+    <description>Recent content in Linux on 摆人日寄</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hant</language>
+    <copyright>This is a customized copyright.</copyright>
+    <lastBuildDate>Tue, 22 Nov 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dig最佳实践</title>
+      <link>https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <pubDate>Tue, 22 Nov 2022 11:25:05 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <description>dig — DNS lookup utility
+man page 开宗明义的说，dig 是个DNS 查找工具，也是跟CDN 打交道时最常用的指令之一。
+白话的说明就是：用来查某个网址会连到哪台主机。
+dig 最基本的使用方式是
+dig example.com 加上一点点的参数，则是
+dig [@server] [name] [type] name 代表你想查询的domain； type 代表record 类型，包含了A, AAAA, CNAME, ANY … 等，预设为A ；@server 则是指你想query 的DNS 服务器。
+有趣的是，后面参数似乎是可以互换位置的，例如说
+dig @168.95.1.1 any www.apple.com dig @168.95.1.1 www.apple.com any dig www.apple.com @168.95.1.1 any 以上三种输入会得到一样的结果，所以可能会在不同的用户或是说明页上看到不同的顺序。
+以 www.google.com 为例，从我所在的地方得到这个结果(省去部份输出，以下皆同)：dig [www.google.com](http://www.google.com/)
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.10.6 &amp;lt;&amp;lt;&amp;gt;&amp;gt; www.google.com ;; QUESTION SECTION: ;www.google.com. IN A ;; ANSWER SECTION: www.google.com. 208 IN A 172.</description>
+    </item>
+    
+    <item>
+      <title>Curl简单实践</title>
+      <link>https://shenyiminghfut.github.io/posts/curl/</link>
+      <pubDate>Fri, 04 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/curl/</guid>
+      <description>curl 是一个通过网络协定传输数据的指令，用很白话的说法就是让你「连接到网站」。
+基本使用 curl http://www.example.com 这样会将 response body print 出来，为了要快速验证网站的回应是否正常，我比较常用的形式是
+curl -iL http://www.example.com -i 代表显示 header + body ，如果只要 header 的话，可以使用大写的 I 。
+-L 则代表跟随网址的 redirect 规则。例如说，现在的主流网站用 HTTP 连接会自动转成 HTTPs 就可以通过 curl 来观察。
+curl -IL http://google.com --- HTTP/1.1 301 Moved Permanently Location: http://www.google.com/ Content-Type: text/html; charset=UTF-8 Date: Mon, 30 Aug 2021 23:42:39 GMT Expires: Wed, 29 Sep 2021 23:42:39 GMT Cache-Control: public, max-age=2592000 Server: gws Content-Length: 219 X-XSS-Protection: 0 X-Frame-Options: SAMEORIGIN HTTP/1.</description>
+    </item>
+    
+    <item>
+      <title>通过Systemctl自定义Service</title>
+      <link>https://shenyiminghfut.github.io/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/</link>
+      <pubDate>Sat, 29 Oct 2022 11:25:05 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/</guid>
+      <description>如果要在 Linux 上设置一个开机自启，出现问题自动重启，并且有良好日志的程序，比较流行的方法有 supervisord、systemd，除此之外，还有 upstart、runit 等类似的工具。 但是自从 systemd 被 ubuntu、centos 等主流 Linux 发行版应用以来，systemd 渐渐成为主流方案。
+如果你需要跨平台 (Linux/MacOSX/FreeBSD) 的方案，那么建议使用 supervisord，如果只需要支持 Linux 则建议选用 systemd.
+要自定义一个服务，需要在 /usr/lib/systemd/system/ 下添加一个配置文件：&amp;lt;software-name&amp;gt;.service
+如果 /usr/lib/systemd/system/ 不存在，可考虑使用 /lib/systemd/system/ 或 /etc/systemd/system/
+ExecXXX 中的命令，均可以正常使用转义字符以及环境变量插值语法，比如用 \ 结尾表示换行，用 $Xxx 获取环境变量。
+配置文件的内容说明：
+[Unit]: 服务的启动顺序与依赖关系 Description: 当前服务的简单描述 After: 当前服务（&amp;lt;software-name&amp;gt;.service）需要在这些服务启动后，才启动 Before: 和 After 相反，当前服务需要在这些服务启动前，先启动 Wants：表示当前服务&amp;#34;弱依赖&amp;#34;于这些服务。即当前服务依赖于它们，但是没有它们，当前服务也能正常运行。 Requires: 表示&amp;#34;强依赖&amp;#34;关系，即如果该服务启动失败或异常退出，那么当前服务也必须退出。 [Service] 服务运行参数的设置 Type=forking 后台运行的形式 PIDFile=/software-name/pid pid文件路径 EnvironmentFile=/xxx/prod.env 通过文件设定环境变量，注意这东西不支持环境变量的插值语法 ${xxx} WorkingDirectory=/xxx/xxx 工作目录 ExecStartPre 为启动做准备的命令 ExecStart 服务的具体运行命令（对非 workingdirectory 的文件，必须用绝对路径！ ExecReload 重载命令，如果程序支持 HUP 信号的话，通常将此项设为 `/bin/kill -HUP $MAINPID` ExecStop 停止命令 ExecStartPre：启动服务之前执行的命令 ExecStartPost：启动服务之后执行的命令 ExecStopPost：停止服务之后执行的命令 RuntimeDirectory=xxxx RuntimeDirectoryMode=0775 PrivateTmp=True 表示给服务分配独立的临时空间 RestartSec 自动重启当前服务间隔的秒数 Restart 定义何种情况 Systemd 会自动重启当前服务，可能的值包括always（总是重启）、on-success、on-failure 等 # 程序的 user 和 group User=ryan Group=ryan 注意：启动、重载、停止命令全部要求使用绝对路径 [Install] 定义如何安装这个配置文件，即怎样做到开机启动。 # Target的含义是服务组，表示一组服务。 WantedBy=multi-user.</description>
+    </item>
+    
+    <item>
+      <title>写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AB/</link>
+      <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AB/</guid>
+      <description>《写给开发人员的实用密码学》系列文章目录:
+写给开发人员的实用密码学（一）—— 概览
+写给开发人员的实用密码学（二）—— 哈希函数
+写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF
+写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG
+写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS
+写给开发人员的实用密码学（六）—— 对称密钥加密算法
+写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC
+写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议
+待续
+2021-01-17: 完成 TLS 协议简介、数字证书介绍、数字证书的申请或生成方法、mTLS 介绍、TLS 协议的破解手段
+2022-03-13 ~ 2022-03-14: 重新整理补充，改写为《写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议》，整合进我的实用密码学系列文章中
+补充 PKI 公钥基础架构及 X509 证书标准介绍 TODO:
+补充 TLS 协议的逆向手段 基于 cfssl 详细介绍 PKI 的各项组件 基于 PKI 的应用服务间身份识别技术：SPIFF ID SPIFF ID 是云原生领域的标准，服务网格项目 Istio 就使用了 SPIFF ID 作为安全命名 现代人的日常生活中，HTTPS 协议几乎无处不在，我们每天浏览网页时、用手机刷京东淘宝时、甚至每天秀自己绿色的健康码时，都在使用 HTTPS 协议。</description>
+    </item>
+    
+    <item>
+      <title>写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%83/</link>
+      <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%83/</guid>
+      <description>本文部分内容翻译自 Practical-Cryptography-for-Developers-Book
+这篇文章中会涉及到一些数论知识，本文不会详细介绍这些数学知识，可以在有疑惑的时候自行查找相关知识，或者选择跳过相关内容。
+《写给开发人员的实用密码学》系列文章目录：
+写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 在介绍非对称密钥加密方案和算法之前，我们首先要了解公钥密码学的概念。
+从第一次世界大战、第二次世界大战到 1976 年这段时期密码的发展阶段，被称为「近代密码阶段」。 在近代密码阶段，所有的密码系统都使用对称密码算法——使用相同的密钥进行加解密。 当时使用的密码算法在拥有海量计算资源的现代人看来都是非常简单的，我们经常看到各种讲述一二战的谍战片，基本都包含破译电报的片段。
+第一二次世界大战期间，无线电被广泛应用于军事通讯，围绕无线电通讯的加密破解攻防战极大地影响了战局。
+公元 20 世纪初，第一次世界大战进行到关键时刻，英国破译密码的专门机构「40 号房间」利用缴获的德国密码本破译了著名的「齐默尔曼电报」，其内容显示德国打算联合墨西哥对抗可能会参战的美国，这促使美国放弃中立对德宣战，从而彻底改变了一战的走势。
+1943 年，美国从破译的日本电报中得知山本五十六将于 4 月 18 日乘中型轰炸机，由 6 架战斗机护航，到中途岛视察。美国总统罗斯福亲自做出决定截击山本，山本乘坐的飞机在去往中途岛的路上被美军击毁，战争天才山本五十六机毁人亡，日本海军从此一蹶不振。
+此外，在二次世界大战中，美军将印第安纳瓦霍土著语言作为密码使用，并特别征募使用印第安纳瓦霍通信兵。在二次世界大战日美的太平洋战场上，美国海军军部让北墨西哥和亚历桑那印第安纳瓦霍族人使用纳瓦霍语进行情报传递。纳瓦霍语的语法、音调及词汇都极为独特，不为世人所知道，当时纳瓦霍族以外的美国人中，能听懂这种语言的也就一二十人。这是密码学和语言学的成功结合，纳瓦霍语密码成为历史上从未被破译的密码。
+在 1976 年 Malcolm J. Williamson 公开发表了现在被称为「Diffie–Hellman 密钥交换，DHKE」的算法，并提出了「公钥密码学」的概念，这是密码学领域一项划时代的发明，它宣告了「近代密码阶段」的终结，是「现代密码学」的起点。
+言归正传，对称密码算法的问题有两点：
+「需要安全的通道进行密钥交换」，早期最常见的是面对面交换密钥 每个点对点通信都需要使用不同的密钥，密钥的管理会变得很困难 如果你需要跟 100 个朋友安全通信，你就要维护 100 个不同的对称密钥，而且还得确保它们不泄漏。 这会导致巨大的「密钥交换」跟「密钥保存与管理」的成本。「公钥密码学」最大的优势就是，它解决了这两个问题：
+「公钥密码学」可以在不安全的信道上安全地进行密钥交换，第三方即使监听到通信过程，但是（几乎）无法破解出密钥。 每个人只需要公开自己的公钥，就可以跟其他任何人安全地通信。 如果你需要跟 100 个朋友安全通信，你们只需要公开自己的公钥。发送消息时使用对方的公钥加密，接收消息时使用自己的私钥解密即可。 只有你自己的私钥需要保密，所有的公钥都可以公开，这就显著降低了密钥的维护成本。 因此公钥密码学成为了现代密码学的基石，而「公钥密码学」的诞生时间 1976 年被认为是现代密码学的开端。</description>
+    </item>
+    
+    <item>
+      <title>写给开发人员的实用密码学（六）—— 对称密钥加密算法</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AD/</link>
+      <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AD/</guid>
+      <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book，笔者补充了部分代码示例。
+《写给开发人员的实用密码学》系列文章目录：
+写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 两个常用动词：
+加密：cipher 或者 encrypt 解密：decipher 或者 decrypt 另外有几个名词有必要解释：
+cipher: 指用于加解密的「密码算法」，有时也被直接翻译成「密码」 cryptographic algorithm: 密码学算法，泛指密码学相关的各类算法 ciphertext: 密文，即加密后的信息。对应的词是明文 plaintext password: 这个应该不需要解释，就是我们日常用的各种字符或者数字密码，也可称作口令。 passphrase: 翻译成「密码词组」或者「密碼片語」，通常指用于保护密钥或者其他敏感数据的一个 password 如果你用 ssh/gpg/openssl 等工具生成或使用过密钥，应该对它不陌生。 在密码学里面，最容易搞混的词估计就是「密码」了，cipher/password/passphrase 都可以被翻译成「密码」，需要注意下其中区别。
+在密码学中，有两种加密方案被广泛使用：「对称加密」与「非对称加密」。
+对称加密是指，使用相同的密钥进行消息的加密与解密。因为这个特性，我们也称这个密钥为「共享密钥（Shared Secret Key）」，示意图如下：
+现代密码学中广泛使用的对称加密算法（ciphers）有：AES（AES-128、AES-192、AES-256）、ChaCha20、Twofish、IDEA、Serpent、Camelia、RC6、CAST 等。 其中绝大多数都是「块密码算法（Block Cipher）」或者叫「分组密码算法」，这种算法一次只能加密固定大小的块（例如 128 位）； 少部分是「流密码算法（Stream Cipher）」，流密码算法将数据逐字节地加密为密文流。
+通过使用称为「分组密码工作模式」的技术，可以将「分组密码算法」转换为「流密码算法」。
+即使计算机进入量子时代，仍然可以沿用当前的对称密码算法。因为大多数现代对称密钥密码算法都是抗量子的（quantum-resistant），这意味当使用长度足够的密钥时，强大的量子计算机无法破坏其安全性。 目前来看 256 位的 AES/Twofish 在很长一段时间内都将是 量子安全 的。</description>
+    </item>
+    
+    <item>
+      <title>写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/</link>
+      <pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/</guid>
+      <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book，笔者额外补充了 DHKE/ECDH 的代码示例，以及「PFS 完美前向保密协议 DHE/ECDHE」一节。
+《写给开发人员的实用密码学》系列文章目录：
+写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 在密码学中密钥交换是一种协议，功能是在两方之间安全地交换加密密钥，其他任何人都无法获得密钥的副本。通常各种加密通讯协议的第一步都是密钥交换。 密钥交换技术具体来说有两种方案：
+密钥协商：协议中的双方都参与了共享密钥的生成，两个代表算法是 Diffie-Hellman (DHKE) 和 Elliptic-Curve Diffie-Hellman (ECDH) 密钥传输：双方中其中一方生成出共享密钥，并通过此方案将共享密钥传输给另一方。密钥传输方案通常都通过公钥密码系统实现。比如在 RSA 密钥交换中，客户端使用它的私钥加密一个随机生成的会话密钥，然后将密文发送给服务端，服务端再使用它的公钥解密出会话密钥。 密钥交换协议无时无刻不在数字世界中运行，在你连接 WiFi 时，或者使用 HTTPS 协议访问一个网站，都会执行密钥交换协议。 密钥交换可以基于匿名的密钥协商协议如 DHKE，一个密码或预共享密钥，一个数字证书等等。有些通讯协议只在开始时交换一次密钥，而有些协议则会随着时间的推移不断地交换密钥。
+认证密钥交换（AKE）是一种会同时认证相关方身份的密钥交换协议，比如个人 WiFi 通常就会使用 password-authenticated key agreement (PAKE)，而如果你连接的是公开 WiFi，则会使用匿名密钥交换协议。
+目前有许多用于密钥交换的密码算法。其中一些使用公钥密码系统，而另一些则使用更简单的密钥交换方案（如 Diffie-Hellman 密钥交换）；其中有些算法涉及服务器身份验证，也有些涉及客户端身份验证；其中部分算法使用密码，另一部分使用数字证书或其他身份验证机制。下面列举一些知名的密钥交换算法：
+Diffie-Hellman Key Exchange (DHКЕ) ：传统的、应用最为广泛的密钥交换协议 椭圆曲线 Diffie-Hellman (ECDH) RSA-OAEP 和 RSA-KEM（RSA 密钥传输） PSK（预共享密钥） SRP（安全远程密码协议） FHMQV（Fully Hashed Menezes-Qu-Vanstone） ECMQV（Ellictic-Curve Menezes-Qu-Vanstone） CECPQ1（量子安全密钥协议） 迪菲 - 赫尔曼密钥交换（Diffie–Hellman Key Exchange）是一种安全协议，它可以让双方在完全没有对方任何预先信息的条件下通过不安全信道安全地协商出一个安全密钥，而且任何窃听者都无法得知密钥信息。 这个密钥可以在后续的通讯中作为对称密钥来加密通讯内容。</description>
+    </item>
+    
+    <item>
+      <title>写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/</link>
+      <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/</guid>
+      <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book
+《写给开发人员的实用密码学》系列文章目录：
+写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 在密码学中，随机性（熵）扮演了一个非常重要的角色，许多密码学算法都要求使用一个不可预测的随机数，只有在生成的随机数不可预测时，这些算法才能保证其安全性。
+比如 MAC 算法中的 key 就必须是一个不可预测的值，在这个条件下 MAC 值才是不可伪造的。
+另外许多的高性能算法如快速排序、布隆过滤器、蒙特卡洛方法等，都依赖于随机性，如果随机性可以被预测，或者能够找到特定的输入值使这些算法变得特别慢，那黑客就能借此对服务进行 DDoS 攻击，以很小的成本达到让服务不可用的目的。
+Pseudo-Random Number Generators(PRNG) 是一种数字序列的生成算法，它生成出的数字序列的统计学属性跟真正的随机数序列非常相似，但它生成的伪随机数序列并不是真正的随机数序列！因为该序列完全依赖于提供给 PRNG 的初始值，这个值被称为 PRNG 的种子。
+算法流程如下，算法的每次迭代都生成出一个新的伪随机数：
+如果输入的初始种子是相同的，PRNG 总是会生成出相同的伪随机数序列，因此 PRNG 也被称为 Deterministic Random Bit Generator (DRBG)，即确定性随机比特生成器。
+实际上目前也有所谓的「硬件随机数生成器 TRNG」能生成出真正的随机数，但是因为 PRNG 的高速、低成本、可复现等原因，它仍然被大量使用在现代软件开发中。
+PRNG 可用于从一个很小的初始随机性（熵）生成出大量的伪随机性，这被称做「拉伸（Stretching）」。
+PRNG 被广泛应用在前面提到的各种依赖随机性的高性能算法以及密码学算法中。
+我们在上一篇文章的「MAC 的应用」一节中提到，一个最简单的 PRNG 可以直接使用 MAC 算法实现，用 Python 实现如下：</description>
+    </item>
+    
+    <item>
+      <title>写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/</link>
+      <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/</guid>
+      <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book 《写给开发人员的实用密码学》系列文章目录：
+写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 MAC 消息认证码，即 Message Authentication Code，是用于验证消息的一小段信息。 换句话说，能用它确认消息的真实性——消息来自指定的发件人并且没有被篡改。
+MAC 值通过允许验证者（也拥有密钥）检测消息内容的任何更改来保护消息的数据完整性及其真实性。
+一个安全的 MAC 函数，跟加密哈希函数非常类似，也拥有如下特性：
+快速：计算速度要足够快 确定性：对同样的消息跟密钥，应该总是产生同样的输出 难以分析：对消息或密钥的任何微小改动，都应该使输出完全发生变化 不可逆：从 MAC 值逆向演算出消息跟密钥应该是不可行的。 无碰撞：找到具有相同哈希的两条不同消息应该非常困难（或几乎不可能） 但是 MAC 算法比加密哈希函数多一个输入值：密钥，因此也被称为 keyed hash functions，即「加密钥的哈希函数」。
+如下 Python 代码使用 key 跟 消息计算出对应的 HMAC-SHA256 值：
+import hashlib, hmac, binascii key = b&amp;#34;key&amp;#34; msg = b&amp;#34;some msg&amp;#34; mac = hmac.</description>
+    </item>
+    
+    <item>
+      <title>写给开发人员的实用密码学（二）—— 哈希函数</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%8C/</link>
+      <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%8C/</guid>
+      <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book
+《写给开发人员的实用密码学》系列文章目录：
+写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 哈希函数，或者叫散列函数，是一种从任何一种数据中创建一个数字指纹（也叫数字摘要）的方法，散列函数把数据压缩（或者放大）成一个长度固定的字符串。
+哈希函数的输入空间（文本或者二进制数据）是无限大，但是输出空间（一个固定长度的摘要）却是有限的。将「无限」映射到「有限」，不可避免的会有概率不同的输入得到相同的输出，这种情况我们称为碰撞（collision）。
+一个简单的哈希函数是直接对输入数据 / 文本的字节求和。 它会导致大量的碰撞，例如 hello 和 ehllo 将具有相同的哈希值。
+更好的哈希函数可以使用这样的方案：它将第一个字节作为状态，然后转换状态（例如，将它乘以像 31 这样的素数），然后将下一个字节添加到状态，然后再次转换状态并添加下一个字节等。 这样的操作可以显着降低碰撞概率并产生更均匀的分布。
+加密哈希函数（也叫密码学哈希函数）是指一类有特殊属性的哈希函数。
+一个好的「加密哈希函数」必须满足抗碰撞（collision-resistant）和不可逆（irreversible）这两个条件。 抗碰撞是指通过统计学方法（彩虹表）很难或几乎不可能猜出哈希值对应的原始数据，而不可逆则是说攻击者很难或几乎不可能从算法层面通过哈希值逆向演算出原始数据。
+具体而言，一个理想的加密哈希函数，应当具有如下属性：
+快速：计算速度要足够快 确定性：对同样的输入，应该总是产生同样的输出 难以分析：对输入的任何微小改动，都应该使输出完全发生变化 不可逆：从其哈希值逆向演算出输入值应该是不可行的。这意味着没有比暴力破解更好的破解方法 无碰撞：找到具有相同哈希值的两条不同消息应该非常困难（或几乎不可能） 现代加密哈希函数（如 SHA2 和 SHA3）都具有上述几个属性，并被广泛应用在多个领域，各种现代编程语言和平台的标准库中基本都包含这些常用的哈希函数。
+现代密码学哈希函数（如 SHA2, SHA3, BLAKE2）都被认为是量子安全的，无惧量子计算机的发展。
+加密哈希函数被广泛用于文件完整性校验。如果你从网上下载的文件计算出的 SHA256 校验和（checksum）跟官方公布的一致，那就说明文件没有损坏。
+但是哈希函数自身不能保证文件的真实性，目前来讲，真实性通常是 TLS 协议要保证的，它确保你在 openssl 网站上看到的「SHA256 校验和」真实无误（未被篡改）。</description>
+    </item>
+    
+    <item>
+      <title>写给开发人员的实用密码学（一）—— 概览</title>
+      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/</link>
+      <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/</guid>
+      <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book 《写给开发人员的实用密码学》系列文章目录： 写给开发人员的实用密码学（一）—— 概览 写给开发人员的&amp;hellip;&amp;hellip;
+本文主要翻译自 Practical-Cryptography-for-Developers-Book
+《写给开发人员的实用密码学》系列文章目录：
+写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 你是软件开发人员吗？有时你会需要在日常工作中使用哈希、加密或数字签名等密码学工具吗？ 你认为密码学很复杂，充满了数学知识，而且只适合书呆子吗？ 不，不是这样滴，每个开发人员都可以学习如何使用加密算法。
+从开发人员的角度理解密码学概念不需要你是一个厉害的数学家。 这个系列的文章将尽量以最浅显的方式教你应用密码学的基础知识，而且包含大量循序渐进的代码示例和实践练习——就像你学习 Web 开发、数据库或 APP 开发一样。
+没错，如果你能够学会 Web 开发或 RESTful 服务，那么你也完全可以学会实用密码学。这就像学习一个新的 API 或一个新的 Web 开发框架，只要掌握了概念 + 加密库 API + 工具 + 最佳实践，你就学会了实用密码学~
+在这个系列中，你将学习如何使用密码算法和密码系统，如哈希、MAC 码和密钥派生函数 (KDF)、随机生成器、密钥交换协议、对称密码算法、加密方案、非对称密码系统、公钥密码学、椭圆曲线、数字签名和量子安全加密算法，以及现代加密工具和库。
+密码学已经从第一代广泛应用的密码学算法（比如已经退役的 MD5 跟 DES），发展到现代密码学算法（如 SHA-3, Argon2 以及 ChaCha20）。</description>
+    </item>
+    
+  </channel>
+</rss>
