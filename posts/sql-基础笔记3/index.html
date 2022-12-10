@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html><head>
+<title>SQL 基础实践（三）</title>
+
+
+
+
+<meta charset="utf-8">
+<meta name="X-UA-Compatible" content="IE=edge">
+<meta name="google-site-verification" content="">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="telephone=no" name="format-detection">
+<meta name="description" content="本笔记整理自《SQL 基础教程》、《MySQL 必知必会》和网上资料。个人笔记不保证正确">
+<meta name="renderer" content="webkit">
+<meta name="theme-color" content="#ffffff">
+
+
+
+<meta property="og:title" content="SQL 基础实践（三）" />
+<meta property="og:description" content="本笔记整理自《SQL 基础教程》、《MySQL 必知必会》和网上资料。个人笔记不保证正确" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-18T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-09-18T00:00:00+00:00" /><meta property="og:site_name" content="My Blog" />
+
+
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL 基础实践（三）"/>
+<meta name="twitter:description" content="本笔记整理自《SQL 基础教程》、《MySQL 必知必会》和网上资料。个人笔记不保证正确"/>
+
+
+
+
+
+
+
+<link type="text/css" rel="stylesheet" href="/vendor/css/bootstrap.min.css">
+
+
+  
+
+
+
+
+<link rel="icon" href="https://shenyiminghfut.github.io/static/images/bird.jpg">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/journal.min.4911cdba6f1b7c77b7747bb468ef07239bca7b881cf2045f88da04c5f72e36bf.css" integrity="sha256-SRHNum8bfHe3dHu0aO8HI5vKe4gc8gRfiNoExfcuNr8=" media="screen">
+
+
+
+<link rel="stylesheet" href="https://shenyiminghfut.github.io/scss/dark-mode.min.241cce2dfc0c6e4b9a64f3bb73e005e4a357d3313342d2805681faf6a78d679b.css" integrity="sha256-JBzOLfwMbkuaZPO7c&#43;AF5KNX0zEzQtKAVoH69qeNZ5s=" media="screen">
+
+
+<script src="/vendor/js/loadCSS.js"></script>
+<script>
+  loadCSS("https://fonts.googleapis.com/css?family=Fira+Mono|Material+Icons");
+</script>
+
+
+
+
+
+
+  <script src="/js/toc.js"></script>
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="/vendor/js/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+  clientID: '87b383f0bc03d41e07fe',
+  clientSecret: 'ebd8d74511e37d50021fa2decc3d65f19cbe5445',
+  repo: 'BlogComment',
+  owner: 'ShenYimingHFUT',
+  admin: ['ShenYimingHFUT'],
+  id: md5(location.pathname),
+  distractionFreeMode: 'false'
+  });
+  window.onload = function () {
+        gitalk.render('gitalk-container')
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    	<div id="app"><div id="sideContainer" class="side-container">
+    
+    <a class="a-block nav-head false" href="https://shenyiminghfut.github.io">
+    
+        <div class="nav-title">
+            摆人日寄
+        </div>
+        
+        <div class="nav-subtitle">
+            啊对对对。
+        </div>
+        
+    </a>
+
+    <div class="nav-link-list">
+        
+        
+            
+            
+            
+                
+            
+            
+            
+            <a class="a-block nav-link-item active" href="/posts">
+                归档
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/categories">
+                分类
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/tags">
+                标签
+            </a>
+            
+        
+            
+            
+            
+            
+            
+            <a class="a-block nav-link-item false" href="/index.xml">
+                RSS
+            </a>
+            
+        
+    </div>
+
+    
+
+    <div class="nav-footer">
+        
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+
+    </div>
+    
+</div><div id="extraContainer" class="extra-container">
+    
+    
+    <div class="toc animated-visibility" :class="{ invisible: scrollY <= 140 }">
+
+
+</div>
+    
+    <div class="pagination">
+        <a id="globalBackToTop" class="pagination-action animated-visibility" href="#top" :class="{ invisible: scrollY == 0 }">
+            <i class="material-icons pagination-action-icon">
+                keyboard_arrow_up
+            </i>
+        </a>
+        
+        <a type="button" class="pagination-action" id="darkModeToggleButton">
+            <span class="material-icons pagination-action-icon" id="darkModeToggleIcon">
+                dark_mode
+            </span>
+        </a>
+        
+        
+    </div>
+</div>
+<div class="single-column-drawer-container" id="drawer"
+     v-bind:class="{ 'single-column-drawer-container-active': isDrawerOpen }">
+    <div class="drawer-content">
+        <div class="drawer-menu">
+            
+            
+            
+                
+                
+                
+                    
+                
+                
+                
+                <a class="a-block drawer-menu-item active" href="/posts">
+                    归档
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/categories">
+                    分类
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/tags">
+                    标签
+                </a>
+                
+            
+                
+                
+                
+                
+                
+                <a class="a-block drawer-menu-item false" href="/index.xml">
+                    RSS
+                </a>
+                
+            
+            
+            <div class="toc">
+
+
+</div>
+            
+        </div>
+    </div>
+</div>
+<transition name="fade">
+    <div id="drawer-mask" v-bind:class="{ 'single-column-drawer-mask': mounted }" v-if="isDrawerOpen" v-on:click="toggleDrawer"></div>
+</transition>
+<nav id="navBar" class="navbar sticky-top navbar-light single-column-nav-container">
+    <div id="navBackground" class="nav-background"></div>
+    <div class="container container-narrow nav-content">
+        <button id="nav_dropdown_btn" class="nav-dropdown-toggle" type="button" v-on:click="toggleDrawer">
+            <i class="material-icons">
+                menu
+            </i>
+        </button>
+        <a id="navTitle" class="navbar-brand" href="https://shenyiminghfut.github.io">
+            摆人日寄
+        </a>
+        
+        <button type="button" class="nav-darkmode-toggle" id="darkModeToggleButton2">
+            <i class="material-icons" id="darkModeToggleIcon2">
+                dark_mode
+            </i>
+        </button>
+        
+    </div>
+</nav>
+<div class="single-column-header-container" id="pageHead"
+     v-bind:style="{ transform: 'translateZ(0px) translateY('+.3*scrollY+'px)', opacity: 1-navOpacity }">
+    <a href="https://shenyiminghfut.github.io">
+        <div class="single-column-header-title">摆人日寄</div>
+        
+        <div class="single-column-header-subtitle">啊对对对。</div>
+        
+
+    </a>
+</div>
+
+            <div id="content">
+                <div id="streamContainer" class="stream-container">
+
+    <div class="post-list-container post-list-container-shadow">
+        <div class="post">
+            
+            
+            
+                
+            
+
+            <div class="post-head-wrapper"
+                
+                    
+                    
+                    style="background-image: url('https://shenyiminghfut.github.io/images/chinese.jpg')"
+                    
+                
+            >
+                <div class="post-title">
+                    SQL 基础实践（三）
+                    
+                    <div class="post-subtitle">
+                        本笔记整理自《SQL 基础教程》、《MySQL 必知必会》和网上资料。个人笔记不保证正确
+                    </div>
+                    
+                    <div class="post-meta">
+                        
+                        <time itemprop="datePublished">
+                            2022-09-18 00:00
+                        </time>
+                        
+
+                        
+                            <i class="material-icons" style="">folder</i>
+                                <a href="/categories/sql">SQL</a>
+                                &nbsp;
+                        
+
+                        
+                            <i class="material-icons" style="">label</i>
+                            
+                                <a href="/tags/sql">SQL</a>
+                                &nbsp;
+                            
+                        
+                        
+                            <i class="material-icons" style="">schedule</i>
+                            
+
+                            
+                            
+
+                            
+                            6 min
+                            
+                            31 s.
+                        
+                    </div>
+                </div>
+            </div>
+            
+            <div class="post-body-wrapper">
+                
+                <div class="post-body" v-pre>
+                
+                    <p>数据类型是限制我们可以在表里存储什么数据的一种方法。不过，对于许多应用来说， 这种限制实在是太粗糙了。比如，一个包含产品价格的字段应该只接受正数。 但是没有哪种标准数据类型只接受正数。 另外一个问题是你可能需要根据其它字段或者其它行的数据来约束字段数据。比如， 在一个包含产品信息的表中，每个产品编号都应该只有一行。</p>
+<p>对于这些问题，SQL 允许你在字段和表上定义约束。约束允许你对数据施加任意控制。 如果用户企图在字段里存储违反约束的数据，那么就会抛出一个错误。 这种情况同时也适用于数值来自默认值的情况。</p>
+<p>外键约束声明一个字段 (或者一组字段) 的数值必须匹配另外一个表中出现的数值。 创建外键约束的前提是，该外键所在的表已经存在，并且外键必须是 UNIQUE 的。（主键默认 UNIQUE 且 NOT NULL）</p>
+<pre tabindex="0"><code>CREATE TABLE &lt;表名&gt; (
+    &lt;字段名&gt; &lt;类型&gt; PRIMARY KEY,
+    &lt;字段名&gt; &lt;类型&gt; REFERENCES &lt;外键所在的表名&gt; (&lt;字段名&gt;),  -- 这创建了一个外键
+    ...
+);
+</code></pre><p>还有另一种语法，它支持以多个字段为外键（<strong>字段约束也可以写成表约束，也就是放在一个独立的行中。而反过来很可能不行</strong>）：</p>
+<pre tabindex="0"><code>CREATE TABLE &lt;表名&gt; (
+    &lt;字段名1&gt; &lt;类型&gt; PRIMARY KEY,
+    &lt;字段名2&gt; &lt;类型&gt;
+    &lt;字段名3&gt; &lt;类型&gt;
+    ...
+    FOREIGN KEY (&lt;字段名2&gt;,  &lt;字段名3&gt;) REFERENCES &lt;外键所在的表名&gt; (&lt;字段名4&gt;, &lt;字段名5&gt;)
+);
+</code></pre><p>一个表也可以包含多个外键约束。这个特性用于实现表之间的多对多关系。 比如你有关于产品和订单的表，但现在你想允许一个订单可以包含多种产品 (上面那个结构是不允许这么做的)，你可以使用这样的结构：</p>
+<pre tabindex="0"><code>CREATE TABLE products (
+    product_no integer PRIMARY KEY,
+    name text,
+    price numeric
+);
+
+CREATE TABLE orders (
+    order_id integer PRIMARY KEY,
+    shipping_address text,
+    ...
+);
+
+CREATE TABLE order_items (
+    product_no integer REFERENCES products,
+    order_id integer REFERENCES orders,
+    quantity integer,
+    PRIMARY KEY (product_no, order_id)
+);
+</code></pre><p>外键能通过 <code>ALTER</code> 语句添加或删除</p>
+<p>上面说过：外键约束声明一个字段 (或者一组字段) 的数值必须匹配另外一个表中出现的数值。</p>
+<p>但是以 1. 中最后一个 sql 为例，如果一个订单（order）在创建之后，该订单包含的某个产品（product）被删除了，会发生什么？</p>
+<p>这个例子中，订单包含的产品通过外键被记录在 order_items 表中。现在如果你要删除 product 中某个被 order_items 引用了的行，默认情况为 <code>NO ACTION</code>，就是直接报错。</p>
+<p>这个行为也可以手动指定：</p>
+<pre tabindex="0"><code>CREATE TABLE products (
+    product_no integer PRIMARY KEY,
+    name text,
+    price numeric
+);
+
+CREATE TABLE orders (
+    order_id integer PRIMARY KEY,
+    shipping_address text,
+    ...
+);
+
+CREATE TABLE order_items (
+    product_no integer REFERENCES products ON DELETE RESTRICT,  -- 限制，也就是禁止删除被它引用的行
+    order_id integer REFERENCES orders ON DELETE CASCADE,    -- 级联，在删除被它引用的行的时候，这一行本身也会被自动删除掉
+    quantity integer,
+    PRIMARY KEY (product_no, order_id)
+);
+</code></pre><p>除了 <code>RESTRICT</code> 和 <code>CASCADE</code> 外，在外键上的动作还有两个选项：<code>SET NULL</code> 和 <code>SET DEFAULT</code>，顾名思义，就是在被引用的行删除后将外键设置为 <code>NULL</code> 或默认值。</p>
+<p><code>ON UPDATE</code> 与 <code>ON DELETE</code> 的动作是一样的，只是 <code>CASCADE</code> 表示同步更新。</p>
+<pre tabindex="0"><code>CREATE TABLE products (
+    product_no integer,
+    name text,
+    price numeric CHECK (price &gt; 0)
+);
+</code></pre><p>你还可以给这个约束取一个独立的名字。这样就可以令错误消息更清晰， 并且在你需要修改它的时候引用这个名字。语法是：</p>
+<pre tabindex="0"><code>CREATE TABLE products (
+    product_no integer,
+    name text,
+    price numeric CONSTRAINT positive_price CHECK (price &gt; 0)
+);
+</code></pre><p>稍微复杂一点的例子：</p>
+<pre tabindex="0"><code>CREATE TABLE products (
+    product_no integer,
+    name text,
+    price numeric CHECK (price &gt; 0),
+    discounted_price numeric,
+    CHECK (discounted_price &gt; 0 AND price &gt; discounted_price)
+);
+</code></pre><p>同样的，可以为 CHECK 命名，令错误信息更清晰：</p>
+<pre tabindex="0"><code>CREATE TABLE products (
+    product_no integer,
+    name text,
+    price numeric,
+    CHECK (price &gt; 0),
+    discounted_price numeric,
+    CHECK (discounted_price &gt; 0),
+    CONSTRAINT valid_discount CHECK (price &gt; discounted_price)
+);
+</code></pre><p>要注意的是，<strong>当约束表达式计算结果为真或 NULL 的时候，检查约束会被认为是满足条件的</strong>。 因为大多数表达式在含有 NULL 操作数的时候结果都是 NULL ，所以这些约束不能阻止字段值为 NULL 。要排除掉 NULL，只能使用 <code>NOT NULL</code> 约束。（所以就说 NULL 是万恶之源 hhh）</p>
+<ul>
+<li><a href="http://www.postgres.cn/docs/9.4/ddl-constraints.html">约束</a></li>
+</ul>
+
+                    
+                    <HR width="100%" id="EOF">
+		    <p style="color:#777;">上次修改於 2022-09-18</p>
+                    
+                </div>
+            </div>
+            
+            
+            <nav class="post-pagination">
+
+                
+                <a class="newer-posts" href="https://shenyiminghfut.github.io/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/">
+			下回<br>集中隔离最佳实践&#34;
+                </a>
+                
+                
+                
+                <a class="older-posts" href="https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/">
+			上回<br>SQL 基础实践（二）
+                </a>
+                
+            </nav>
+            <div class="post-comment-wrapper">
+                
+ 
+<div id="gitalk-container"></div>
+    
+
+            </div>
+        </div>
+    </div>
+
+
+                    </div>
+            </div><div id="single-column-footer">
+
+PowerBy <a href="https://gohugo.io/getting-started/">HUGO</a>
+<br>
+
+
+&copy;
+	
+	This is a customized copyright.
+	
+</div>
+            </div>
+    
+    <script src="/js/journal.js"></script>
+    </body>
+</html>

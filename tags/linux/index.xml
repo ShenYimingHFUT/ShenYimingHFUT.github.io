@@ -7,9 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Tue, 22 Nov 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Dec 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Dig最佳实践</title>
+      <title>ClashRelay简明指南</title>
+      <link>https://shenyiminghfut.github.io/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Thu, 01 Dec 2022 11:25:05 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</guid>
+      <description>序言
+关于代理，一直以来分成两派：自建 &amp;amp; 机场，但是各有优缺点。
+自建：保护隐私、可以⾃⼰折腾，但⼀遇到被阻断，就得深夜焦头烂额地换新配置、换 ip 、换端口，或者某天路由变了速度就突然变很慢！ 机场：看⽚记录被公开挂出来、访问某网站访问不了。
+那么有没有一种可以⼜快⼜稳⼜保护隐私⽆审计的办法呢？
+有的！答案就是 Clash Relay Group + Prxoy Provider + LoadBlance/Fallback。
+原理： Clash 的 relay 分组会把组内节点串成一个代理链，只需要将机场节点作为前置节点，⾃建节点作为后置节点，相当于只把机场作为跨境隧道，最终落地解密出真实流量的还是我们的⾃建节点。
+你的电脑 &amp;lt;-&amp;gt; 机场 &amp;lt;-&amp;gt; ⾃建节点 &amp;lt;-&amp;gt; 交友⽹站
+这样⼀来，机场不知道我们实际访问的⽹站，⽽我们的⾃建节点通过机场过境，也不怕被封了！
+还可以购买很便宜的落地机，因为不⽤关⼼线路了！
+这样就既能享受机场的便捷、⼜能保护⾃⼰的隐私了！
+⾃建节点那边就算服务商有记录、也不知道我们的实际 ip 、只能看到机场的 ip ，
+好！怎么实现呢？
+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- 超级简洁版教程来啦！&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-
+我准备了⼀份写好的配置⽂件 配置文件：点击查看详细内容 port: 7890 socks-port: 7891 allow-lan: true mode: Rule log-level: info external-controller: :9090 proxies: # 把你的⾃建节点填到这⾥! # 像下⾯这样 - name: &#34;你的⾃建节点&#34; type: ss server: 8.8.8.8 port: 12345 cipher: aes-256-gcm password: 3afjadljfalfaeasdfga proxy-providers: Jichang: type: http url: # 然后把订阅转换的链接贴到这⾥!</description>
+    </item>
+    
+    <item>
+      <title>Dig简单实践</title>
       <link>https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Tue, 22 Nov 2022 11:25:05 -0400</pubDate>
       
@@ -200,6 +222,23 @@ import hashlib, hmac, binascii key = b&amp;#34;key&amp;#34; msg = b&amp;#34;some
 没错，如果你能够学会 Web 开发或 RESTful 服务，那么你也完全可以学会实用密码学。这就像学习一个新的 API 或一个新的 Web 开发框架，只要掌握了概念 + 加密库 API + 工具 + 最佳实践，你就学会了实用密码学~
 在这个系列中，你将学习如何使用密码算法和密码系统，如哈希、MAC 码和密钥派生函数 (KDF)、随机生成器、密钥交换协议、对称密码算法、加密方案、非对称密码系统、公钥密码学、椭圆曲线、数字签名和量子安全加密算法，以及现代加密工具和库。
 密码学已经从第一代广泛应用的密码学算法（比如已经退役的 MD5 跟 DES），发展到现代密码学算法（如 SHA-3, Argon2 以及 ChaCha20）。</description>
+    </item>
+    
+    <item>
+      <title>Linux 中的虚拟网络接口</title>
+      <link>https://shenyiminghfut.github.io/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</guid>
+      <description>本文用到的字符画工具：vscode-asciiflow2
+注意: 本文中使用 ip 命令创建或修改的任何网络配置，都是未持久化的，主机重启即消失。
+Linux 具有强大的虚拟网络能力，这也是 openstack 网络、docker 容器网络以及 kubernetes 网络等虚拟网络的基础。
+这里介绍 Linux 常用的虚拟网络接口类型：TUN/TAP、bridge、veth、ipvlan/macvlan、vlan 以及 vxlan/geneve.
+tun/tap 是操作系统内核中的虚拟网络设备，他们为用户层程序提供数据的接收与传输。
+普通的物理网络接口如 eth0，它的两端分别是内核协议栈和外面的物理网络。
+而对于 TUN/TAP 虚拟接口如 tun0，它的一端一定是连接的用户层程序，另一端则视配置方式的不同而变化，可以直连内核协议栈，也可以是某个 bridge（后面会介绍）。 Linux 通过内核模块 TUN 提供 tun/tap 功能，该模块提供了一个设备接口 /dev/net/tun 供用户层程序读写，用户层程序通过 /dev/net/tun 读写主机内核协议栈的数据。
+&amp;gt; modinfo tun filename: /lib/modules/5.13.6-1-default/kernel/drivers/net/tun.ko.xz alias: devname:net/tun alias: char-major-10-200 license: GPL author: (C) 1999-2004 Max Krasnyansky &amp;lt;maxk@qualcomm.com&amp;gt; description: Universal TUN/TAP device driver ... &amp;gt; ls /dev/net/tun /dev/net/tun 一个 TUN 设备的示例图如下：
++----------------------------------------------------------------------+ | | | +--------------------+ +--------------------+ | | | User Application A | | User Application B +&amp;lt;-----+ | | +------------+-------+ +-------+------------+ | | | | 1 | 5 | | |.</description>
     </item>
     
   </channel>

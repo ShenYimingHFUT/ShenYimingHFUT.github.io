@@ -7,11 +7,11 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Tue, 22 Nov 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Dec 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
       <link>https://shenyiminghfut.github.io/tags/linux/</link>
-      <pubDate>Tue, 22 Nov 2022 11:25:05 -0400</pubDate>
+      <pubDate>Thu, 01 Dec 2022 11:25:05 -0400</pubDate>
       
       <guid>https://shenyiminghfut.github.io/tags/linux/</guid>
       <description></description>
@@ -36,11 +36,29 @@
     </item>
     
     <item>
+      <title>SQL</title>
+      <link>https://shenyiminghfut.github.io/tags/sql/</link>
+      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>scene</title>
       <link>https://shenyiminghfut.github.io/tags/scene/</link>
       <pubDate>Fri, 08 Jul 2022 10:58:08 -0400</pubDate>
       
       <guid>https://shenyiminghfut.github.io/tags/scene/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chinese</title>
+      <link>https://shenyiminghfut.github.io/tags/chinese/</link>
+      <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/tags/chinese/</guid>
       <description></description>
     </item>
     
@@ -63,11 +81,11 @@
     </item>
     
     <item>
-      <title>Chinese</title>
-      <link>https://shenyiminghfut.github.io/tags/chinese/</link>
+      <title>Net</title>
+      <link>https://shenyiminghfut.github.io/tags/net/</link>
       <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/tags/chinese/</guid>
+      <guid>https://shenyiminghfut.github.io/tags/net/</guid>
       <description></description>
     </item>
     

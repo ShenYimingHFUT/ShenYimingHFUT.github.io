@@ -70,25 +70,6 @@ ls -al ~/.config/clash .rw-r--r-- 10 einverne 23 Mar 19:30 config.yaml .rw-r--r-
     </item>
     
     <item>
-      <title>docker exec 命令中含有通配符执行失败的问题</title>
-      <link>https://shenyiminghfut.github.io/posts/docker-exec-%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%90%AB%E6%9C%89%E9%80%9A%E9%85%8D%E7%AC%A6%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</link>
-      <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
-      
-      <guid>https://shenyiminghfut.github.io/posts/docker-exec-%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%90%AB%E6%9C%89%E9%80%9A%E9%85%8D%E7%AC%A6%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</guid>
-      <description>我写的的 demo 环境是通过 docker-compose 一键拉起的。因为服务器部署，与本地拉起测试有一些配置需要调整，于是打算用脚本做一下，这个时候发现执行带有通配符的命令会报如下错误
-我写的 go-ldap-admin (opens new window) 的 demo 环境是通过 docker-compose 一键拉起的。
-因为服务器部署，与本地拉起测试有一些配置需要调整，于是打算用脚本做一下，这个时候发现执行带有通配符的命令会报如下错误：
-$ docker exec -it go-ldap-admin-ui ls static/js/app.*.js ls: cannot access static/js/app.*.js: No such file or directory 1
-2
-一开始想着加个单引号把命令包起来，发现仍然不行。
-解决方案：用双引号将命令包裹起来，就不会报错了。
-$ docker exec -it go-ldap-admin-ui sh -c &amp;#34;ls static/js/app.*.js&amp;#34; static/js/app.580a29c6.js 1
-2
-参考：https://stackoverflow.com/questions/50742892/using-in-docker-exec-command (opens new window)
-上次更新: 2022/06/15, 17:15:28</description>
-    </item>
-    
-    <item>
       <title>Tmux教程</title>
       <link>https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
       <pubDate>Mon, 09 Mar 2020 10:58:08 -0400</pubDate>

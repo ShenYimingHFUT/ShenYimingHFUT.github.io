@@ -7,9 +7,31 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Tue, 22 Nov 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Dec 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Dig最佳实践</title>
+      <title>ClashRelay简明指南</title>
+      <link>https://shenyiminghfut.github.io/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Thu, 01 Dec 2022 11:25:05 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</guid>
+      <description>序言
+关于代理，一直以来分成两派：自建 &amp;amp; 机场，但是各有优缺点。
+自建：保护隐私、可以⾃⼰折腾，但⼀遇到被阻断，就得深夜焦头烂额地换新配置、换 ip 、换端口，或者某天路由变了速度就突然变很慢！ 机场：看⽚记录被公开挂出来、访问某网站访问不了。
+那么有没有一种可以⼜快⼜稳⼜保护隐私⽆审计的办法呢？
+有的！答案就是 Clash Relay Group + Prxoy Provider + LoadBlance/Fallback。
+原理： Clash 的 relay 分组会把组内节点串成一个代理链，只需要将机场节点作为前置节点，⾃建节点作为后置节点，相当于只把机场作为跨境隧道，最终落地解密出真实流量的还是我们的⾃建节点。
+你的电脑 &amp;lt;-&amp;gt; 机场 &amp;lt;-&amp;gt; ⾃建节点 &amp;lt;-&amp;gt; 交友⽹站
+这样⼀来，机场不知道我们实际访问的⽹站，⽽我们的⾃建节点通过机场过境，也不怕被封了！
+还可以购买很便宜的落地机，因为不⽤关⼼线路了！
+这样就既能享受机场的便捷、⼜能保护⾃⼰的隐私了！
+⾃建节点那边就算服务商有记录、也不知道我们的实际 ip 、只能看到机场的 ip ，
+好！怎么实现呢？
+&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- 超级简洁版教程来啦！&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-
+我准备了⼀份写好的配置⽂件 配置文件：点击查看详细内容 port: 7890 socks-port: 7891 allow-lan: true mode: Rule log-level: info external-controller: :9090 proxies: # 把你的⾃建节点填到这⾥! # 像下⾯这样 - name: &#34;你的⾃建节点&#34; type: ss server: 8.8.8.8 port: 12345 cipher: aes-256-gcm password: 3afjadljfalfaeasdfga proxy-providers: Jichang: type: http url: # 然后把订阅转换的链接贴到这⾥!</description>
+    </item>
+    
+    <item>
+      <title>Dig简单实践</title>
       <link>https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Tue, 22 Nov 2022 11:25:05 -0400</pubDate>
       
@@ -78,6 +100,46 @@ ExecXXX 中的命令，均可以正常使用转义字符以及环境变量插值
     </item>
     
     <item>
+      <title>SQL 基础实践（三）</title>
+      <link>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/</link>
+      <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/</guid>
+      <description>数据类型是限制我们可以在表里存储什么数据的一种方法。不过，对于许多应用来说， 这种限制实在是太粗糙了。比如，一个包含产品价格的字段应该只接受正数。 但是没有哪种标准数据类型只接受正数。 另外一个问题是你可能需要根据其它字段或者其它行的数据来约束字段数据。比如， 在一个包含产品信息的表中，每个产品编号都应该只有一行。
+对于这些问题，SQL 允许你在字段和表上定义约束。约束允许你对数据施加任意控制。 如果用户企图在字段里存储违反约束的数据，那么就会抛出一个错误。 这种情况同时也适用于数值来自默认值的情况。
+外键约束声明一个字段 (或者一组字段) 的数值必须匹配另外一个表中出现的数值。 创建外键约束的前提是，该外键所在的表已经存在，并且外键必须是 UNIQUE 的。（主键默认 UNIQUE 且 NOT NULL）
+CREATE TABLE &amp;lt;表名&amp;gt; ( &amp;lt;字段名&amp;gt; &amp;lt;类型&amp;gt; PRIMARY KEY, &amp;lt;字段名&amp;gt; &amp;lt;类型&amp;gt; REFERENCES &amp;lt;外键所在的表名&amp;gt; (&amp;lt;字段名&amp;gt;), -- 这创建了一个外键 ... ); 还有另一种语法，它支持以多个字段为外键（字段约束也可以写成表约束，也就是放在一个独立的行中。而反过来很可能不行）：
+CREATE TABLE &amp;lt;表名&amp;gt; ( &amp;lt;字段名1&amp;gt; &amp;lt;类型&amp;gt; PRIMARY KEY, &amp;lt;字段名2&amp;gt; &amp;lt;类型&amp;gt; &amp;lt;字段名3&amp;gt; &amp;lt;类型&amp;gt; ... FOREIGN KEY (&amp;lt;字段名2&amp;gt;, &amp;lt;字段名3&amp;gt;) REFERENCES &amp;lt;外键所在的表名&amp;gt; (&amp;lt;字段名4&amp;gt;, &amp;lt;字段名5&amp;gt;) ); 一个表也可以包含多个外键约束。这个特性用于实现表之间的多对多关系。 比如你有关于产品和订单的表，但现在你想允许一个订单可以包含多种产品 (上面那个结构是不允许这么做的)，你可以使用这样的结构：
+CREATE TABLE products ( product_no integer PRIMARY KEY, name text, price numeric ); CREATE TABLE orders ( order_id integer PRIMARY KEY, shipping_address text, .</description>
+    </item>
+    
+    <item>
+      <title>SQL 基础实践（二）</title>
+      <link>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/</link>
+      <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/</guid>
+      <description>本笔记整理自《SQL 基础教程》、《MySQL 必知必会》和网上资料。个人笔记不保证正确。
+将 SELECT 查询包装成一个虚拟表，该虚拟表就被称为视图。（因为只是一个包装，因此视图的数据也会随着原表的更新而更新）
+用途： 简化复杂的 SQL 查询，用它替换子查询，能降低查询的嵌套深度。 SELECT 查询的重用，减少重复查询。 … 创建视图： CREATE VIEW &amp;lt;视图名称&amp;gt; (&amp;lt;视图列名1&amp;gt;, &amp;lt;视图列名2&amp;gt;... ) AS &amp;lt;SELECT 语句&amp;gt;; 其中 SELECT 的结果列和视图列名一一对应。 3. 视图的限制 1. 视图的 SELECT 子句，不能包含 ORDER BY 子句。因为视图也是表，而表是集合，它没有顺序。（也有些 DB 支持该用法，但不通用） 1. 视图的更新：只在很有限的条件下，才能在视图上使用 INSERT/DELETE/UPDATE 这样的变更数据的语句。（视图应该只用于检索，能不更新就不要更新它） 4. 删除视图：DROP VIEW &amp;lt;视图名称&amp;gt;;
+子查询，其实就是一次性的视图:
+SELECT ... FROM ( SELECT ... -- 这就是一个子查询：嵌套的 select 语句 ) AS &amp;lt;别名&amp;gt; ... 上面的查询的 FROM 子句中，给另一 SELECT 子句定义了一个别名，并将它作为了查询对象。这就是一个子查询。
+子查询不仅能用于 FROM，还能用在 WHERE 子句等很多地方。</description>
+    </item>
+    
+    <item>
+      <title>SQL 基础实践（一）</title>
+      <link>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/</link>
+      <pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/</guid>
+      <description>本笔记整理自《SQL 基础教程》、《MySQL 必知必会》和网上资料。个人笔记不保证正确。
+SQL，即结构化查询语言，是为访问与操作关系数据库中的数据而设计的语言。
+关系数据库以行 (row) 为单位读写数据 SQL 根据功能的不同，可分为三类（其中 DML 用得最多，增删查改嘛） DDL(Data Definition Language, 数据定义语言): CREATE/DROP/ALTER DML(Data Manipulation Language, 数据操作语言): SELECT/INSERT/UPDATE/DELETE DCL(Data Control Language, 数据控制语言): COMMIT/ROLLBACK/GRANT/REVOKE SQL 语句要以分号结尾。换行在 SQL 中不表示结束，而等同于空格。 SQL 不区分 ** 关键字 (Keyword)** 的大小写，但是描述符就不一定了。 这里有个坑：MySQL 中，数据库和表其实就是数据目录下的目录和文件，因而，操作系统的敏感性决定数据库名和表名 是否大小写敏感。这就意味着数据库名和表名在 Windows 中是大小写不敏感的，而在大多数类型的 Unix/Linux 系统中是大小写敏感的。（注意仅指数据库名和表名）可通过修改配置文件的lower_case_table_names属性来统一这一行为。 而字段名、字段内容都是内部数据，是操作系统无关的。它们的大小写敏感性，由 MySQL 的的校对（COLLATE）规则来控制。该规则体现在 MySQL 的 校对字符集（COLLATION）的后缀上：比如 utf8 字符集，utf8_general_ci表示不区分大小写，这个是 utf8 字符集默认的校对规则；utf8_general_cs 表示区分大小写，utf8_bin 表示二进制比较，同样也区分大小写 。 SQL 中的字符串和日期需要用单引号引用起来，日期有特定格式年-月-日 修改字符集：set names &amp;lt;字符集名&amp;gt; 记住在 MySQL 中，utf-8mb4 才是完全的 utf-8 字符集。
+创建数据库 CREATE DATABASE &amp;lt;数据库名称&amp;gt;; 关系表的设计，要确保把信息分解成多个表，一类信息一个表，各表通过某些常用的，基本不会改变的值（即关系表设计中的关系，也常称为外键）互相关联。尽量不要有冗余数据。</description>
+    </item>
+    
+    <item>
       <title>[译] NAT 穿透是如何工作的：技术原理及企业级实践（Tailscale, 2020）</title>
       <link>https://shenyiminghfut.github.io/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</link>
       <pubDate>Fri, 08 Jul 2022 10:58:08 -0400</pubDate>
@@ -91,6 +153,19 @@ ExecXXX 中的命令，均可以正常使用转义字符以及环境变量插值
 由于译者水平有限，本文不免存在遗漏或错误之处。如有疑问，请查阅原文。
 以下是译文。
 1.1 背景：IPv4 地址短缺，引入 NAT 1.2 需求：两台经过 NAT 的机器建立点对点连接 1.3 方案：NAT 穿透 1.3.1 两个必备前提：UDP + 能直接控制 socket 1.3.2 保底方式：中继 1.4 挑战：有状态防火墙和 NAT 设备 2.1 有状态防火墙 2.1.1 默认行为（策略） 2.1.2 如何区分入向和出向包 2.2 防火墙朝向（face-off）与穿透方案 2.2.1 防火墙朝向相同 场景特点：服务端 IP 可直接访问 穿透方案：客户端直连服务端，或 hub-and-spoke 拓扑 2.</description>
+    </item>
+    
+    <item>
+      <title>ssh端口转发</title>
+      <link>https://shenyiminghfut.github.io/posts/vault/</link>
+      <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/vault/</guid>
+      <description>Vault 是 hashicorp 推出的 secrets 管理、加密即服务与权限管理工具。
+Vault 是 hashicorp 推出的 secrets 管理、加密即服务与权限管理工具。它的功能简介如下：
+secrets 管理：支持保存各种自定义信息、自动生成各类密钥，vault 自动生成的密钥还能自动轮转 (rotate) 认证方式：支持接入各大云厂商的账号体系（比如阿里云 RAM 子账号体系）或者 LDAP 等进行身份验证，不需要创建额外的账号体系。 权限管理：通过 policy，可以设定非常细致的 ACL 权限。 密钥引擎：也支持接管各大云厂商的账号体系（比如阿里云 RAM 子账号体系），实现 API Key 的自动轮转。 支持接入 kubernetes rbac 认证体系，通过 serviceaccount+role 为每个 Pod 单独配置认证角色。 支持通过 sidecar/init-container 将 secrets 注入到 pod 中，或者通过 k8s operator 将 vault 数据同步到 k8s secrets 中 在使用 Vault 之前，我们是以携程开源的 Apollo 作为微服务的分布式配置中心。
+Apollo 在国内非常流行。它功能强大，支持配置的继承，也有提供 HTTP API 方便自动化。 缺点是权限管理和 secrets 管理比较弱，也不支持信息加密，不适合直接存储敏感信息。因此我们现在切换到了 Vault.
+目前我们本地的 CI/CD 流水线和云上的微服务体系，都是使用的 Vault 做 secrets 管理.</description>
     </item>
     
     <item>
@@ -355,25 +430,6 @@ public class Main { public static void main(String[] args) { System.ou
     </item>
     
     <item>
-      <title>docker exec 命令中含有通配符执行失败的问题</title>
-      <link>https://shenyiminghfut.github.io/posts/docker-exec-%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%90%AB%E6%9C%89%E9%80%9A%E9%85%8D%E7%AC%A6%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</link>
-      <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
-      
-      <guid>https://shenyiminghfut.github.io/posts/docker-exec-%E5%91%BD%E4%BB%A4%E4%B8%AD%E5%90%AB%E6%9C%89%E9%80%9A%E9%85%8D%E7%AC%A6%E6%89%A7%E8%A1%8C%E5%A4%B1%E8%B4%A5%E7%9A%84%E9%97%AE%E9%A2%98-%E4%BA%8C%E4%B8%AB%E8%AE%B2%E6%A2%B5/</guid>
-      <description>我写的的 demo 环境是通过 docker-compose 一键拉起的。因为服务器部署，与本地拉起测试有一些配置需要调整，于是打算用脚本做一下，这个时候发现执行带有通配符的命令会报如下错误
-我写的 go-ldap-admin (opens new window) 的 demo 环境是通过 docker-compose 一键拉起的。
-因为服务器部署，与本地拉起测试有一些配置需要调整，于是打算用脚本做一下，这个时候发现执行带有通配符的命令会报如下错误：
-$ docker exec -it go-ldap-admin-ui ls static/js/app.*.js ls: cannot access static/js/app.*.js: No such file or directory 1
-2
-一开始想着加个单引号把命令包起来，发现仍然不行。
-解决方案：用双引号将命令包裹起来，就不会报错了。
-$ docker exec -it go-ldap-admin-ui sh -c &amp;#34;ls static/js/app.*.js&amp;#34; static/js/app.580a29c6.js 1
-2
-参考：https://stackoverflow.com/questions/50742892/using-in-docker-exec-command (opens new window)
-上次更新: 2022/06/15, 17:15:28</description>
-    </item>
-    
-    <item>
       <title>Tmux教程</title>
       <link>https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
       <pubDate>Mon, 09 Mar 2020 10:58:08 -0400</pubDate>
@@ -393,6 +449,25 @@ $ docker exec -it go-ldap-admin-ui sh -c &amp;#34;ls static/js/app.*.js&amp;#34;
 类似的终端复用器还有 GNU Screen。Tmux 与它功能相似，但是更易用，也更强大。
 二、基本用法 2.1 安装 Tmux 一般需要自己安装。
 # Ubuntu 或 Debian $ sudo apt-get install tmux # CentOS 或 Fedora $ sudo yum install tmux # Mac $ brew install tmux 2.</description>
+    </item>
+    
+    <item>
+      <title>socat&amp;&amp;netcat最佳实践.</title>
+      <link>https://shenyiminghfut.github.io/posts/-socat-netcat/</link>
+      <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/-socat-netcat/</guid>
+      <description>文中的命令均在 macOS Big Sur 和 openSUSE Tumbleweed 上测试通过
+netcat(network cat) 是一个历史悠久的网络工具包，被称作 TCP/IP 的瑞士军刀，各大 Linux 发行版都有默认安装 openbsd 版本的 netcat，它的命令行名称为 nc.
+而 socat(socket cat)，官方文档描述它是 &amp;quot;netcat++&amp;quot; (extended design, new implementation)，项目比较活跃，kubernetes-client(kubectl) 底层就是使用的它做各种流量转发。
+在不方便安装 socat 的环境中，我们可以使用系统自带的 netcat. 而在其他环境，可以考虑优先使用 socat.
+socat 的基本命令格式：
+给 socat 提供两个地址，socat 干的活就是把两个地址的流对接起来。左边地址的输出传给右边，同时又把右边地址的输出传给左边，也就是一个双向的数据管道。
+听起来好像没啥特别的，但是实际上计算机网络干的活也就是数据传输而已，却影响了整个世界，不可小觑它的功能。
+socat 支持非常多的地址类型：-/stdio，TCP, TCP-LISTEN, UDP, UDP-LISTEN, OPEN, EXEC, SOCKS, PROXY 等等，可用于端口监听、链接，文件和进程读写，代理桥接等等。
+socat 的功能就是这么简单，命令行参数也很简洁，唯一需要花点精力学习的就是它各种地址的定义和搭配写法。 · 而 netcat 定义貌似没这么严谨，可以简单的理解为网络版的 cat 命令 2333
+各发行版都自带 netcat，包名通常为 nc-openbsd，因此这里只介绍 socat 的安装方法：
+# Debian/Ubuntu sudo apt install socat # CentOS/RedHat sudo yum install socat # macOS brew install socat 其他发行版基本也都可以使用包管理器安装 socat</description>
     </item>
     
     <item>
@@ -427,6 +502,23 @@ ssh -L 主机A端口X:主机C:主机C端口Z username@hostname# 简单理解为
       
       <guid>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
       <description>创建命令 Git 命令说明git clone &amp;lt;url&amp;gt;克隆远程仓库git init初始化本地 git 仓库（即创建新的本地仓库） 本地更改 Git 命令说明git status查看当前分支状态git diff查看已跟踪文件的变更git add &amp;lt;file&amp;gt;将指定的文件添加到暂存区git add .将所有有变更的文件添加到暂存区git commit -a提交所有本地修改git commit -m &#34;xxx&#34;把已添加至暂存区的文件执行提交，并以 xxx 作为本次提交的描述git commit --amend -m &#34;xxx&#34;修改上一次提交（请勿用该命令修改已发布的提交）git commit -am &#34;xxx&#34;该命令是 git add . 和 git commit -m &#34;xxx&#34; 的快捷方式git stash暂存当前修改，将所有置为 HEAD 状态git stash list查看所有暂存列表git stash push把当前工作区的文件暂存到临时空间git stash pop把文件从临时空间中恢复到当前工作区 提交历史 Git 命令说明git log查看提交日志git log -n显示 n 行日志，n 为整数git log --stat查看本地提交日志git show &amp;lt;commit&amp;gt;查看提交日志及相关变动文件git show HEAD查看 HEAD 提交日志git show HEAD^查看 HEAD 的上一个版本提交日志。另外，git show HEAD^^ 是查看上 2 个版本的提交日志；git show HEAD^5 是查看上 5 个版本的提交日志git blame &amp;lt;file&amp;gt;对于指定文件，逐行显示提交的哈希 ID、提交者、提交日期以及修改的内容git whatchanged显示提交历史，以及每次提交变更的文件 分支和标签 Git 命令说明git branch查看本地分支git branch -r查看远程分支git branch -a查看所有分支（本地和远程）git branch --merged查看所有分支已合并到当前分支的分支git branch --no-merged查看所有分支未合并到当前分支的分支git branch -m &amp;lt;new-branch&amp;gt;把当前分支的名称改成 new-branch；如果 new-branch 已存在，将不会执行改名git branch -M &amp;lt;new-branch&amp;gt;强制把当前分支的名称改成 new-branch（即使 new-branch 已存在）git branch -m &amp;lt;old-branch&amp;gt; &amp;lt;new-branch&amp;gt;把分支 old-branch 的名称改成 new-branch，如果 new-branch 已存在，将不会执行改名git branch -M &amp;lt;old-branch&amp;gt; &amp;lt;new-branch&amp;gt;强制把分支 old-branch 的名称改成 new-branch（即使 new-branch 已存在）git checkout &amp;lt;branch-name&amp;gt;切换到 branch-name 分支git branch &amp;lt;new-branch&amp;gt;新建分支（也可以用 git checkout -b &amp;lt;new-branch&amp;gt;）git branch --track &amp;lt;new&amp;gt; &amp;lt;remote&amp;gt;基于远程分支创建一个新分支，同 git checkout --track &amp;lt;remote/branch&amp;gt;git branch -d &amp;lt;branch-name&amp;gt;删除本地分支git tag列出所有本地标签git tag &amp;lt;tag-name&amp;gt;基于最新的提交创建标签git tag -d &amp;lt;tag-name&amp;gt;删除标签 删除命令 Git 命令说明git rm &amp;lt;file&amp;gt;删除文件（将从磁盘中删除文件）git rm -r &amp;lt;directory&amp;gt;递归删除指定目录下的文件git rm --cached &amp;lt;file&amp;gt;停止跟踪文件，不会从磁盘中删除 合并和衍合 Git 命令说明git merge &amp;lt;branch&amp;gt;合并指定分支到当前分支，保留两个git rebase &amp;lt;branch&amp;gt;合并指定分支到当前分支，只保留一个git rebase --abort终止 rebase 操作，即回到执行 rebase 之前的状态git rebase --continue解决冲突后继续执行 rebasegit mergetool使用配置文件指定的 mergetool 解决冲突git add &amp;lt;resolved-file&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux 中的虚拟网络接口</title>
+      <link>https://shenyiminghfut.github.io/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://shenyiminghfut.github.io/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</guid>
+      <description>本文用到的字符画工具：vscode-asciiflow2
+注意: 本文中使用 ip 命令创建或修改的任何网络配置，都是未持久化的，主机重启即消失。
+Linux 具有强大的虚拟网络能力，这也是 openstack 网络、docker 容器网络以及 kubernetes 网络等虚拟网络的基础。
+这里介绍 Linux 常用的虚拟网络接口类型：TUN/TAP、bridge、veth、ipvlan/macvlan、vlan 以及 vxlan/geneve.
+tun/tap 是操作系统内核中的虚拟网络设备，他们为用户层程序提供数据的接收与传输。
+普通的物理网络接口如 eth0，它的两端分别是内核协议栈和外面的物理网络。
+而对于 TUN/TAP 虚拟接口如 tun0，它的一端一定是连接的用户层程序，另一端则视配置方式的不同而变化，可以直连内核协议栈，也可以是某个 bridge（后面会介绍）。 Linux 通过内核模块 TUN 提供 tun/tap 功能，该模块提供了一个设备接口 /dev/net/tun 供用户层程序读写，用户层程序通过 /dev/net/tun 读写主机内核协议栈的数据。
+&amp;gt; modinfo tun filename: /lib/modules/5.13.6-1-default/kernel/drivers/net/tun.ko.xz alias: devname:net/tun alias: char-major-10-200 license: GPL author: (C) 1999-2004 Max Krasnyansky &amp;lt;maxk@qualcomm.com&amp;gt; description: Universal TUN/TAP device driver ... &amp;gt; ls /dev/net/tun /dev/net/tun 一个 TUN 设备的示例图如下：
++----------------------------------------------------------------------+ | | | +--------------------+ +--------------------+ | | | User Application A | | User Application B +&amp;lt;-----+ | | +------------+-------+ +-------+------------+ | | | | 1 | 5 | | |.</description>
     </item>
     
   </channel>
