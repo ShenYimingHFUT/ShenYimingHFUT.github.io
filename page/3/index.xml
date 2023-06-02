@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>摆人日寄</title>
-    <link>https://shenyiminghfut.github.io/</link>
+    <link>https://hugo.crossentropy.me/</link>
     <description>Recent content on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
     <lastBuildDate>Thu, 01 Dec 2022 11:25:05 -0400</lastBuildDate>
     
-        <atom:link href="https://shenyiminghfut.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://hugo.crossentropy.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>命令行Clash指南</title>
-        <link>https://shenyiminghfut.github.io/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/</link>
+        <link>https://hugo.crossentropy.me/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/</link>
         <pubDate>Mon, 29 Mar 2021 10:58:08 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/ -&lt;blockquote&gt;
+        <guid>https://hugo.crossentropy.me/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/ -&lt;blockquote&gt;
 &lt;p&gt;去年年中的时候切换到 macOS，一直用 ClashX，时隔半年又迁移回了 Linux，发现原先使用的 V2rayL 虽然能用，但是有些简陋，并且不支持分流，并且如果一个地址失效了，还需要手动地进行切换。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;去年年中的时候切换到 macOS，一直用 ClashX，时隔半年又迁移回了 Linux，发现原先使用的 V2rayL 虽然能用，但是有些简陋，并且不支持分流，并且如果一个地址失效了，还需要手动地进行切换。所以看到 Linux 的 Clash 可以自动进行流量切换的时候，就试一下。&lt;/p&gt;
@@ -85,18 +85,18 @@ StandardError=append:/var/log/clash/error.log
 &lt;li&gt;你还可以在终端下对代理进行&lt;a href=&#34;https://einverne.github.io/post/2020/04/how-to-speed-test-a-proxy-socks-or-http-proxy.html&#34;&gt;测速&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;感谢 BobMaster 在评论里面提供其他解决方式，有兴趣可以尝试 &lt;a href=&#34;https://github.com/v2rayA/v2rayA&#34;&gt;v2rayA&lt;/a&gt;， 或 &lt;a href=&#34;https://github.com/Qv2ray/Qv2ray&#34;&gt;Qv2ray&lt;/a&gt;&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>会用 Markdown 还不够，还得知道排版规范</title>
-        <link>https://shenyiminghfut.github.io/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/</link>
+        <link>https://hugo.crossentropy.me/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/</link>
         <pubDate>Sat, 13 Mar 2021 10:58:08 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/ -&lt;p&gt;本文将会介绍 Markdown 中&lt;/p&gt;
+        <guid>https://hugo.crossentropy.me/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/ -&lt;p&gt;本文将会介绍 Markdown 中&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;Markdown 标记的使用规范&lt;/p&gt;
@@ -259,18 +259,18 @@ StandardError=append:/var/log/clash/error.log
 &lt;blockquote&gt;
 &lt;p&gt;某班上海——北京的高铁的运行时间是 10:00——16:00。&lt;/p&gt;
 &lt;/blockquote&gt;
-- https://shenyiminghfut.github.io/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title> Vim命令速查</title>
-        <link>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <link>https://hugo.crossentropy.me/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
         <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ -&lt;blockquote&gt;
+        <guid>https://hugo.crossentropy.me/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ -&lt;blockquote&gt;
 &lt;p&gt;本速查表按分类列出了 Vim 常用的命令和快捷键，数量较多，可使用 Ctrl + F 进行查找。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;全局命令&#34;&gt;全局命令&lt;/h2&gt;
@@ -306,18 +306,18 @@ StandardError=append:/var/log/clash/error.log
 &lt;h2 id=&#34;diff文件比较&#34;&gt;Diff（文件比较）&lt;/h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;30%&#34;&gt;命令 / 快捷键&lt;/th&gt;&lt;th&gt;功能描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;zf&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;手动定义一个折迭行为&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;zd&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;删除光标处的折迭&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;za&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;展开 / 收起光标处的区块&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;zo&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;展开光标处的区块&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;zc&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;折迭光标处的区块&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;zr&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;展开当前折迭层级&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;zm&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;收起当前折迭层级&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;zi&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;切换折迭功能&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;]c&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;跳转到下一个不同处&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;[c&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;跳转到上一个不同处&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;do&lt;/kbd&gt; 或 &lt;kbd&gt;:diffg[et]&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;从其他缓冲区获取不同之处&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;dp&lt;/kbd&gt; 或 &lt;kbd&gt;:diffpu[t]&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;把不同之处存入其他缓冲区&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:diffthis&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;把当前窗口的内容作为文件对比的一部分&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:dif[fupdate]&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;刷新，重新比较&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:diffo[ff]&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;关闭当前窗口的 Diff 模式&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 &lt;h2 id=&#34;退出&#34;&gt;退出&lt;/h2&gt;
-&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;30%&#34;&gt;命令 / 快捷键&lt;/th&gt;&lt;th&gt;功能描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:w&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;保存&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:w !sudo tee %&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;使用 &lt;code&gt;sudo&lt;/code&gt; 保存当前文件&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:wq&lt;/kbd&gt; 或 &lt;kbd&gt;:x&lt;/kbd&gt; 或 &lt;kbd&gt;ZZ&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;保存并退出&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:q&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;退出（文件已修改且未保存时 Vim 将发出警告）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:q!&lt;/kbd&gt; 或 &lt;kbd&gt;ZQ&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;强制退出（即使文件未保存）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:wqa&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;保存所有标签页，并全部退出&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;- https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ - This is a customized copyright.</description>
+&lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;30%&#34;&gt;命令 / 快捷键&lt;/th&gt;&lt;th&gt;功能描述&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:w&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;保存&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:w !sudo tee %&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;使用 &lt;code&gt;sudo&lt;/code&gt; 保存当前文件&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:wq&lt;/kbd&gt; 或 &lt;kbd&gt;:x&lt;/kbd&gt; 或 &lt;kbd&gt;ZZ&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;保存并退出&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:q&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;退出（文件已修改且未保存时 Vim 将发出警告）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:q!&lt;/kbd&gt; 或 &lt;kbd&gt;ZQ&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;强制退出（即使文件未保存）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;kbd&gt;:wqa&lt;/kbd&gt;&lt;/td&gt;&lt;td&gt;保存所有标签页，并全部退出&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;- https://hugo.crossentropy.me/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>Tmux教程</title>
-        <link>https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+        <link>https://hugo.crossentropy.me/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
         <pubDate>Mon, 09 Mar 2020 10:58:08 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/ -&lt;p&gt;Tmux 是一个终端复用器（terminal multiplexer），非常有用，属于常用的开发工具。&lt;/p&gt;
+        <guid>https://hugo.crossentropy.me/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/ -&lt;p&gt;Tmux 是一个终端复用器（terminal multiplexer），非常有用，属于常用的开发工具。&lt;/p&gt;
 &lt;p&gt;本文介绍如何使用 Tmux。&lt;/p&gt;
 &lt;h2 id=&#34;一tmux-是什么&#34;&gt;一、Tmux 是什么？&lt;/h2&gt;
 &lt;h3 id=&#34;11-会话与进程&#34;&gt;1.1 会话与进程&lt;/h3&gt;
@@ -547,18 +547,18 @@ $ tmux source-file ~/.tmux.conf
 &lt;li&gt;&lt;a href=&#34;https://danielmiessler.com/study/tmux/&#34;&gt;Tactical tmux: The 10 Most Important Commands&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://linuxize.com/post/getting-started-with-tmux/&#34;&gt;Getting started with Tmux&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-- https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>socat&amp;&amp;netcat最佳实践.</title>
-        <link>https://shenyiminghfut.github.io/posts/-socat-netcat/</link>
+        <link>https://hugo.crossentropy.me/posts/-socat-netcat/</link>
         <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/-socat-netcat/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/-socat-netcat/ -&lt;blockquote&gt;
+        <guid>https://hugo.crossentropy.me/posts/-socat-netcat/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/-socat-netcat/ -&lt;blockquote&gt;
 &lt;p&gt;文中的命令均在 macOS Big Sur 和 openSUSE Tumbleweed 上测试通过&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;netcat(network cat) 是一个历史悠久的网络工具包，被称作 TCP/IP 的瑞士军刀，各大 Linux 发行版都有默认安装 openbsd 版本的 netcat，它的命令行名称为 &lt;code&gt;nc&lt;/code&gt;.&lt;/p&gt;
@@ -689,18 +689,18 @@ curl -v -H &amp;#39;Host: baidu.com&amp;#39; localhost:8080
 &lt;li&gt;&lt;a href=&#34;https://zhuanlan.zhihu.com/p/83959309&#34;&gt;用好你的瑞士军刀 / netcat - 韦易笑 - 知乎&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.dest-unreach.org/socat/&#34;&gt;socat - Multipurpose relay&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-- https://shenyiminghfut.github.io/posts/-socat-netcat/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/-socat-netcat/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>ssh端口转发</title>
-        <link>https://shenyiminghfut.github.io/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/</link>
+        <link>https://hugo.crossentropy.me/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/</link>
         <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/ -&lt;p&gt;SSH 端口转发（隧道）功能强大、用途广泛，仅仅一行代码便可以将两台主机联系起来，对特定的访问请求进行代理。正确书写 SSH 命令是实现一切的基础。然而许多关于端口转发命令参数的介绍都是浅入深出：罗列名词却不加解释，给出实例却不讲如何举一反三。因而在此尝试整理一份更清晰的使用指引，不涉及原理。不足之处欢迎评论区交流。&lt;/p&gt;
+        <guid>https://hugo.crossentropy.me/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/ -&lt;p&gt;SSH 端口转发（隧道）功能强大、用途广泛，仅仅一行代码便可以将两台主机联系起来，对特定的访问请求进行代理。正确书写 SSH 命令是实现一切的基础。然而许多关于端口转发命令参数的介绍都是浅入深出：罗列名词却不加解释，给出实例却不讲如何举一反三。因而在此尝试整理一份更清晰的使用指引，不涉及原理。不足之处欢迎评论区交流。&lt;/p&gt;
 &lt;h2 id=&#34;一基本连接&#34;&gt;一　基本连接&lt;/h2&gt;
 &lt;p&gt;SSH 基本的连接命令是：&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;ssh username@hostname
@@ -782,35 +782,35 @@ curl -v -H &amp;#39;Host: baidu.com&amp;#39; localhost:8080
 &lt;p&gt;这样应用的请求就从 X 进入隧道，抵达 B 后其中的目标信息被解析出来，B 访问目标后再将结果通过隧道返回给 A。比如在开启代理的 A 上的浏览器中访问 &lt;a href=&#34;http://zhihu.com&#34;&gt;http://zhihu.com&lt;/a&gt;，经过端口转发，相当于是 B 在帮 A 访问 &lt;a href=&#34;http://zhihu.com&#34;&gt;http://zhihu.com&lt;/a&gt;。&lt;/p&gt;
 &lt;h2 id=&#34;五端口转发的停止&#34;&gt;五　端口转发的停止&lt;/h2&gt;
 &lt;p&gt;SSH 端口转发完全基于基本的 SSH 连接，因此，通过在远程终端上执行 exit 命令、暴力关闭本地终端窗口、远程主机 B 关机、本地主机 A 关机等可以切断 SSH 连接的方式，即可停止 SSH 端口转发。就是这样。&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>中文文本测试</title>
-        <link>https://shenyiminghfut.github.io/posts/chinese/</link>
+        <link>https://hugo.crossentropy.me/posts/chinese/</link>
         <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/chinese/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/chinese/ -&lt;p&gt;　　这样看来， 邓拓在不经意间这样说过，越是没有本领的就越加自命不凡。这不禁令我深思。 我们不得不面对一个非常尴尬的事实，那就是， 一般来说， 所谓中午吃什么，关键是中午吃什么需要如何写。 伏尔泰说过一句富有哲理的话，坚持意志伟大的事业需要始终不渝的精神。这启发了我， 那么， 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。 这样看来， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 一般来讲，我们都必须务必慎重的考虑考虑。 黑格尔说过一句富有哲理的话，只有永远躺在泥坑里的人，才不会再掉进坑里。这启发了我， 我们不得不面对一个非常尴尬的事实，那就是， 既然如何， 在这种困难的抉择下，本人思来想去，寝食难安。&lt;/p&gt;
+        <guid>https://hugo.crossentropy.me/posts/chinese/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/chinese/ -&lt;p&gt;　　这样看来， 邓拓在不经意间这样说过，越是没有本领的就越加自命不凡。这不禁令我深思。 我们不得不面对一个非常尴尬的事实，那就是， 一般来说， 所谓中午吃什么，关键是中午吃什么需要如何写。 伏尔泰说过一句富有哲理的话，坚持意志伟大的事业需要始终不渝的精神。这启发了我， 那么， 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。 这样看来， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 一般来讲，我们都必须务必慎重的考虑考虑。 黑格尔说过一句富有哲理的话，只有永远躺在泥坑里的人，才不会再掉进坑里。这启发了我， 我们不得不面对一个非常尴尬的事实，那就是， 既然如何， 在这种困难的抉择下，本人思来想去，寝食难安。&lt;/p&gt;
 &lt;p&gt;　　我认为， 而这些并不是完全重要，更加重要的问题是， 了解清楚中午吃什么到底是一种怎么样的存在，是解决一切问题的关键。 中午吃什么因何而发生？ 而这些并不是完全重要，更加重要的问题是， 卢梭在不经意间这样说过，浪费时间是一桩大罪过。这启发了我， 既然如此， 从这个角度来看， 歌德在不经意间这样说过，意志坚强的人能把世界放在手中像泥块一样任意揉捏。我希望诸位也能好好地体会这句话。 我认为， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 莎士比亚在不经意间这样说过，人的一生是短的，但如果卑劣地过这一生，就太长了。带着这句话，我们还要更加慎重的审视这个问题： 带着这些问题，我们来审视一下中午吃什么。 中午吃什么因何而发生？ 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 布尔沃曾经说过，要掌握书，莫被书掌握；要为生而读，莫为读而生。这似乎解答了我的疑惑。 而这些并不是完全重要，更加重要的问题是， 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 带着这些问题，我们来审视一下中午吃什么。 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 我认为， 一般来说， 中午吃什么，到底应该如何实现。 我们不得不面对一个非常尴尬的事实，那就是， 所谓中午吃什么，关键是中午吃什么需要如何写。 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 现在，解决中午吃什么的问题，是非常非常重要的。　　我认为， 而这些并不是完全重要，更加重要的问题是， 了解清楚中午吃什么到底是一种怎么样的存在，是解决一切问题的关键。 中午吃什么因何而发生？ 而这些并不是完全重要，更加重要的问题是， 卢梭在不经意间这样说过，浪费时间是一桩大罪过。这启发了我， 既然如此， 从这个角度来看， 歌德在不经意间这样说过，意志坚强的人能把世界放在手中像泥块一样任意揉捏。我希望诸位也能好好地体会这句话。 我认为， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 莎士比亚在不经意间这样说过，人的一生是短的，但如果卑劣地过这一生，就太长了。带着这句话，我们还要更加慎重的审视这个问题： 带着这些问题，我们来审视一下中午吃什么。 中午吃什么因何而发生？ 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 布尔沃曾经说过，要掌握书，莫被书掌握；要为生而读，莫为读而生。这似乎解答了我的疑惑。 而这些并不是完全重要，更加重要的问题是， 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 带着这些问题，我们来审视一下中午吃什么。 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 我认为， 一般来说， 中午吃什么，到底应该如何实现。 我们不得不面对一个非常尴尬的事实，那就是， 所谓中午吃什么，关键是中午吃什么需要如何写。 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 现在，解决中午吃什么的问题，是非常非常重要的。&lt;/p&gt;
 &lt;p&gt;　　我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 可是，即使是这样，中午吃什么的出现仍然代表了一定的意义。 带着这些问题，我们来审视一下中午吃什么。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 我认为， 问题的关键究竟为何？ 非洲曾经提到过，最灵繁的人也看不见自己的背脊。这启发了我， 易卜生说过一句富有哲理的话，伟大的事业，需要决心，能力，组织和责任感。这似乎解答了我的疑惑。 一般来说， 在这种困难的抉择下，本人思来想去，寝食难安。 中午吃什么，到底应该如何实现。 经过上述讨论， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 中午吃什么因何而发生？
 带着这些问题，我们来审视一下中午吃什么。 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。那就是， 一般来说， 所谓中午吃什么，关键是中午吃什么需要如何写。 伏尔泰说过一句富有哲理的话，坚持意志伟大的事业需要始终不渝的精神。这启发了我， 那么， 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。 这样看来， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 一般来讲，我们都必须务必慎重的考虑考虑。 黑格尔说过一句富有哲理的话，只有永远躺在泥坑里的人，才不会再掉进坑里。这启发了我， 我们不得不面对一个非常尴尬的事实，那就是， 既然如何， 在这种困难的抉择下，本人思来想去，寝食难安。&lt;/p&gt;
 &lt;p&gt;　　我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 可是，即使是这样，中午吃什么的出现仍然代表了一定的意义。 带着这些问题，我们来审视一下中午吃什么。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 我认为， 问题的关键究竟为何？ 非洲曾经提到过，最灵繁的人也看不见自己的背脊。这启发了我， 易卜生说过一句富有哲理的话，伟大的事业，需要决心，能力，组织和责任感。这似乎解答了我的疑惑。 一般来说， 在这种困难的抉择下，本人思来想去，寝食难安。 中午吃什么，到底应该如何实现。 经过上述讨论， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 中午吃什么因何而发生？
 带着这些问题，我们来审视一下中午吃什么。 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/chinese/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/chinese/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>Git命令速查表</title>
-        <link>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+        <link>https://hugo.crossentropy.me/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
         <pubDate>Tue, 09 Apr 2019 10:58:08 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ -&lt;h2 id=&#34;创建命令&#34;&gt;创建命令&lt;/h2&gt;
+        <guid>https://hugo.crossentropy.me/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ -&lt;h2 id=&#34;创建命令&#34;&gt;创建命令&lt;/h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git clone &amp;lt;url&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;克隆远程仓库&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git init&lt;/code&gt;&lt;/td&gt;&lt;td&gt;初始化本地 git 仓库（即创建新的本地仓库）&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 &lt;h2 id=&#34;本地更改&#34;&gt;本地更改&lt;/h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git status&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看当前分支状态&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git diff&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看已跟踪文件的变更&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git add &amp;lt;file&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;将指定的文件添加到暂存区&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git add .&lt;/code&gt;&lt;/td&gt;&lt;td&gt;将所有有变更的文件添加到暂存区&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git commit -a&lt;/code&gt;&lt;/td&gt;&lt;td&gt;提交所有本地修改&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git commit -m &#34;xxx&#34;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把已添加至暂存区的文件执行提交，并以 xxx 作为本次提交的描述&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git commit --amend -m &#34;xxx&#34;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;修改上一次提交（请勿用该命令修改已发布的提交）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git commit -am &#34;xxx&#34;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;该命令是 &lt;code&gt;git add .&lt;/code&gt; 和 &lt;code&gt;git commit -m &#34;xxx&#34;&lt;/code&gt; 的快捷方式&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git stash&lt;/code&gt;&lt;/td&gt;&lt;td&gt;暂存当前修改，将所有置为 HEAD 状态&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git stash list&lt;/code&gt;&lt;/td&gt;&lt;td&gt;查看所有暂存列表&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git stash push&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把当前工作区的文件暂存到临时空间&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git stash pop&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把文件从临时空间中恢复到当前工作区&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
@@ -828,7 +828,7 @@ curl -v -H &amp;#39;Host: baidu.com&amp;#39; localhost:8080
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --list&lt;/code&gt;&lt;/td&gt;&lt;td&gt;列出当前 Git 配置&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --global user.name &amp;lt;name&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把参数 &lt;code&gt;name&lt;/code&gt; 设置为当前用户使用的提交者的姓名；如果未指定 &lt;code&gt;name&lt;/code&gt; 参数，则显示当前用户使用的提交者姓名&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --global user.email &amp;lt;email&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;把参数 &lt;code&gt;email&lt;/code&gt; 设置为当前用户使用的提交者的邮箱；如果未指定 &lt;code&gt;email&lt;/code&gt; 参数，则显示当前用户使用的提交者邮箱&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --global alias.&amp;lt;alias&amp;gt; &amp;lt;command&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;为 Git 命令创建全局的别名。比如，执行 &lt;code&gt;alias.glog log --graph --oneline --decorate&lt;/code&gt; 命令后，&lt;code&gt;git glog&lt;/code&gt; 就相当于 &lt;code&gt;git log --graph --oneline --decorate&lt;/code&gt;。&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --system core.editor &amp;lt;editor&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;对于本机的所有用户，设置命令使用的编辑器（比如 &lt;code&gt;vim&lt;/code&gt;）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --global --edit&lt;/code&gt;&lt;/td&gt;&lt;td&gt;在编辑器中打开全局配置文件（用于手动修改）&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git config --global color.ui auto&lt;/code&gt;&lt;/td&gt;&lt;td&gt;使用不同的颜色渲染 Git 命令的输出结果&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
 &lt;h2 id=&#34;其他命令&#34;&gt;其他命令&lt;/h2&gt;
 &lt;table&gt;&lt;thead&gt;&lt;tr&gt;&lt;th width=&#34;35%&#34;&gt;Git 命令&lt;/th&gt;&lt;th&gt;说明&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git var -l&lt;/code&gt;&lt;/td&gt;&lt;td&gt;列出 Git 环境变量&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&lt;code&gt;git help &amp;lt;command&amp;gt;&lt;/code&gt;&lt;/td&gt;&lt;td&gt;显示指定命令的帮助（将呼出该命令的 man 文件）&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;
-- https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/ - This is a customized copyright.</description>
         </item>
     
     

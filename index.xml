@@ -1,24 +1,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>摆人日寄</title>
-    <link>https://shenyiminghfut.github.io/</link>
+    <link>https://hugo.crossentropy.me/</link>
     <description>Recent content on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
     <lastBuildDate>Thu, 01 Dec 2022 11:25:05 -0400</lastBuildDate>
     
-        <atom:link href="https://shenyiminghfut.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://hugo.crossentropy.me/index.xml" rel="self" type="application/rss+xml" />
     
     
     
         <item>
         <title>ClashRelay简明指南</title>
-        <link>https://shenyiminghfut.github.io/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</link>
+        <link>https://hugo.crossentropy.me/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</link>
         <pubDate>Thu, 01 Dec 2022 11:25:05 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/ -&lt;p&gt;序言&lt;br&gt;
+        <guid>https://hugo.crossentropy.me/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/ -&lt;p&gt;序言&lt;br&gt;
 关于代理，一直以来分成两派：自建 &amp;amp; 机场，但是各有优缺点。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;自建：保护隐私、可以⾃⼰折腾，但⼀遇到被阻断，就得深夜焦头烂额地换新配置、换 ip 、换端口，或者某天路由变了速度就突然变很慢！&lt;/li&gt;
@@ -3670,18 +3670,18 @@ Clash 还有三种分组：负载均衡、故障转移、⾃动选择&lt;br&gt;
 机场好坏也⽆所谓，因为做了故障转移和负载均衡！&lt;br&gt;
 5、能避免谷歌验证码&lt;br&gt;
 6、能长期保持访问的 ip 是固定的，不会乱跳 对！因为⽹站看到的 ip 只有你⼀个⼈⽤！⾮常⼲净！&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>Dig简单实践</title>
-        <link>https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+        <link>https://hugo.crossentropy.me/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
         <pubDate>Tue, 22 Nov 2022 11:25:05 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/ -&lt;blockquote&gt;
+        <guid>https://hugo.crossentropy.me/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/ -&lt;blockquote&gt;
 &lt;p&gt;dig — DNS lookup utility&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;man page 开宗明义的说，dig 是个DNS 查找工具，也是跟CDN 打交道时最常用的指令之一。&lt;/p&gt;
@@ -3764,18 +3764,18 @@ www.apple.com.  1800 IN CNAME www.apple.com.edgekey.net.
 &lt;p&gt;让业务之类的非技术人员，电脑没有装 dig 又临时需要用到的人使用&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://toolbox.googleapps.com/apps/dig/&#34;&gt;https://toolbox.googleapps.com/apps/dig/&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href=&#34;https://blog.cloudflare.com/rfc8482-saying-goodbye-to-any/&#34;&gt;RFC8482 – Saying goodbye to ANYLadies and gentlemen, I would like you to welcome the new shiny RFC8482, which effectively deprecates DNS ANY query…blog.cloudflare.com&lt;/a&gt;&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>Curl简单实践</title>
-        <link>https://shenyiminghfut.github.io/posts/curl/</link>
+        <link>https://hugo.crossentropy.me/posts/curl/</link>
         <pubDate>Fri, 04 Nov 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/curl/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/curl/ -&lt;blockquote&gt;
+        <guid>https://hugo.crossentropy.me/posts/curl/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/curl/ -&lt;blockquote&gt;
 &lt;p&gt;curl 是一个通过网络协定传输数据的指令，用很白话的说法就是让你「连接到网站」。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h2 id=&#34;基本使用&#34;&gt;基本使用&lt;/h2&gt;
@@ -3871,18 +3871,18 @@ curl  --insecure https://certificate.expired.net/
 &lt;p&gt;如果需要时间资讯，可以使用-w&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;curl -I example.com -w %{time_connect} -% &amp;#34;{time_starttransfer}-%{time_total}\n&amp;#34;
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;man curl 可以看到更多能用的variables&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/curl/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/curl/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>通过Systemctl自定义Service</title>
-        <link>https://shenyiminghfut.github.io/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/</link>
+        <link>https://hugo.crossentropy.me/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/</link>
         <pubDate>Sat, 29 Oct 2022 11:25:05 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/ -&lt;blockquote&gt;
+        <guid>https://hugo.crossentropy.me/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/ -&lt;blockquote&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;如果要在 Linux 上设置一个开机自启，出现问题自动重启，并且有良好日志的程序，比较流行的方法有 &lt;code&gt;supervisord&lt;/code&gt;、&lt;code&gt;systemd&lt;/code&gt;，除此之外，还有 upstart、runit 等类似的工具。 但是自从 systemd 被 ubuntu、centos 等主流 Linux 发行版应用以来，systemd 渐渐成为主流方案。&lt;/p&gt;
 &lt;p&gt;如果你需要跨平台 (Linux/MacOSX/FreeBSD) 的方案，那么建议使用 &lt;code&gt;supervisord&lt;/code&gt;，如果只需要支持 Linux 则建议选用 &lt;code&gt;systemd&lt;/code&gt;.&lt;/p&gt;
@@ -4045,18 +4045,18 @@ systemctl list-units --type=service  # 查看所有服务
 &lt;li&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2016/03/systemd-tutorial-commands.html&#34;&gt;Systemd 入门教程：命令篇 - 阮一峰&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.jinbuguo.com/systemd/systemd.exec.html&#34;&gt;systemd.exec 中文手册&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-- https://shenyiminghfut.github.io/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>集中隔离最佳实践&#34;</title>
-        <link>https://shenyiminghfut.github.io/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+        <link>https://hugo.crossentropy.me/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
         <pubDate>Fri, 28 Oct 2022 11:25:05 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/ -&lt;blockquote&gt;
+        <guid>https://hugo.crossentropy.me/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/ -&lt;blockquote&gt;
 &lt;p&gt;人在江湖飘，哪能不挨刀。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;人在江湖飘，哪能不挨刀。&lt;/p&gt;
@@ -4201,18 +4201,18 @@ systemctl list-units --type=service  # 查看所有服务
 &lt;/blockquote&gt;
 &lt;p&gt;无论是阅读，看电影电视剧，玩游戏，做什么都可以，如果一直 “输入” 累了那就尝试输出，给自己写日记，拿起手机拍摄隔离记录，发发推特微博即刻，通过网络跟朋友聊聊天，打电话，做什么都可以。&lt;/p&gt;
 &lt;p&gt;试图让自己一直保持情绪高涨是不现实的。人类的状态本来就是起伏的。如果人生遇到了低谷，那就当作是放了一个长假，慢慢积攒能量。如果一直没什么输出，那也没什么关系，毕竟这是自己的人生啊。&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>SQL 基础实践（三）</title>
-        <link>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/</link>
+        <link>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/</link>
         <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/ -&lt;p&gt;数据类型是限制我们可以在表里存储什么数据的一种方法。不过，对于许多应用来说， 这种限制实在是太粗糙了。比如，一个包含产品价格的字段应该只接受正数。 但是没有哪种标准数据类型只接受正数。 另外一个问题是你可能需要根据其它字段或者其它行的数据来约束字段数据。比如， 在一个包含产品信息的表中，每个产品编号都应该只有一行。&lt;/p&gt;
+        <guid>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/ -&lt;p&gt;数据类型是限制我们可以在表里存储什么数据的一种方法。不过，对于许多应用来说， 这种限制实在是太粗糙了。比如，一个包含产品价格的字段应该只接受正数。 但是没有哪种标准数据类型只接受正数。 另外一个问题是你可能需要根据其它字段或者其它行的数据来约束字段数据。比如， 在一个包含产品信息的表中，每个产品编号都应该只有一行。&lt;/p&gt;
 &lt;p&gt;对于这些问题，SQL 允许你在字段和表上定义约束。约束允许你对数据施加任意控制。 如果用户企图在字段里存储违反约束的数据，那么就会抛出一个错误。 这种情况同时也适用于数值来自默认值的情况。&lt;/p&gt;
 &lt;p&gt;外键约束声明一个字段 (或者一组字段) 的数值必须匹配另外一个表中出现的数值。 创建外键约束的前提是，该外键所在的表已经存在，并且外键必须是 UNIQUE 的。（主键默认 UNIQUE 且 NOT NULL）&lt;/p&gt;
 &lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;CREATE TABLE &amp;lt;表名&amp;gt; (
@@ -4305,18 +4305,18 @@ CREATE TABLE order_items (
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.postgres.cn/docs/9.4/ddl-constraints.html&#34;&gt;约束&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-- https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>SQL 基础实践（二）</title>
-        <link>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/</link>
+        <link>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/</link>
         <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/ -&lt;blockquote&gt;
+        <guid>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/ -&lt;blockquote&gt;
 &lt;p&gt;本笔记整理自&lt;a href=&#34;https://book.douban.com/subject/24841239/&#34;&gt;《SQL 基础教程》&lt;/a&gt;、&lt;a href=&#34;https://book.douban.com/subject/3354490/&#34;&gt;《MySQL 必知必会》&lt;/a&gt;和网上资料。个人笔记不保证正确。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;将 SELECT 查询包装成一个虚拟表，该虚拟表就被称为视图。（因为只是一个包装，因此视图的数据也会随着原表的更新而更新）&lt;/p&gt;
@@ -4502,18 +4502,18 @@ select distinct batches.identity_number as &amp;#39;登录失败账号&amp;#39;,
 &lt;p&gt;隐式类型转换会导致查询不会走索引！！！可能会严重拖累性能。另外还可能会导致各种奇怪的问题。&lt;/p&gt;
 &lt;p&gt;详见 &lt;a href=&#34;https://www.cnblogs.com/BOHB-yunying/p/12458589.html&#34;&gt;MYSQL 隐式类型转换&lt;/a&gt;
 ·&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>SQL 基础实践（一）</title>
-        <link>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/</link>
+        <link>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/</link>
         <pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/ -&lt;blockquote&gt;
+        <guid>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/ -&lt;blockquote&gt;
 &lt;p&gt;本笔记整理自&lt;a href=&#34;https://book.douban.com/subject/24841239/&#34;&gt;《SQL 基础教程》&lt;/a&gt;、&lt;a href=&#34;https://book.douban.com/subject/3354490/&#34;&gt;《MySQL 必知必会》&lt;/a&gt;和网上资料。个人笔记不保证正确。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;SQL，即结构化查询语言，是为访问与操作关系数据库中的数据而设计的语言。&lt;/p&gt;
@@ -4711,18 +4711,18 @@ CALL my_test()
 &lt;blockquote&gt;
 &lt;p&gt;P.S. 许多语言的数据库 API 会定义自己的事务操作，不一定与这里一致。&lt;/p&gt;
 &lt;/blockquote&gt;
-- https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>[译] NAT 穿透是如何工作的：技术原理及企业级实践（Tailscale, 2020）</title>
-        <link>https://shenyiminghfut.github.io/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</link>
+        <link>https://hugo.crossentropy.me/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</link>
         <pubDate>Fri, 08 Jul 2022 10:58:08 -0400</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/ -&lt;h3 id=&#34;译者序&#34;&gt;译者序&lt;/h3&gt;
+        <guid>https://hugo.crossentropy.me/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/ -&lt;h3 id=&#34;译者序&#34;&gt;译者序&lt;/h3&gt;
 &lt;p&gt;本文翻译自 2020 年的一篇英文博客： &lt;a href=&#34;https://tailscale.com/blog/how-nat-traversal-works/&#34;&gt;How NAT traversal works&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;设想这样一个问题：在北京和上海各有一台&lt;strong&gt;局域网的机器&lt;/strong&gt;（例如一台是家里的台式机，一 台是连接到星巴克 WiFi 的笔记本），二者都是私网 IP 地址，但可以访问公网， &lt;strong&gt;如何让这两台机器通信呢？&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;既然二者都能访问公网，那最简单的方式当然是在公网上架设一个中继服务器： 两台机器分别连接到中继服务，后者完成双向转发。这种方式显然有很大的性能开销，而 且中继服务器很容易成为瓶颈。&lt;/p&gt;
@@ -5495,18 +5495,18 @@ CALL my_test()
 &lt;li&gt;如果当前路径断了，降级到其他可用的路径；&lt;/li&gt;
 &lt;li&gt;确保所有东西都是加密的，并且有端到端认证。&lt;/li&gt;
 &lt;/ol&gt;
-- https://shenyiminghfut.github.io/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/ - This is a customized copyright.</description>
         </item>
     
     
     
         <item>
         <title>ssh端口转发</title>
-        <link>https://shenyiminghfut.github.io/posts/vault/</link>
+        <link>https://hugo.crossentropy.me/posts/vault/</link>
         <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
         
-        <guid>https://shenyiminghfut.github.io/posts/vault/</guid>
-        <description>摆人日寄 https://shenyiminghfut.github.io/posts/vault/ -&lt;blockquote&gt;
+        <guid>https://hugo.crossentropy.me/posts/vault/</guid>
+        <description>摆人日寄 https://hugo.crossentropy.me/posts/vault/ -&lt;blockquote&gt;
 &lt;p&gt;Vault 是 hashicorp 推出的 secrets 管理、加密即服务与权限管理工具。&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;p&gt;&lt;a href=&#34;https://github.com/hashicorp/vault&#34;&gt;Vault&lt;/a&gt; 是 hashicorp 推出的 secrets 管理、加密即服务与权限管理工具。它的功能简介如下：&lt;/p&gt;
@@ -6167,7 +6167,7 @@ spec:
 &lt;/ul&gt;
 &lt;p&gt;官方的 sidecar/init-container 模式仍然是最推荐使用的。&lt;/p&gt;
 &lt;p&gt;待续。。。&lt;/p&gt;
-- https://shenyiminghfut.github.io/posts/vault/ - This is a customized copyright.</description>
+- https://hugo.crossentropy.me/posts/vault/ - This is a customized copyright.</description>
         </item>
     
     

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 摆人日寄</title>
-    <link>https://shenyiminghfut.github.io/posts/</link>
+    <link>https://hugo.crossentropy.me/posts/</link>
     <description>Recent content in Posts on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Thu, 01 Dec 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Dec 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://hugo.crossentropy.me/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ClashRelay简明指南</title>
-      <link>https://shenyiminghfut.github.io/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</link>
+      <link>https://hugo.crossentropy.me/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</link>
       <pubDate>Thu, 01 Dec 2022 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</guid>
+      <guid>https://hugo.crossentropy.me/posts/clashrelay%E7%AE%80%E6%98%8E%E6%8C%87%E5%8D%97/</guid>
       <description>序言
 关于代理，一直以来分成两派：自建 &amp;amp; 机场，但是各有优缺点。
 自建：保护隐私、可以⾃⼰折腾，但⼀遇到被阻断，就得深夜焦头烂额地换新配置、换 ip 、换端口，或者某天路由变了速度就突然变很慢！ 机场：看⽚记录被公开挂出来、访问某网站访问不了。
@@ -32,10 +32,10 @@
     
     <item>
       <title>Dig简单实践</title>
-      <link>https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <link>https://hugo.crossentropy.me/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Tue, 22 Nov 2022 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>https://hugo.crossentropy.me/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
       <description>dig — DNS lookup utility
 man page 开宗明义的说，dig 是个DNS 查找工具，也是跟CDN 打交道时最常用的指令之一。
 白话的说明就是：用来查某个网址会连到哪台主机。
@@ -50,10 +50,10 @@ dig @168.95.1.1 any www.apple.com dig @168.95.1.1 www.apple.com any dig www.appl
     
     <item>
       <title>Curl简单实践</title>
-      <link>https://shenyiminghfut.github.io/posts/curl/</link>
+      <link>https://hugo.crossentropy.me/posts/curl/</link>
       <pubDate>Fri, 04 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/curl/</guid>
+      <guid>https://hugo.crossentropy.me/posts/curl/</guid>
       <description>curl 是一个通过网络协定传输数据的指令，用很白话的说法就是让你「连接到网站」。
 基本使用 curl http://www.example.com 这样会将 response body print 出来，为了要快速验证网站的回应是否正常，我比较常用的形式是
 curl -iL http://www.example.com -i 代表显示 header + body ，如果只要 header 的话，可以使用大写的 I 。
@@ -63,10 +63,10 @@ curl -IL http://google.com --- HTTP/1.1 301 Moved Permanently Location: http://w
     
     <item>
       <title>通过Systemctl自定义Service</title>
-      <link>https://shenyiminghfut.github.io/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/</link>
+      <link>https://hugo.crossentropy.me/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/</link>
       <pubDate>Sat, 29 Oct 2022 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E9%80%9A%E8%BF%87systemctl%E8%87%AA%E5%AE%9A%E4%B9%89service/</guid>
       <description>如果要在 Linux 上设置一个开机自启，出现问题自动重启，并且有良好日志的程序，比较流行的方法有 supervisord、systemd，除此之外，还有 upstart、runit 等类似的工具。 但是自从 systemd 被 ubuntu、centos 等主流 Linux 发行版应用以来，systemd 渐渐成为主流方案。
 如果你需要跨平台 (Linux/MacOSX/FreeBSD) 的方案，那么建议使用 supervisord，如果只需要支持 Linux 则建议选用 systemd.
 要自定义一个服务，需要在 /usr/lib/systemd/system/ 下添加一个配置文件：&amp;lt;software-name&amp;gt;.service
@@ -78,10 +78,10 @@ ExecXXX 中的命令，均可以正常使用转义字符以及环境变量插值
     
     <item>
       <title>集中隔离最佳实践&#34;</title>
-      <link>https://shenyiminghfut.github.io/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <link>https://hugo.crossentropy.me/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Fri, 28 Oct 2022 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E9%9B%86%E4%B8%AD%E9%9A%94%E7%A6%BB%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
       <description>人在江湖飘，哪能不挨刀。
 人在江湖飘，哪能不挨刀。
 生活在 2022 年的中国，“行政区被封”、“小区被封”、“被判密接”、“被赋码”、“被转运”等等这些 “被们” 都是随机发生的，而且无法为个人左右。所以要让自己做好准备，减少这些不可控的东西给自己带来的负面影响。
@@ -101,10 +101,10 @@ ExecXXX 中的命令，均可以正常使用转义字符以及环境变量插值
     
     <item>
       <title>SQL 基础实践（三）</title>
-      <link>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/</link>
+      <link>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/</link>
       <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/</guid>
+      <guid>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B03/</guid>
       <description>数据类型是限制我们可以在表里存储什么数据的一种方法。不过，对于许多应用来说， 这种限制实在是太粗糙了。比如，一个包含产品价格的字段应该只接受正数。 但是没有哪种标准数据类型只接受正数。 另外一个问题是你可能需要根据其它字段或者其它行的数据来约束字段数据。比如， 在一个包含产品信息的表中，每个产品编号都应该只有一行。
 对于这些问题，SQL 允许你在字段和表上定义约束。约束允许你对数据施加任意控制。 如果用户企图在字段里存储违反约束的数据，那么就会抛出一个错误。 这种情况同时也适用于数值来自默认值的情况。
 外键约束声明一个字段 (或者一组字段) 的数值必须匹配另外一个表中出现的数值。 创建外键约束的前提是，该外键所在的表已经存在，并且外键必须是 UNIQUE 的。（主键默认 UNIQUE 且 NOT NULL）
@@ -115,10 +115,10 @@ CREATE TABLE products ( product_no integer PRIMARY KEY, name text, price numeric
     
     <item>
       <title>SQL 基础实践（二）</title>
-      <link>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/</link>
+      <link>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/</link>
       <pubDate>Fri, 16 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/</guid>
+      <guid>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B02/</guid>
       <description>本笔记整理自《SQL 基础教程》、《MySQL 必知必会》和网上资料。个人笔记不保证正确。
 将 SELECT 查询包装成一个虚拟表，该虚拟表就被称为视图。（因为只是一个包装，因此视图的数据也会随着原表的更新而更新）
 用途： 简化复杂的 SQL 查询，用它替换子查询，能降低查询的嵌套深度。 SELECT 查询的重用，减少重复查询。 … 创建视图： CREATE VIEW &amp;lt;视图名称&amp;gt; (&amp;lt;视图列名1&amp;gt;, &amp;lt;视图列名2&amp;gt;... ) AS &amp;lt;SELECT 语句&amp;gt;; 其中 SELECT 的结果列和视图列名一一对应。 3. 视图的限制 1. 视图的 SELECT 子句，不能包含 ORDER BY 子句。因为视图也是表，而表是集合，它没有顺序。（也有些 DB 支持该用法，但不通用） 1. 视图的更新：只在很有限的条件下，才能在视图上使用 INSERT/DELETE/UPDATE 这样的变更数据的语句。（视图应该只用于检索，能不更新就不要更新它） 4. 删除视图：DROP VIEW &amp;lt;视图名称&amp;gt;;
@@ -129,10 +129,10 @@ SELECT ... FROM ( SELECT ... -- 这就是一个子查询：嵌套的 select 语�
     
     <item>
       <title>SQL 基础实践（一）</title>
-      <link>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/</link>
+      <link>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/</link>
       <pubDate>Wed, 14 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/</guid>
+      <guid>https://hugo.crossentropy.me/posts/sql-%E5%9F%BA%E7%A1%80%E7%AC%94%E8%AE%B01/</guid>
       <description>本笔记整理自《SQL 基础教程》、《MySQL 必知必会》和网上资料。个人笔记不保证正确。
 SQL，即结构化查询语言，是为访问与操作关系数据库中的数据而设计的语言。
 关系数据库以行 (row) 为单位读写数据 SQL 根据功能的不同，可分为三类（其中 DML 用得最多，增删查改嘛） DDL(Data Definition Language, 数据定义语言): CREATE/DROP/ALTER DML(Data Manipulation Language, 数据操作语言): SELECT/INSERT/UPDATE/DELETE DCL(Data Control Language, 数据控制语言): COMMIT/ROLLBACK/GRANT/REVOKE SQL 语句要以分号结尾。换行在 SQL 中不表示结束，而等同于空格。 SQL 不区分 ** 关键字 (Keyword)** 的大小写，但是描述符就不一定了。 这里有个坑：MySQL 中，数据库和表其实就是数据目录下的目录和文件，因而，操作系统的敏感性决定数据库名和表名 是否大小写敏感。这就意味着数据库名和表名在 Windows 中是大小写不敏感的，而在大多数类型的 Unix/Linux 系统中是大小写敏感的。（注意仅指数据库名和表名）可通过修改配置文件的lower_case_table_names属性来统一这一行为。 而字段名、字段内容都是内部数据，是操作系统无关的。它们的大小写敏感性，由 MySQL 的的校对（COLLATE）规则来控制。该规则体现在 MySQL 的 校对字符集（COLLATION）的后缀上：比如 utf8 字符集，utf8_general_ci表示不区分大小写，这个是 utf8 字符集默认的校对规则；utf8_general_cs 表示区分大小写，utf8_bin 表示二进制比较，同样也区分大小写 。 SQL 中的字符串和日期需要用单引号引用起来，日期有特定格式年-月-日 修改字符集：set names &amp;lt;字符集名&amp;gt; 记住在 MySQL 中，utf-8mb4 才是完全的 utf-8 字符集。
@@ -141,10 +141,10 @@ SQL，即结构化查询语言，是为访问与操作关系数据库中的数�
     
     <item>
       <title>[译] NAT 穿透是如何工作的：技术原理及企业级实践（Tailscale, 2020）</title>
-      <link>https://shenyiminghfut.github.io/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</link>
+      <link>https://hugo.crossentropy.me/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</link>
       <pubDate>Fri, 08 Jul 2022 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</guid>
+      <guid>https://hugo.crossentropy.me/posts/nat%E6%98%AF%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E7%9A%84/</guid>
       <description>译者序 本文翻译自 2020 年的一篇英文博客： How NAT traversal works。
 设想这样一个问题：在北京和上海各有一台局域网的机器（例如一台是家里的台式机，一 台是连接到星巴克 WiFi 的笔记本），二者都是私网 IP 地址，但可以访问公网， 如何让这两台机器通信呢？
 既然二者都能访问公网，那最简单的方式当然是在公网上架设一个中继服务器： 两台机器分别连接到中继服务，后者完成双向转发。这种方式显然有很大的性能开销，而 且中继服务器很容易成为瓶颈。
@@ -157,10 +157,10 @@ SQL，即结构化查询语言，是为访问与操作关系数据库中的数�
     
     <item>
       <title>ssh端口转发</title>
-      <link>https://shenyiminghfut.github.io/posts/vault/</link>
+      <link>https://hugo.crossentropy.me/posts/vault/</link>
       <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/vault/</guid>
+      <guid>https://hugo.crossentropy.me/posts/vault/</guid>
       <description>Vault 是 hashicorp 推出的 secrets 管理、加密即服务与权限管理工具。
 Vault 是 hashicorp 推出的 secrets 管理、加密即服务与权限管理工具。它的功能简介如下：
 secrets 管理：支持保存各种自定义信息、自动生成各类密钥，vault 自动生成的密钥还能自动轮转 (rotate) 认证方式：支持接入各大云厂商的账号体系（比如阿里云 RAM 子账号体系）或者 LDAP 等进行身份验证，不需要创建额外的账号体系。 权限管理：通过 policy，可以设定非常细致的 ACL 权限。 密钥引擎：也支持接管各大云厂商的账号体系（比如阿里云 RAM 子账号体系），实现 API Key 的自动轮转。 支持接入 kubernetes rbac 认证体系，通过 serviceaccount+role 为每个 Pod 单独配置认证角色。 支持通过 sidecar/init-container 将 secrets 注入到 pod 中，或者通过 k8s operator 将 vault 数据同步到 k8s secrets 中 在使用 Vault 之前，我们是以携程开源的 Apollo 作为微服务的分布式配置中心。
@@ -170,10 +170,10 @@ Apollo 在国内非常流行。它功能强大，支持配置的继承，也有�
     
     <item>
       <title>HTTP状态码速查表</title>
-      <link>https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</link>
+      <link>https://hugo.crossentropy.me/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</link>
       <pubDate>Sat, 12 Mar 2022 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</guid>
+      <guid>https://hugo.crossentropy.me/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</guid>
       <description>1xx 状态：表示临时响应 1xx 系列状态码，表示请求已收到，需要请求者继续执行操作的状态代码。
 继续（Continue）
 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部
@@ -208,10 +208,10 @@ Apollo 在国内非常流行。它功能强大，支持配置的继承，也有�
     
     <item>
       <title>写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AB/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AB/</link>
       <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AB/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AB/</guid>
       <description>《写给开发人员的实用密码学》系列文章目录:
 写给开发人员的实用密码学（一）—— 概览
 写给开发人员的实用密码学（二）—— 哈希函数
@@ -230,10 +230,10 @@ Apollo 在国内非常流行。它功能强大，支持配置的继承，也有�
     
     <item>
       <title>写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%83/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%83/</link>
       <pubDate>Sun, 07 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%83/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%83/</guid>
       <description>本文部分内容翻译自 Practical-Cryptography-for-Developers-Book
 这篇文章中会涉及到一些数论知识，本文不会详细介绍这些数学知识，可以在有疑惑的时候自行查找相关知识，或者选择跳过相关内容。
 《写给开发人员的实用密码学》系列文章目录：
@@ -251,10 +251,10 @@ Apollo 在国内非常流行。它功能强大，支持配置的继承，也有�
     
     <item>
       <title>写给开发人员的实用密码学（六）—— 对称密钥加密算法</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AD/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AD/</link>
       <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AD/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AD/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book，笔者补充了部分代码示例。
 《写给开发人员的实用密码学》系列文章目录：
 写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 两个常用动词：
@@ -269,10 +269,10 @@ cipher: 指用于加解密的「密码算法」，有时也被直接翻译成「
     
     <item>
       <title>写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/</link>
       <pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book，笔者额外补充了 DHKE/ECDH 的代码示例，以及「PFS 完美前向保密协议 DHE/ECDHE」一节。
 《写给开发人员的实用密码学》系列文章目录：
 写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 在密码学中密钥交换是一种协议，功能是在两方之间安全地交换加密密钥，其他任何人都无法获得密钥的副本。通常各种加密通讯协议的第一步都是密钥交换。 密钥交换技术具体来说有两种方案：
@@ -284,10 +284,10 @@ Diffie-Hellman Key Exchange (DHКЕ) ：传统的、应用最为广泛的密钥�
     
     <item>
       <title>写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/</link>
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book
 《写给开发人员的实用密码学》系列文章目录：
 写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 在密码学中，随机性（熵）扮演了一个非常重要的角色，许多密码学算法都要求使用一个不可预测的随机数，只有在生成的随机数不可预测时，这些算法才能保证其安全性。
@@ -304,10 +304,10 @@ PRNG 被广泛应用在前面提到的各种依赖随机性的高性能算法以
     
     <item>
       <title>写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/</link>
       <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book 《写给开发人员的实用密码学》系列文章目录：
 写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 MAC 消息认证码，即 Message Authentication Code，是用于验证消息的一小段信息。 换句话说，能用它确认消息的真实性——消息来自指定的发件人并且没有被篡改。
 MAC 值通过允许验证者（也拥有密钥）检测消息内容的任何更改来保护消息的数据完整性及其真实性。
@@ -319,10 +319,10 @@ import hashlib, hmac, binascii key = b&amp;#34;key&amp;#34; msg = b&amp;#34;some
     
     <item>
       <title>写给开发人员的实用密码学（二）—— 哈希函数</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%8C/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%8C/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%8C/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%8C/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book
 《写给开发人员的实用密码学》系列文章目录：
 写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 哈希函数，或者叫散列函数，是一种从任何一种数据中创建一个数字指纹（也叫数字摘要）的方法，散列函数把数据压缩（或者放大）成一个长度固定的字符串。
@@ -340,10 +340,10 @@ import hashlib, hmac, binascii key = b&amp;#34;key&amp;#34; msg = b&amp;#34;some
     
     <item>
       <title>写给开发人员的实用密码学（一）—— 概览</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/</link>
       <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book 《写给开发人员的实用密码学》系列文章目录： 写给开发人员的实用密码学（一）—— 概览 写给开发人员的&amp;hellip;&amp;hellip;
 本文主要翻译自 Practical-Cryptography-for-Developers-Book
 《写给开发人员的实用密码学》系列文章目录：
@@ -356,10 +356,10 @@ import hashlib, hmac, binascii key = b&amp;#34;key&amp;#34; msg = b&amp;#34;some
     
     <item>
       <title>如何拯救一台 glibc 被干掉的 Linux 服务器</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sun, 09 May 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%A6%82%E4%BD%95%E6%8B%AF%E6%95%91%E4%B8%80%E5%8F%B0-glibc-%E8%A2%AB%E5%B9%B2%E6%8E%89%E7%9A%84-linux-%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description>今天正要下班，群里有人问我：
 『我们有个新管理员上的 glibc 给删了，现在什么命令都跑不了了，还有救吗？』
 我说，glibc 也能弄掉，莫不是 rpm &amp;ndash;force?
@@ -373,10 +373,10 @@ glibc 被卸载，负责加载所有. so 的 ld.so 也就没了，因此运行�
     
     <item>
       <title>命令行Clash指南</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/</link>
       <pubDate>Mon, 29 Mar 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%9C%A8-linux-%E4%B8%8A%E4%BD%BF%E7%94%A8-clash-%E4%BD%9C%E4%BB%A3%E7%90%86-verne-in-github/</guid>
       <description>去年年中的时候切换到 macOS，一直用 ClashX，时隔半年又迁移回了 Linux，发现原先使用的 V2rayL 虽然能用，但是有些简陋，并且不支持分流，并且如果一个地址失效了，还需要手动地进行切换。
 去年年中的时候切换到 macOS，一直用 ClashX，时隔半年又迁移回了 Linux，发现原先使用的 V2rayL 虽然能用，但是有些简陋，并且不支持分流，并且如果一个地址失效了，还需要手动地进行切换。所以看到 Linux 的 Clash 可以自动进行流量切换的时候，就试一下。
 Clash 是 Go 语言实现的，跨平台代理工具，支持 Shadowsocks/v2ray，支持规则分流等等。
@@ -391,10 +391,10 @@ ls -al ~/.config/clash .rw-r--r-- 10 einverne 23 Mar 19:30 config.yaml .rw-r--r-
     
     <item>
       <title>会用 Markdown 还不够，还得知道排版规范</title>
-      <link>https://shenyiminghfut.github.io/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/</link>
+      <link>https://hugo.crossentropy.me/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/</link>
       <pubDate>Sat, 13 Mar 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/</guid>
+      <guid>https://hugo.crossentropy.me/posts/markdown%E6%8E%92%E7%89%88%E8%A7%84%E8%8C%83/</guid>
       <description>本文将会介绍 Markdown 中
 Markdown 标记的使用规范
 使用空格、空行、缩进等元素优化排版的方法
@@ -421,20 +421,20 @@ public class Main { public static void main(String[] args) { System.ou
     
     <item>
       <title> Vim命令速查</title>
-      <link>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+      <link>https://hugo.crossentropy.me/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
       <pubDate>Tue, 09 Mar 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+      <guid>https://hugo.crossentropy.me/posts/vim-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
       <description>本速查表按分类列出了 Vim 常用的命令和快捷键，数量较多，可使用 Ctrl + F 进行查找。
 全局命令 命令 / 快捷键功能描述:h[elp] 关键字显示指定关键字的帮助:sav[eas] 文件名另存为...:clo[se]关闭当前窗口:ter[minal]打开新的终端窗口K打开光标所在单词对应的 man 页面 移动光标 命令 / 快捷键功能描述h左移光标j下移光标k上移光标l右移光标H移动到当前页面顶部M移动到当前页面中间L移动到当前页面底部w移动到下个单词开头W移动到下个单词开头（单词含标点）e移动到下个单词结尾E移动到下个单词结尾（单词含标点）b移动到上个单词开头B移动到上个单词开头（单词含标点）%跳转到配对的符号0移动到行首^移动到行首的非空白符$移动到行尾g_移动到行内最后一个非空白符gg移动到文件第一行G移动到文件最后一行5gg 或 5G移动到第 5 行fx移动到字符 x 下次出现的位置tx移动到字符 x 下次出现的位置的前一个字符Fx移动到字符 x 上次出现的位置Tx移动到字符 x 上次出现的位置的后一个字符;重复之前的 f、t、F、T 操作,反向重复之前的 f、t、F、T 操作}移动到下一个段落（当编辑代码时则为函数／代码块）{移动到上一个段落（当编辑代码时则为函数／代码块）zz移动屏幕使光标居中Ctrl + e向下移动屏幕一行（保持光标不动）Ctrl + y向上移动屏幕一行（保持光标不动）Ctrl + b向上滚动一屏Ctrl + f向下滚动一屏Ctrl + d向下滚动半屏Ctrl + u向上滚动半屏 插入模式（插入 / 追加文本） 命令 / 快捷键功能描述i从光标前开始插入字符I从行首开始插入字符a从光标后开始插入字符A从行尾开始插入字符o在当前行之下另起一行，开始插入字符O在当前行之上另起一行，开始插入字符ea从当前单词末尾开始插入Ctrl + h在插入模式下，删除光标前的字符Ctrl + w在插入模式下，删除光标前的单词Ctrl + j在插入模式下，另起一行Ctrl + t在插入模式下，向右缩进，宽度由 shiftwidth 控制Ctrl + d在插入模式下，向左缩进，宽度由 shiftwidth 控制Ctrl + n在插入模式下，在光标之前插入自动补全的下一个匹配项Ctrl + p在插入模式下，在光标之前插入自动补全的上一个匹配项Ctrl + rx在当前光标处插入 x 寄存器的内容Esc退出插入模式 编辑文本 命令 / 快捷键功能描述r替换当前字符J将下一行合并到当前行，并在两部分文本之间插入一个空格gJ将下一行合并到当前行，两部分文本之间不含空格gwip重新调整段落g~切换整个文本的大小写（即大写变小写，小写变大写）gu把整个文本改成小写gU把整个文本改成大写cc 或 S将光标所在的行删除，然后进入插入模式C 或 c$删除光标所在位置到行尾的所有文本，然后进入插入模式ciw将光标所在的单词删除，然后进入插入模式cw从光标位置开始，修改单词s删除当前字符，然后进入插入模式xp将当前字符后移uundo - 撤销最近一次操作U恢复 / 撤销最后修改的行Ctrl + rredo - 重做（和 u 相反）.</description>
     </item>
     
     <item>
       <title>Tmux教程</title>
-      <link>https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
+      <link>https://hugo.crossentropy.me/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</link>
       <pubDate>Mon, 09 Mar 2020 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
+      <guid>https://hugo.crossentropy.me/posts/tmux-%E4%BD%BF%E7%94%A8%E6%95%99%E7%A8%8B/</guid>
       <description>Tmux 是一个终端复用器（terminal multiplexer），非常有用，属于常用的开发工具。
 本文介绍如何使用 Tmux。
 一、Tmux 是什么？ 1.1 会话与进程 命令行的典型使用方式是，打开一个终端窗口（terminal window，以下简称 &amp;ldquo;窗口&amp;rdquo;），在里面输入命令。用户与计算机的这种临时的交互，称为一次 &amp;ldquo;会话&amp;rdquo;（session） 。
@@ -453,10 +453,10 @@ public class Main { public static void main(String[] args) { System.ou
     
     <item>
       <title>socat&amp;&amp;netcat最佳实践.</title>
-      <link>https://shenyiminghfut.github.io/posts/-socat-netcat/</link>
+      <link>https://hugo.crossentropy.me/posts/-socat-netcat/</link>
       <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/-socat-netcat/</guid>
+      <guid>https://hugo.crossentropy.me/posts/-socat-netcat/</guid>
       <description>文中的命令均在 macOS Big Sur 和 openSUSE Tumbleweed 上测试通过
 netcat(network cat) 是一个历史悠久的网络工具包，被称作 TCP/IP 的瑞士军刀，各大 Linux 发行版都有默认安装 openbsd 版本的 netcat，它的命令行名称为 nc.
 而 socat(socket cat)，官方文档描述它是 &amp;quot;netcat++&amp;quot; (extended design, new implementation)，项目比较活跃，kubernetes-client(kubectl) 底层就是使用的它做各种流量转发。
@@ -472,10 +472,10 @@ socat 的功能就是这么简单，命令行参数也很简洁，唯一需要�
     
     <item>
       <title>ssh端口转发</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/</link>
       <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%BD%BB%E5%BA%95%E6%90%9E%E6%87%82-ssh-%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E5%91%BD%E4%BB%A4/</guid>
       <description>SSH 端口转发（隧道）功能强大、用途广泛，仅仅一行代码便可以将两台主机联系起来，对特定的访问请求进行代理。正确书写 SSH 命令是实现一切的基础。然而许多关于端口转发命令参数的介绍都是浅入深出：罗列名词却不加解释，给出实例却不讲如何举一反三。因而在此尝试整理一份更清晰的使用指引，不涉及原理。不足之处欢迎评论区交流。
 一　基本连接 SSH 基本的连接命令是：
 ssh username@hostname 这里牵扯到了两台主机，一是执行命令、运行 SSH 客户端的主机，我们称为本地主机 A【Host A】；二是接收连接请求、运行 SSH 服务器的主机，我们称为远程主机 B【Host B】。通过密码或密钥等方式验证后，SSH 连接建立，主机 A 可以使用命令行对主机 B 实施远程控制。
@@ -487,29 +487,29 @@ ssh -L 主机A端口X:主机C:主机C端口Z username@hostname# 简单理解为
     
     <item>
       <title>中文文本测试</title>
-      <link>https://shenyiminghfut.github.io/posts/chinese/</link>
+      <link>https://hugo.crossentropy.me/posts/chinese/</link>
       <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/chinese/</guid>
+      <guid>https://hugo.crossentropy.me/posts/chinese/</guid>
       <description>这样看来， 邓拓在不经意间这样说过，越是没有本领的就越加自命不凡。这不禁令我深思。 我们不得不面对一个非常尴尬的事实，那就是， 一般来说， 所谓中午吃什么，关键是中午吃什么需要如何写。 伏尔泰说过一句富有哲理的话，坚持意志伟大的事业需要始终不渝的精神。这启发了我， 那么， 对我个人而言，中午吃什么不仅仅是一个重大的事件，还可能会改变我的人生。 这样看来， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 一般来讲，我们都必须务必慎重的考虑考虑。 黑格尔说过一句富有哲理的话，只有永远躺在泥坑里的人，才不会再掉进坑里。这启发了我， 我们不得不面对一个非常尴尬的事实，那就是， 既然如何， 在这种困难的抉择下，本人思来想去，寝食难安。
 我认为， 而这些并不是完全重要，更加重要的问题是， 了解清楚中午吃什么到底是一种怎么样的存在，是解决一切问题的关键。 中午吃什么因何而发生？ 而这些并不是完全重要，更加重要的问题是， 卢梭在不经意间这样说过，浪费时间是一桩大罪过。这启发了我， 既然如此， 从这个角度来看， 歌德在不经意间这样说过，意志坚强的人能把世界放在手中像泥块一样任意揉捏。我希望诸位也能好好地体会这句话。 我认为， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 莎士比亚在不经意间这样说过，人的一生是短的，但如果卑劣地过这一生，就太长了。带着这句话，我们还要更加慎重的审视这个问题： 带着这些问题，我们来审视一下中午吃什么。 中午吃什么因何而发生？ 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 布尔沃曾经说过，要掌握书，莫被书掌握；要为生而读，莫为读而生。这似乎解答了我的疑惑。 而这些并不是完全重要，更加重要的问题是， 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 带着这些问题，我们来审视一下中午吃什么。 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 我认为， 一般来说， 中午吃什么，到底应该如何实现。 我们不得不面对一个非常尴尬的事实，那就是， 所谓中午吃什么，关键是中午吃什么需要如何写。 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 现在，解决中午吃什么的问题，是非常非常重要的。　我认为， 而这些并不是完全重要，更加重要的问题是， 了解清楚中午吃什么到底是一种怎么样的存在，是解决一切问题的关键。 中午吃什么因何而发生？ 而这些并不是完全重要，更加重要的问题是， 卢梭在不经意间这样说过，浪费时间是一桩大罪过。这启发了我， 既然如此， 从这个角度来看， 歌德在不经意间这样说过，意志坚强的人能把世界放在手中像泥块一样任意揉捏。我希望诸位也能好好地体会这句话。 我认为， 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 这种事实对本人来说意义重大，相信对这个世界也是有一定意义的。 莎士比亚在不经意间这样说过，人的一生是短的，但如果卑劣地过这一生，就太长了。带着这句话，我们还要更加慎重的审视这个问题： 带着这些问题，我们来审视一下中午吃什么。 中午吃什么因何而发生？ 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 布尔沃曾经说过，要掌握书，莫被书掌握；要为生而读，莫为读而生。这似乎解答了我的疑惑。 而这些并不是完全重要，更加重要的问题是， 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 本人也是经过了深思熟虑，在每个日日夜夜思考这个问题。 带着这些问题，我们来审视一下中午吃什么。 生活中，若中午吃什么出现了，我们就不得不考虑它出现了的事实。 我认为， 一般来说， 中午吃什么，到底应该如何实现。 我们不得不面对一个非常尴尬的事实，那就是， 所谓中午吃什么，关键是中午吃什么需要如何写。 我们一般认为，抓住了问题的关键，其他一切则会迎刃而解。 现在，解决中午吃什么的问题，是非常非常重要的。</description>
     </item>
     
     <item>
       <title>Git命令速查表</title>
-      <link>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
+      <link>https://hugo.crossentropy.me/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</link>
       <pubDate>Tue, 09 Apr 2019 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
+      <guid>https://hugo.crossentropy.me/posts/git-%E5%91%BD%E4%BB%A4%E9%80%9F%E6%9F%A5/</guid>
       <description>创建命令 Git 命令说明git clone &amp;lt;url&amp;gt;克隆远程仓库git init初始化本地 git 仓库（即创建新的本地仓库） 本地更改 Git 命令说明git status查看当前分支状态git diff查看已跟踪文件的变更git add &amp;lt;file&amp;gt;将指定的文件添加到暂存区git add .将所有有变更的文件添加到暂存区git commit -a提交所有本地修改git commit -m &#34;xxx&#34;把已添加至暂存区的文件执行提交，并以 xxx 作为本次提交的描述git commit --amend -m &#34;xxx&#34;修改上一次提交（请勿用该命令修改已发布的提交）git commit -am &#34;xxx&#34;该命令是 git add . 和 git commit -m &#34;xxx&#34; 的快捷方式git stash暂存当前修改，将所有置为 HEAD 状态git stash list查看所有暂存列表git stash push把当前工作区的文件暂存到临时空间git stash pop把文件从临时空间中恢复到当前工作区 提交历史 Git 命令说明git log查看提交日志git log -n显示 n 行日志，n 为整数git log --stat查看本地提交日志git show &amp;lt;commit&amp;gt;查看提交日志及相关变动文件git show HEAD查看 HEAD 提交日志git show HEAD^查看 HEAD 的上一个版本提交日志。另外，git show HEAD^^ 是查看上 2 个版本的提交日志；git show HEAD^5 是查看上 5 个版本的提交日志git blame &amp;lt;file&amp;gt;对于指定文件，逐行显示提交的哈希 ID、提交者、提交日期以及修改的内容git whatchanged显示提交历史，以及每次提交变更的文件 分支和标签 Git 命令说明git branch查看本地分支git branch -r查看远程分支git branch -a查看所有分支（本地和远程）git branch --merged查看所有分支已合并到当前分支的分支git branch --no-merged查看所有分支未合并到当前分支的分支git branch -m &amp;lt;new-branch&amp;gt;把当前分支的名称改成 new-branch；如果 new-branch 已存在，将不会执行改名git branch -M &amp;lt;new-branch&amp;gt;强制把当前分支的名称改成 new-branch（即使 new-branch 已存在）git branch -m &amp;lt;old-branch&amp;gt; &amp;lt;new-branch&amp;gt;把分支 old-branch 的名称改成 new-branch，如果 new-branch 已存在，将不会执行改名git branch -M &amp;lt;old-branch&amp;gt; &amp;lt;new-branch&amp;gt;强制把分支 old-branch 的名称改成 new-branch（即使 new-branch 已存在）git checkout &amp;lt;branch-name&amp;gt;切换到 branch-name 分支git branch &amp;lt;new-branch&amp;gt;新建分支（也可以用 git checkout -b &amp;lt;new-branch&amp;gt;）git branch --track &amp;lt;new&amp;gt; &amp;lt;remote&amp;gt;基于远程分支创建一个新分支，同 git checkout --track &amp;lt;remote/branch&amp;gt;git branch -d &amp;lt;branch-name&amp;gt;删除本地分支git tag列出所有本地标签git tag &amp;lt;tag-name&amp;gt;基于最新的提交创建标签git tag -d &amp;lt;tag-name&amp;gt;删除标签 删除命令 Git 命令说明git rm &amp;lt;file&amp;gt;删除文件（将从磁盘中删除文件）git rm -r &amp;lt;directory&amp;gt;递归删除指定目录下的文件git rm --cached &amp;lt;file&amp;gt;停止跟踪文件，不会从磁盘中删除 合并和衍合 Git 命令说明git merge &amp;lt;branch&amp;gt;合并指定分支到当前分支，保留两个git rebase &amp;lt;branch&amp;gt;合并指定分支到当前分支，只保留一个git rebase --abort终止 rebase 操作，即回到执行 rebase 之前的状态git rebase --continue解决冲突后继续执行 rebasegit mergetool使用配置文件指定的 mergetool 解决冲突git add &amp;lt;resolved-file&amp;gt;</description>
     </item>
     
     <item>
       <title>Linux 中的虚拟网络接口</title>
-      <link>https://shenyiminghfut.github.io/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</link>
+      <link>https://hugo.crossentropy.me/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</guid>
+      <guid>https://hugo.crossentropy.me/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</guid>
       <description>本文用到的字符画工具：vscode-asciiflow2
 注意: 本文中使用 ip 命令创建或修改的任何网络配置，都是未持久化的，主机重启即消失。
 Linux 具有强大的虚拟网络能力，这也是 openstack 网络、docker 容器网络以及 kubernetes 网络等虚拟网络的基础。

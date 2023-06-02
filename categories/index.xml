@@ -2,63 +2,63 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 摆人日寄</title>
-    <link>https://shenyiminghfut.github.io/categories/</link>
+    <link>https://hugo.crossentropy.me/categories/</link>
     <description>Recent content in Categories on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Thu, 01 Dec 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Dec 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://hugo.crossentropy.me/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Test</title>
-      <link>https://shenyiminghfut.github.io/categories/test/</link>
+      <link>https://hugo.crossentropy.me/categories/test/</link>
       <pubDate>Thu, 01 Dec 2022 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/categories/test/</guid>
+      <guid>https://hugo.crossentropy.me/categories/test/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SQL</title>
-      <link>https://shenyiminghfut.github.io/categories/sql/</link>
+      <link>https://hugo.crossentropy.me/categories/sql/</link>
       <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/categories/sql/</guid>
+      <guid>https://hugo.crossentropy.me/categories/sql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Story</title>
-      <link>https://shenyiminghfut.github.io/categories/story/</link>
+      <link>https://hugo.crossentropy.me/categories/story/</link>
       <pubDate>Fri, 08 Jul 2022 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/categories/story/</guid>
+      <guid>https://hugo.crossentropy.me/categories/story/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Code</title>
-      <link>https://shenyiminghfut.github.io/categories/code/</link>
+      <link>https://hugo.crossentropy.me/categories/code/</link>
       <pubDate>Sat, 12 Mar 2022 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/categories/code/</guid>
+      <guid>https://hugo.crossentropy.me/categories/code/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Blog</title>
-      <link>https://shenyiminghfut.github.io/categories/blog/</link>
+      <link>https://hugo.crossentropy.me/categories/blog/</link>
       <pubDate>Sat, 13 Mar 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/categories/blog/</guid>
+      <guid>https://hugo.crossentropy.me/categories/blog/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://shenyiminghfut.github.io/categories/linux/</link>
+      <link>https://hugo.crossentropy.me/categories/linux/</link>
       <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/categories/linux/</guid>
+      <guid>https://hugo.crossentropy.me/categories/linux/</guid>
       <description></description>
     </item>
     

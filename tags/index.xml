@@ -2,99 +2,99 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on 摆人日寄</title>
-    <link>https://shenyiminghfut.github.io/tags/</link>
+    <link>https://hugo.crossentropy.me/tags/</link>
     <description>Recent content in Tags on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Thu, 01 Dec 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 01 Dec 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://hugo.crossentropy.me/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux</title>
-      <link>https://shenyiminghfut.github.io/tags/linux/</link>
+      <link>https://hugo.crossentropy.me/tags/linux/</link>
       <pubDate>Thu, 01 Dec 2022 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/tags/linux/</guid>
+      <guid>https://hugo.crossentropy.me/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>tool</title>
-      <link>https://shenyiminghfut.github.io/tags/tool/</link>
+      <link>https://hugo.crossentropy.me/tags/tool/</link>
       <pubDate>Tue, 22 Nov 2022 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/tags/tool/</guid>
+      <guid>https://hugo.crossentropy.me/tags/tool/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Covid</title>
-      <link>https://shenyiminghfut.github.io/tags/covid/</link>
+      <link>https://hugo.crossentropy.me/tags/covid/</link>
       <pubDate>Fri, 28 Oct 2022 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/tags/covid/</guid>
+      <guid>https://hugo.crossentropy.me/tags/covid/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SQL</title>
-      <link>https://shenyiminghfut.github.io/tags/sql/</link>
+      <link>https://hugo.crossentropy.me/tags/sql/</link>
       <pubDate>Sun, 18 Sep 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/tags/sql/</guid>
+      <guid>https://hugo.crossentropy.me/tags/sql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>scene</title>
-      <link>https://shenyiminghfut.github.io/tags/scene/</link>
+      <link>https://hugo.crossentropy.me/tags/scene/</link>
       <pubDate>Fri, 08 Jul 2022 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/tags/scene/</guid>
+      <guid>https://hugo.crossentropy.me/tags/scene/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chinese</title>
-      <link>https://shenyiminghfut.github.io/tags/chinese/</link>
+      <link>https://hugo.crossentropy.me/tags/chinese/</link>
       <pubDate>Sat, 14 May 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/tags/chinese/</guid>
+      <guid>https://hugo.crossentropy.me/tags/chinese/</guid>
       <description></description>
     </item>
     
     <item>
       <title>http</title>
-      <link>https://shenyiminghfut.github.io/tags/http/</link>
+      <link>https://hugo.crossentropy.me/tags/http/</link>
       <pubDate>Sat, 12 Mar 2022 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/tags/http/</guid>
+      <guid>https://hugo.crossentropy.me/tags/http/</guid>
       <description></description>
     </item>
     
     <item>
       <title>markdown</title>
-      <link>https://shenyiminghfut.github.io/tags/markdown/</link>
+      <link>https://hugo.crossentropy.me/tags/markdown/</link>
       <pubDate>Sat, 13 Mar 2021 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/tags/markdown/</guid>
+      <guid>https://hugo.crossentropy.me/tags/markdown/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Net</title>
-      <link>https://shenyiminghfut.github.io/tags/net/</link>
+      <link>https://hugo.crossentropy.me/tags/net/</link>
       <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/tags/net/</guid>
+      <guid>https://hugo.crossentropy.me/tags/net/</guid>
       <description></description>
     </item>
     
     <item>
       <title>git</title>
-      <link>https://shenyiminghfut.github.io/tags/git/</link>
+      <link>https://hugo.crossentropy.me/tags/git/</link>
       <pubDate>Tue, 09 Apr 2019 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/tags/git/</guid>
+      <guid>https://hugo.crossentropy.me/tags/git/</guid>
       <description></description>
     </item>
     

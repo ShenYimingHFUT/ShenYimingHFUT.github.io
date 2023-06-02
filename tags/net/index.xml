@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Net on 摆人日寄</title>
-    <link>https://shenyiminghfut.github.io/tags/net/</link>
+    <link>https://hugo.crossentropy.me/tags/net/</link>
     <description>Recent content in Net on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Thu, 14 Nov 2019 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 14 Nov 2019 11:25:05 -0400</lastBuildDate><atom:link href="https://hugo.crossentropy.me/tags/net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>socat&amp;&amp;netcat最佳实践.</title>
-      <link>https://shenyiminghfut.github.io/posts/-socat-netcat/</link>
+      <link>https://hugo.crossentropy.me/posts/-socat-netcat/</link>
       <pubDate>Thu, 14 Nov 2019 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/-socat-netcat/</guid>
+      <guid>https://hugo.crossentropy.me/posts/-socat-netcat/</guid>
       <description>文中的命令均在 macOS Big Sur 和 openSUSE Tumbleweed 上测试通过
 netcat(network cat) 是一个历史悠久的网络工具包，被称作 TCP/IP 的瑞士军刀，各大 Linux 发行版都有默认安装 openbsd 版本的 netcat，它的命令行名称为 nc.
 而 socat(socket cat)，官方文档描述它是 &amp;quot;netcat++&amp;quot; (extended design, new implementation)，项目比较活跃，kubernetes-client(kubectl) 底层就是使用的它做各种流量转发。
@@ -29,10 +29,10 @@ socat 的功能就是这么简单，命令行参数也很简洁，唯一需要�
     
     <item>
       <title>Linux 中的虚拟网络接口</title>
-      <link>https://shenyiminghfut.github.io/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</link>
+      <link>https://hugo.crossentropy.me/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</guid>
+      <guid>https://hugo.crossentropy.me/posts/linux-%E4%B8%AD%E7%9A%84%E8%99%9A%E6%8B%9F%E7%BD%91%E7%BB%9C%E6%8E%A5%E5%8F%A3/</guid>
       <description>本文用到的字符画工具：vscode-asciiflow2
 注意: 本文中使用 ip 命令创建或修改的任何网络配置，都是未持久化的，主机重启即消失。
 Linux 具有强大的虚拟网络能力，这也是 openstack 网络、docker 容器网络以及 kubernetes 网络等虚拟网络的基础。

@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>tool on 摆人日寄</title>
-    <link>https://shenyiminghfut.github.io/tags/tool/</link>
+    <link>https://hugo.crossentropy.me/tags/tool/</link>
     <description>Recent content in tool on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Tue, 22 Nov 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 22 Nov 2022 11:25:05 -0400</lastBuildDate><atom:link href="https://hugo.crossentropy.me/tags/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dig简单实践</title>
-      <link>https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
+      <link>https://hugo.crossentropy.me/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</link>
       <pubDate>Tue, 22 Nov 2022 11:25:05 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
+      <guid>https://hugo.crossentropy.me/posts/dig%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5/</guid>
       <description>dig — DNS lookup utility
 man page 开宗明义的说，dig 是个DNS 查找工具，也是跟CDN 打交道时最常用的指令之一。
 白话的说明就是：用来查某个网址会连到哪台主机。
@@ -28,10 +28,10 @@ dig @168.95.1.1 any www.apple.com dig @168.95.1.1 www.apple.com any dig www.appl
     
     <item>
       <title>Curl简单实践</title>
-      <link>https://shenyiminghfut.github.io/posts/curl/</link>
+      <link>https://hugo.crossentropy.me/posts/curl/</link>
       <pubDate>Fri, 04 Nov 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/curl/</guid>
+      <guid>https://hugo.crossentropy.me/posts/curl/</guid>
       <description>curl 是一个通过网络协定传输数据的指令，用很白话的说法就是让你「连接到网站」。
 基本使用 curl http://www.example.com 这样会将 response body print 出来，为了要快速验证网站的回应是否正常，我比较常用的形式是
 curl -iL http://www.example.com -i 代表显示 header + body ，如果只要 header 的话，可以使用大写的 I 。
@@ -41,10 +41,10 @@ curl -IL http://google.com --- HTTP/1.1 301 Moved Permanently Location: http://w
     
     <item>
       <title>写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AB/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AB/</link>
       <pubDate>Mon, 08 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AB/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AB/</guid>
       <description>《写给开发人员的实用密码学》系列文章目录:
 写给开发人员的实用密码学（一）—— 概览
 写给开发人员的实用密码学（二）—— 哈希函数
@@ -63,10 +63,10 @@ curl -IL http://google.com --- HTTP/1.1 301 Moved Permanently Location: http://w
     
     <item>
       <title>写给开发人员的实用密码学（六）—— 对称密钥加密算法</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AD/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AD/</link>
       <pubDate>Sat, 06 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AD/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%85%AD/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book，笔者补充了部分代码示例。
 《写给开发人员的实用密码学》系列文章目录：
 写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 两个常用动词：
@@ -81,10 +81,10 @@ cipher: 指用于加解密的「密码算法」，有时也被直接翻译成「
     
     <item>
       <title>写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/</link>
       <pubDate>Fri, 05 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%94/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book，笔者额外补充了 DHKE/ECDH 的代码示例，以及「PFS 完美前向保密协议 DHE/ECDHE」一节。
 《写给开发人员的实用密码学》系列文章目录：
 写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 在密码学中密钥交换是一种协议，功能是在两方之间安全地交换加密密钥，其他任何人都无法获得密钥的副本。通常各种加密通讯协议的第一步都是密钥交换。 密钥交换技术具体来说有两种方案：
@@ -96,10 +96,10 @@ Diffie-Hellman Key Exchange (DHКЕ) ：传统的、应用最为广泛的密钥�
     
     <item>
       <title>写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/</link>
       <pubDate>Thu, 04 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E5%9B%9B/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book
 《写给开发人员的实用密码学》系列文章目录：
 写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 在密码学中，随机性（熵）扮演了一个非常重要的角色，许多密码学算法都要求使用一个不可预测的随机数，只有在生成的随机数不可预测时，这些算法才能保证其安全性。
@@ -116,10 +116,10 @@ PRNG 被广泛应用在前面提到的各种依赖随机性的高性能算法以
     
     <item>
       <title>写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/</link>
       <pubDate>Wed, 03 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%89/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book 《写给开发人员的实用密码学》系列文章目录：
 写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 MAC 消息认证码，即 Message Authentication Code，是用于验证消息的一小段信息。 换句话说，能用它确认消息的真实性——消息来自指定的发件人并且没有被篡改。
 MAC 值通过允许验证者（也拥有密钥）检测消息内容的任何更改来保护消息的数据完整性及其真实性。
@@ -131,10 +131,10 @@ import hashlib, hmac, binascii key = b&amp;#34;key&amp;#34; msg = b&amp;#34;some
     
     <item>
       <title>写给开发人员的实用密码学（二）—— 哈希函数</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%8C/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%8C/</link>
       <pubDate>Tue, 02 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%8C/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%BA%8C/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book
 《写给开发人员的实用密码学》系列文章目录：
 写给开发人员的实用密码学（一）—— 概览 写给开发人员的实用密码学（二）—— 哈希函数 写给开发人员的实用密码学（三）—— MAC 与密钥派生函数 KDF 写给开发人员的实用密码学（四）—— 安全随机数生成器 CSPRNG 写给开发人员的实用密码学（五）—— 密钥交换 DHKE 与完美前向保密 PFS 写给开发人员的实用密码学（六）—— 对称密钥加密算法 写给开发人员的实用密码学（七）—— 非对称密钥加密算法 RSA/ECC 写给开发人员的实用密码学（八）—— 数字证书与 TLS 协议 待续 哈希函数，或者叫散列函数，是一种从任何一种数据中创建一个数字指纹（也叫数字摘要）的方法，散列函数把数据压缩（或者放大）成一个长度固定的字符串。
@@ -152,10 +152,10 @@ import hashlib, hmac, binascii key = b&amp;#34;key&amp;#34; msg = b&amp;#34;some
     
     <item>
       <title>写给开发人员的实用密码学（一）—— 概览</title>
-      <link>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/</link>
+      <link>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/</link>
       <pubDate>Mon, 01 Nov 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/</guid>
+      <guid>https://hugo.crossentropy.me/posts/%E5%86%99%E7%BB%99%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%9A%84%E5%AE%9E%E7%94%A8%E5%AF%86%E7%A0%81%E5%AD%A6%E4%B8%80/</guid>
       <description>本文主要翻译自 Practical-Cryptography-for-Developers-Book 《写给开发人员的实用密码学》系列文章目录： 写给开发人员的实用密码学（一）—— 概览 写给开发人员的&amp;hellip;&amp;hellip;
 本文主要翻译自 Practical-Cryptography-for-Developers-Book
 《写给开发人员的实用密码学》系列文章目录：

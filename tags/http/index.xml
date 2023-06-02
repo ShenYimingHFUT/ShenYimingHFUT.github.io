@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>http on 摆人日寄</title>
-    <link>https://shenyiminghfut.github.io/tags/http/</link>
+    <link>https://hugo.crossentropy.me/tags/http/</link>
     <description>Recent content in http on 摆人日寄</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hant</language>
     <copyright>This is a customized copyright.</copyright>
-    <lastBuildDate>Sat, 12 Mar 2022 10:58:08 -0400</lastBuildDate><atom:link href="https://shenyiminghfut.github.io/tags/http/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Mar 2022 10:58:08 -0400</lastBuildDate><atom:link href="https://hugo.crossentropy.me/tags/http/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>HTTP状态码速查表</title>
-      <link>https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</link>
+      <link>https://hugo.crossentropy.me/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</link>
       <pubDate>Sat, 12 Mar 2022 10:58:08 -0400</pubDate>
       
-      <guid>https://shenyiminghfut.github.io/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</guid>
+      <guid>https://hugo.crossentropy.me/posts/http-%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/</guid>
       <description>1xx 状态：表示临时响应 1xx 系列状态码，表示请求已收到，需要请求者继续执行操作的状态代码。
 继续（Continue）
 请求者应当继续提出请求。 服务器返回此代码表示已收到请求的第一部分，正在等待其余部
